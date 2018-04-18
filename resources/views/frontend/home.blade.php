@@ -15,7 +15,7 @@ $pinterest_url=$setting['pinterest_url']['field_value'];
 $company=$setting['contacted_person']['field_value'];
 ?>
 <h1 style="display: none;"><?php echo $seo["title"]; ?></h1>
-<div class="container">
+<div class="container margin-top-10">
 	<div class="row">
 		<div class="col-lg-12">
 			<?php 

@@ -12,10 +12,9 @@
 @font-face{font-family:"OpenSans-Bold";src:url("../fonts/OpenSans-Bold.ttf") format('truetype');}
 body{
     font-size:14px;
-    color:#585858;
-    background:#f1f1f1;
-    font-family: 'OpenSans';
-    
+    color:#333;
+    background:#FAF9F6;
+    font-family: 'OpenSans';    
 }
 table{max-width:100%;}
 p{margin:1em 0;}
@@ -2059,6 +2058,80 @@ form[name='frm-search'] input[name='q']{
 	float: right;
     width: 50px;
 }
+header{
+        background: #F3F3F1;
+    border-bottom: solid 2px #BA0703;
+}
+.fapto{
+    float: left;
+}
+.faptap{
+        float: right;
+    margin-right: 100px;
+    width: 360px;
+}
+.slogan-1{
+    color: #067A1E;
+    font-size: 25px;       
+    text-shadow: 2px 2px 0px #0000001a;
+    font-family: 'Anton';
+    -webkit-text-stroke-width: 1px;
+-webkit-text-stroke-color: #ffffffb5;
+}
+.mikae{
+        border-top: 1px solid #067A1E;
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+.cchc{
+    color: #ff0000;
+    font-weight: bold;
+}
+.kipha{
+    display: flex;
+    font-size:20px;    
+}
+.rafaen{
+    float: right;
+}
+.ddsmoothmenu > ul > li > a:link,.ddsmoothmenu > ul > li > a:visited{    
+    background: linear-gradient(to bottom, #23853D, #067A1E);
+    color: #ffffff;
+        padding: 10px 14px;
+    border-right: 0px;
+    font-weight: bold;    
+    border-radius: 10px 10px 0px 0px;
+    font-size: 13px;
+}
+.ddsmoothmenu > ul > li{
+    margin-left: 5px
+}
+.ddsmoothmenu > ul > li > a:hover  {
+    background: #29AA4C !important;
+    color: #ffffff
+}
+.ddsmoothmenu ul li a.selected{
+    background: #29AA4C !important;  
+    color: #ffffff  
+}
+.ddsmoothmenu ul li a{
+    text-transform: uppercase;
+}
+.ddsmoothmenu ul li ul li a{
+    background: #067a1edb;
+    padding: 10px 10px;
+}
+.ddsmoothmenu ul li ul li a{
+  border-bottom: 1px solid #23853D;
+  border-right: 1px solid #23853D;
+}
+.ddsmoothmenu ul li ul li a:hover{
+  background:#29AA4C !important;
+}
+.ddsmoothmenu ul li ul li a{
+  width: 250px;
+}
+
 @media (max-width: 768px){    
     .mobilemenu{
         display: block;
