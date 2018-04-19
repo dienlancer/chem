@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 18, 2018 lúc 12:52 PM
+-- Thời gian đã tạo: Th4 19, 2018 lúc 06:52 AM
 -- Phiên bản máy phục vụ: 10.1.29-MariaDB
 -- Phiên bản PHP: 7.0.26
 
@@ -416,10 +416,35 @@ CREATE TABLE `category_product` (
 --
 
 INSERT INTO `category_product` (`id`, `fullname`, `meta_keyword`, `meta_description`, `alias`, `image`, `status`, `parent_id`, `sort_order`, `created_at`, `updated_at`) VALUES
-(1, 'Laptop', 'metakeyword Gỗ óc chó', 'metadescription Gỗ óc chó', 'laptop', 'laptop-sinh-vien.png', 1, 0, 1, '2018-01-02 05:00:16', '2018-02-28 01:58:22'),
-(12, 'Máy tính', 'metakeyword Điện thoại mới', 'metadescription Điện thoại mới', 'may-tinh', NULL, 1, 0, 2, '2018-02-01 03:00:35', '2018-02-28 01:58:26'),
-(16, 'Phụ kiện máy tính', 'metakeyword Máy tính để bàn', 'metadescription Máy tính để bàn', 'phu-kien-may-tinh', NULL, 1, 0, 6, '2018-02-01 03:07:07', '2018-02-26 07:36:09'),
-(17, 'Loa âm thanh', 'metakeyword Máy in và phụ kiện', 'metadescription Máy in và phụ kiện', 'loa-am-thanh', NULL, 1, 0, 7, '2018-02-01 03:07:37', '2018-02-28 04:01:59');
+(18, 'Hương liệu thực phẩm', 'metakeyword Hương liệu thực phẩm', 'metadescription Hương liệu thực phẩm', 'huong-lieu-thuc-pham', NULL, 1, 0, 1, '2018-04-19 02:10:14', '2018-04-19 02:10:53'),
+(19, 'Màu thực phẩm', 'metakeyword Màu thực phẩm', 'metadescription Màu thực phẩm', 'mau-thuc-pham', NULL, 1, 0, 2, '2018-04-19 02:11:15', '2018-04-19 02:11:15'),
+(20, 'Chất bảo quản', 'metakeyword Chất bảo quản', 'metadescription Chất bảo quản', 'chat-bao-quan', NULL, 1, 0, 3, '2018-04-19 02:11:37', '2018-04-19 02:11:40'),
+(21, 'Chất tạo ngọt', 'metakeyword Chất tạo ngọt', 'metadescription Chất tạo ngọt', 'chat-tao-ngot', NULL, 1, 0, 4, '2018-04-19 02:12:06', '2018-04-19 02:12:06'),
+(22, 'Chất điều vị', 'metakeyword Chất điều vị', 'metadescription Chất điều vị', 'chat-dieu-vi', NULL, 1, 0, 5, '2018-04-19 02:12:29', '2018-04-19 02:12:34'),
+(23, 'Chất chống oxy hóa', 'metakeyword Chất chống oxy hóa', 'metadescription Chất chống oxy hóa', 'chat-chong-oxy-hoa', NULL, 1, 0, 6, '2018-04-19 02:12:58', '2018-04-19 02:12:58'),
+(24, 'Chất tạo xốp', 'metakeyword Chất tạo xốp', 'metadescription Chất tạo xốp', 'chat-tao-xop', NULL, 1, 0, 7, '2018-04-19 02:13:22', '2018-04-19 02:13:26'),
+(25, 'Chất làm đầy', 'metakeyword Chất làm đầy', 'metadescription Chất làm đầy', 'chat-lam-day', NULL, 1, 0, 8, '2018-04-19 02:13:48', '2018-04-19 02:13:48'),
+(26, 'Chất điều chỉnh acid', 'metakeyword Chất điều chỉnh axit', 'metadescription Chất điều chỉnh axit', 'chat-dieu-chinh-acid', NULL, 1, 0, 9, '2018-04-19 02:14:22', '2018-04-19 02:15:17'),
+(27, 'Chất làm rắn chắc', 'metakeyword Chất làm rắn chắc', 'metadescription Chất làm rắn chắc', 'chat-lam-ran-chac', NULL, 1, 0, 10, '2018-04-19 02:15:47', '2018-04-19 02:15:51'),
+(28, 'Chất nhũ hóa', 'metakeyword Chất nhũ hóa', 'metadescription Chất nhũ hóa', 'chat-nhu-hoa', NULL, 1, 0, 11, '2018-04-19 02:16:14', '2018-04-19 02:27:27'),
+(29, 'Chất ổn định', 'metakeyword Chất ổn định', 'metadescription Chất ổn định', 'chat-on-dinh', NULL, 1, 0, 12, '2018-04-19 02:16:38', '2018-04-19 02:35:02'),
+(30, 'Chất làm bóng', 'metakeyword Chất làm bóng', 'metadescription Chất làm bóng', 'chat-lam-bong', NULL, 1, 0, 13, '2018-04-19 02:32:28', '2018-04-19 02:32:35'),
+(31, 'Chất chống vón', 'metakeyword Chất chống vón', 'metadescription Chất chống vón', 'chat-chong-von', NULL, 1, 0, 14, '2018-04-19 02:35:43', '2018-04-19 02:35:43'),
+(32, 'Chất tạo phức', 'metakeyword Chất tạo phức', 'metadescription Chất tạo phức', 'chat-tao-phuc', NULL, 1, 0, 15, '2018-04-19 02:36:13', '2018-04-19 02:36:18'),
+(33, 'Chất chống tạo bọt', 'metakeyword Chất chống tạo bọt', 'metadescription Chất chống tạo bọt', 'chat-chong-tao-bot', NULL, 1, 0, 16, '2018-04-19 02:37:42', '2018-04-19 02:37:42'),
+(34, 'Phụ gia chuyên ngành', 'metakeyword Phụ gia chuyên ngành', 'metadescription Phụ gia chuyên ngành', 'phu-gia-chuyen-nganh', NULL, 1, 0, 17, '2018-04-19 02:38:44', '2018-04-19 02:38:49'),
+(35, 'Bột thực phẩm', 'metakeyword Bột thực phẩm', 'metadescription Bột thực phẩm', 'bot-thuc-pham', NULL, 1, 0, 18, '2018-04-19 02:39:14', '2018-04-19 02:39:14'),
+(36, 'Hương mặn', 'metakeyword Hương mặn', 'metadescription Hương mặn', 'huong-man', NULL, 1, 18, 1, '2018-04-19 02:39:56', '2018-04-19 02:39:56'),
+(37, 'Hương ngọt', 'metakeyword Hương ngọt', 'metadescription Hương ngọt', 'huong-ngot', NULL, 1, 18, 2, '2018-04-19 02:40:21', '2018-04-19 02:40:21'),
+(38, 'Chế biến thịt cá', 'metakeyword Chế biến thịt cá', 'metadescription Chế biến thịt cá', 'che-bien-thit-ca', NULL, 1, 34, 1, '2018-04-19 02:41:22', '2018-04-19 02:41:22'),
+(39, 'Nước chấm , gia vị', 'metakeyword Nước chấm , gia vị', 'metadescription Nước chấm , gia vị', 'nuoc-cham-gia-vi', NULL, 1, 34, 2, '2018-04-19 02:41:49', '2018-04-19 02:41:49'),
+(40, 'Chế biến cà phê', 'metakeyword Chế biến cà phê', 'metadescription Chế biến cà phê', 'che-bien-ca-phe', NULL, 1, 34, 3, '2018-04-19 02:42:20', '2018-04-19 02:42:20'),
+(41, 'Nước giải khát', 'metakeyword Nước giải khát', 'metadescription Nước giải khát', 'nuoc-giai-khat', NULL, 1, 34, 4, '2018-04-19 02:43:01', '2018-04-19 02:43:29'),
+(42, 'Phụ gia chế biến các sản phẩm từ tinh bột', 'metakeyword Phụ gia chế biến các sản phẩm từ tinh bột', 'metadescription Phụ gia chế biến các sản phẩm từ tinh bột', 'phu-gia-che-bien-cac-san-pham-tu-tinh-bot', NULL, 1, 34, 5, '2018-04-19 02:44:43', '2018-04-19 02:44:53'),
+(43, 'Phụ gia chế biến thực phẩm chay', 'metakeyword Phụ gia chế biến thực phẩm chay', 'metadescription Phụ gia chế biến thực phẩm chay', 'phu-gia-che-bien-thuc-pham-chay', NULL, 1, 34, 6, '2018-04-19 02:45:44', '2018-04-19 02:45:44'),
+(44, 'Phụ gia chế biến các sản phẩm rau củ ngâm', 'metakeyword Phụ gia chế biến các sản phẩm rau củ ngâm', 'metadescription Phụ gia chế biến các sản phẩm rau củ ngâm', 'phu-gia-che-bien-cac-san-pham-rau-cu-ngam', NULL, 1, 34, 7, '2018-04-19 02:46:42', '2018-04-19 02:46:42'),
+(45, 'Chế biến mì và snack', 'metakeyword Chế biến mì và snack', 'metadescription Chế biến mì và snack', 'che-bien-mi-va-snack', NULL, 1, 34, 8, '2018-04-19 02:47:42', '2018-04-19 02:47:42'),
+(46, 'Bánh kẹo', 'metakeyword Bánh kẹo', 'metadescription Bánh kẹo', 'banh-keo', NULL, 1, 34, 9, '2018-04-19 02:48:18', '2018-04-19 02:48:18');
 
 -- --------------------------------------------------------
 
@@ -747,10 +772,6 @@ CREATE TABLE `menu` (
 INSERT INTO `menu` (`id`, `fullname`, `alias`, `parent_id`, `menu_type_id`, `level`, `menu_class`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
 (57, 'Trang chủ', 'trang-chu', 0, 5, 0, NULL, 1, 1, '2018-01-10 07:14:21', '2018-01-10 07:14:21'),
 (61, 'Liên hệ', 'lien-he', 0, 5, 0, NULL, 3, 1, '2018-01-10 07:15:34', '2018-03-04 12:48:59'),
-(361, 'Laptop', 'laptop', 0, 8, 0, '', 1, 1, '2018-02-28 07:00:20', '2018-02-28 07:00:20'),
-(362, 'Máy tính', 'may-tinh', 0, 8, 0, '', 2, 1, '2018-02-28 07:00:28', '2018-02-28 07:00:28'),
-(366, 'Phụ kiện máy tính', 'phu-kien-may-tinh', 0, 8, 0, '', 6, 1, '2018-02-28 07:01:08', '2018-02-28 07:01:08'),
-(367, 'Loa âm thanh', 'loa-am-thanh', 0, 8, 0, '', 7, 1, '2018-02-28 07:01:17', '2018-02-28 07:01:17'),
 (372, 'Chính sách giao hàng', 'chinh-sach-giao-hang', 0, 9, 0, '', 1, 1, '2018-02-28 07:25:53', '2018-02-28 07:25:53'),
 (373, 'Đổi trả bảo hành', 'doi-tra-bao-hanh', 0, 9, 0, '', 2, 1, '2018-02-28 07:26:05', '2018-02-28 07:26:05'),
 (374, 'Hướng dẫn mua hàng', 'huong-dan-mua-hang', 0, 9, 0, '', 3, 1, '2018-02-28 07:26:16', '2018-02-28 07:26:16'),
@@ -771,16 +792,70 @@ INSERT INTO `menu` (`id`, `fullname`, `alias`, `parent_id`, `menu_type_id`, `lev
 (413, 'Loa âm thanh', 'loa-am-thanh', 406, 5, 1, '', 7, 1, '2018-03-04 12:50:22', '2018-03-04 12:50:22'),
 (414, 'Tin tức', 'kinh-nghiem-laptop', 0, 9, 0, '', 7, 1, '2018-03-19 11:41:25', '2018-03-19 11:41:25'),
 (415, 'Sản phẩm', 'san-pham', 0, 1, 0, '', 2, 1, '2018-04-18 09:41:33', '2018-04-18 09:42:00'),
-(416, 'Trang chủ', '', 0, 1, 0, '', 1, 1, '2018-04-18 09:42:20', '2018-04-18 09:42:20'),
+(416, 'Trang chủ', 'huong-lieu-thuc-pham', 0, 1, 0, '', 1, 1, '2018-04-18 09:42:20', '2018-04-18 09:42:20'),
 (417, 'Quy trình sản xuất', 'quy-trinh-san-xuat', 0, 1, 0, '', 3, 1, '2018-04-18 09:42:55', '2018-04-18 09:42:55'),
 (418, 'Đối tác', 'doi-tac', 0, 1, 0, '', 4, 1, '2018-04-18 09:43:16', '2018-04-18 09:43:16'),
 (419, 'Tin tức', 'tin-tuc', 0, 1, 0, '', 5, 1, '2018-04-18 09:43:40', '2018-04-18 09:43:40'),
 (420, 'Liên hệ', 'lien-he', 0, 1, 0, '', 6, 1, '2018-04-18 09:44:03', '2018-04-18 09:44:03'),
 (421, 'Tuyển dụng', 'tuyen-dung', 0, 1, 0, '', 7, 1, '2018-04-18 09:44:21', '2018-04-18 09:44:26'),
-(422, 'Hương liệu thực phẩm', 'huong-lieu-thuc-pham', 415, 1, 1, '', 1, 1, '2018-04-18 09:55:43', '2018-04-18 09:55:43'),
-(423, 'Màu thực phẩm', 'mau-thuc-pham', 415, 1, 1, '', 2, 1, '2018-04-18 09:56:07', '2018-04-18 09:56:07'),
-(424, 'Chất bảo quản', 'chat-bao-quan', 415, 1, 1, '', 3, 1, '2018-04-18 09:56:33', '2018-04-18 09:56:49'),
-(425, 'Chất tạo ngọt', 'chat-tao-ngot', 415, 1, 1, '', 4, 1, '2018-04-18 09:57:22', '2018-04-18 09:57:22');
+(429, 'Hương liệu thực phẩm', 'huong-lieu-thuc-pham', 415, 1, 1, '', 1, 1, '2018-04-19 02:50:57', '2018-04-19 02:50:57'),
+(433, 'Màu thực phẩm', 'mau-thuc-pham', 415, 1, 1, '', 2, 1, '2018-04-19 02:54:32', '2018-04-19 02:54:32'),
+(434, 'Chất bảo quản', 'chat-bao-quan', 415, 1, 1, '', 3, 1, '2018-04-19 02:54:43', '2018-04-19 02:54:43'),
+(435, 'Chất tạo ngọt', 'chat-tao-ngot', 415, 1, 1, '', 4, 1, '2018-04-19 02:54:53', '2018-04-19 02:54:53'),
+(436, 'Chất điều vị', 'chat-dieu-vi', 415, 1, 1, '', 5, 1, '2018-04-19 02:55:03', '2018-04-19 02:55:03'),
+(437, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', 415, 1, 1, '', 6, 1, '2018-04-19 02:55:14', '2018-04-19 02:55:14'),
+(438, 'Chất tạo xốp', 'chat-tao-xop', 415, 1, 1, '', 7, 1, '2018-04-19 02:55:26', '2018-04-19 02:55:26'),
+(439, 'Chất làm đầy', 'chat-lam-day', 415, 1, 1, '', 8, 1, '2018-04-19 02:55:37', '2018-04-19 02:55:37'),
+(440, 'Chất điều chỉnh acid', 'chat-dieu-chinh-acid', 415, 1, 1, '', 9, 1, '2018-04-19 02:55:48', '2018-04-19 02:55:48'),
+(441, 'Chất làm rắn chắc', 'chat-lam-ran-chac', 415, 1, 1, '', 10, 1, '2018-04-19 02:56:12', '2018-04-19 02:56:12'),
+(442, 'Chất nhũ hóa', 'chat-nhu-hoa', 415, 1, 1, '', 11, 1, '2018-04-19 02:57:58', '2018-04-19 02:58:22'),
+(443, 'Chất ổn định', 'chat-on-dinh', 415, 1, 1, '', 12, 1, '2018-04-19 02:58:13', '2018-04-19 02:58:22'),
+(444, 'Chất làm bóng', 'chat-lam-bong', 415, 1, 1, '', 13, 1, '2018-04-19 02:58:40', '2018-04-19 02:58:46'),
+(445, 'Chất chống vón', 'chat-chong-von', 415, 1, 1, '', 14, 1, '2018-04-19 02:59:03', '2018-04-19 02:59:09'),
+(446, 'Chất tạo phức', 'chat-tao-phuc', 415, 1, 1, '', 15, 1, '2018-04-19 02:59:26', '2018-04-19 02:59:26'),
+(447, 'Chất chống tạo bọt', 'chat-chong-tao-bot', 415, 1, 1, '', 16, 1, '2018-04-19 02:59:46', '2018-04-19 02:59:46'),
+(448, 'Phụ gia chuyên ngành', 'phu-gia-chuyen-nganh', 415, 1, 1, '', 17, 1, '2018-04-19 03:00:05', '2018-04-19 03:00:05'),
+(449, 'Bột thực phẩm', 'bot-thuc-pham', 415, 1, 1, '', 18, 1, '2018-04-19 03:00:21', '2018-04-19 03:00:21'),
+(450, 'Hương mặn', 'huong-man', 429, 1, 2, '', 1, 1, '2018-04-19 03:00:42', '2018-04-19 03:00:42'),
+(451, 'Hương ngọt', 'huong-ngot', 429, 1, 2, '', 2, 1, '2018-04-19 03:00:51', '2018-04-19 03:00:51'),
+(452, 'Chế biến thịt cá', 'che-bien-thit-ca', 448, 1, 2, '', 1, 1, '2018-04-19 03:01:21', '2018-04-19 03:01:21'),
+(453, 'Nước chấm , gia vị', 'nuoc-cham-gia-vi', 448, 1, 2, '', 2, 1, '2018-04-19 03:11:17', '2018-04-19 03:11:17'),
+(454, 'Chế biến cà phê', 'che-bien-ca-phe', 448, 1, 2, '', 3, 1, '2018-04-19 03:12:18', '2018-04-19 03:12:18'),
+(455, 'Nước giải khát', 'nuoc-giai-khat', 448, 1, 2, '', 4, 1, '2018-04-19 03:12:47', '2018-04-19 03:12:47'),
+(456, 'Phụ gia chế biến các sản phẩm từ tinh bột', 'phu-gia-che-bien-cac-san-pham-tu-tinh-bot', 448, 1, 2, '', 5, 1, '2018-04-19 03:13:19', '2018-04-19 03:13:19'),
+(457, 'Phụ gia chế biến thực phẩm chay', 'phu-gia-che-bien-thuc-pham-chay', 448, 1, 2, '', 6, 1, '2018-04-19 03:14:11', '2018-04-19 03:14:11'),
+(458, 'Phụ gia chế biến các sản phẩm rau củ ngâm', 'phu-gia-che-bien-cac-san-pham-rau-cu-ngam', 448, 1, 2, '', 7, 1, '2018-04-19 03:14:32', '2018-04-19 03:14:32'),
+(459, 'Chế biến mì và snack', 'che-bien-mi-va-snack', 448, 1, 2, '', 8, 1, '2018-04-19 03:14:56', '2018-04-19 03:14:56'),
+(460, 'Bánh kẹo', 'banh-keo', 448, 1, 2, '', 9, 1, '2018-04-19 03:15:08', '2018-04-19 03:15:08'),
+(461, 'Hương liệu thực phẩm', 'huong-lieu-thuc-pham', NULL, 8, 1, '', 1, 1, '2018-04-19 02:50:57', '2018-04-19 02:50:57'),
+(462, 'Màu thực phẩm', 'mau-thuc-pham', NULL, 8, 1, '', 2, 1, '2018-04-19 02:54:32', '2018-04-19 02:54:32'),
+(463, 'Chất bảo quản', 'chat-bao-quan', NULL, 8, 1, '', 3, 1, '2018-04-19 02:54:43', '2018-04-19 02:54:43'),
+(464, 'Chất tạo ngọt', 'chat-tao-ngot', NULL, 8, 1, '', 4, 1, '2018-04-19 02:54:53', '2018-04-19 02:54:53'),
+(465, 'Chất điều vị', 'chat-dieu-vi', NULL, 8, 1, '', 5, 1, '2018-04-19 02:55:03', '2018-04-19 02:55:03'),
+(466, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', NULL, 8, 1, '', 6, 1, '2018-04-19 02:55:14', '2018-04-19 02:55:14'),
+(467, 'Chất tạo xốp', 'chat-tao-xop', NULL, 8, 1, '', 7, 1, '2018-04-19 02:55:26', '2018-04-19 02:55:26'),
+(468, 'Chất làm đầy', 'chat-lam-day', NULL, 8, 1, '', 8, 1, '2018-04-19 02:55:37', '2018-04-19 02:55:37'),
+(469, 'Chất điều chỉnh acid', 'chat-dieu-chinh-acid', NULL, 8, 1, '', 9, 1, '2018-04-19 02:55:48', '2018-04-19 02:55:48'),
+(470, 'Chất làm rắn chắc', 'chat-lam-ran-chac', NULL, 8, 1, '', 10, 1, '2018-04-19 02:56:12', '2018-04-19 02:56:12'),
+(471, 'Chất nhũ hóa', 'chat-nhu-hoa', NULL, 8, 1, '', 11, 1, '2018-04-19 02:57:58', '2018-04-19 02:58:22'),
+(472, 'Chất ổn định', 'chat-on-dinh', NULL, 8, 1, '', 12, 1, '2018-04-19 02:58:13', '2018-04-19 02:58:22'),
+(473, 'Chất làm bóng', 'chat-lam-bong', NULL, 8, 1, '', 13, 1, '2018-04-19 02:58:40', '2018-04-19 02:58:46'),
+(474, 'Chất chống vón', 'chat-chong-von', NULL, 8, 1, '', 14, 1, '2018-04-19 02:59:03', '2018-04-19 02:59:09'),
+(475, 'Chất tạo phức', 'chat-tao-phuc', NULL, 8, 1, '', 15, 1, '2018-04-19 02:59:26', '2018-04-19 02:59:26'),
+(476, 'Chất chống tạo bọt', 'chat-chong-tao-bot', NULL, 8, 1, '', 16, 1, '2018-04-19 02:59:46', '2018-04-19 02:59:46'),
+(477, 'Phụ gia chuyên ngành', 'phu-gia-chuyen-nganh', NULL, 8, 1, '', 17, 1, '2018-04-19 03:00:05', '2018-04-19 03:00:05'),
+(478, 'Bột thực phẩm', 'bot-thuc-pham', NULL, 8, 1, '', 18, 1, '2018-04-19 03:00:21', '2018-04-19 03:00:21'),
+(479, 'Hương mặn', 'huong-man', 461, 8, 2, '', 1, 1, '2018-04-19 04:42:27', '2018-04-19 04:42:27'),
+(480, 'Hương ngọt', 'huong-ngot', 461, 8, 2, '', 2, 1, '2018-04-19 04:42:42', '2018-04-19 04:42:42'),
+(481, 'Chế biến thịt cá', 'che-bien-thit-ca', 477, 8, 2, '', 1, 1, '2018-04-19 04:42:58', '2018-04-19 04:42:58'),
+(482, 'Nước chấm , gia vị', 'nuoc-cham-gia-vi', 477, 8, 2, '', 2, 1, '2018-04-19 04:43:15', '2018-04-19 04:43:15'),
+(483, 'Chế biến cà phê', 'che-bien-ca-phe', 477, 8, 2, '', 3, 1, '2018-04-19 04:43:30', '2018-04-19 04:43:30'),
+(484, 'Nước giải khát', 'nuoc-giai-khat', 477, 8, 2, '', 4, 1, '2018-04-19 04:43:44', '2018-04-19 04:44:12'),
+(485, 'Phụ gia chế biến các sản phẩm từ tinh bột', 'phu-gia-che-bien-cac-san-pham-tu-tinh-bot', 477, 8, 2, '', 5, 1, '2018-04-19 04:44:30', '2018-04-19 04:44:30'),
+(486, 'Phụ gia chế biến thực phẩm chay', 'phu-gia-che-bien-thuc-pham-chay', 477, 8, 2, '', 6, 1, '2018-04-19 04:44:51', '2018-04-19 04:44:51'),
+(487, 'Phụ gia chế biến các sản phẩm rau củ ngâm', 'phu-gia-che-bien-cac-san-pham-rau-cu-ngam', 477, 8, 2, '', 7, 1, '2018-04-19 04:45:11', '2018-04-19 04:45:11'),
+(488, 'Chế biến mì và snack', 'che-bien-mi-va-snack', 477, 8, 2, '', 8, 1, '2018-04-19 04:45:26', '2018-04-19 04:45:26'),
+(489, 'Bánh kẹo', 'banh-keo', 477, 8, 2, '', 9, 1, '2018-04-19 04:45:48', '2018-04-19 04:46:06');
 
 -- --------------------------------------------------------
 
@@ -807,7 +882,7 @@ INSERT INTO `menu_type` (`id`, `fullname`, `theme_location`, `status`, `sort_ord
 (1, 'MainMenu', 'main-menu', 1, 1, '2017-12-15 03:37:06', '2018-02-22 17:15:43'),
 (3, 'Tin tức sự kiện', 'ttsk', 1, 3, '2018-01-03 04:22:54', '2018-02-28 07:58:31'),
 (5, 'MobileMenu', 'mobile-menu', 1, 5, '2018-01-09 19:31:48', '2018-01-09 19:31:48'),
-(8, 'Danh mục sản phẩm', 'danhmucspfooter', 1, 4, '2018-02-28 06:56:55', '2018-02-28 06:59:40'),
+(8, 'Danh mục sản phẩm', 'category-side-bar', 1, 4, '2018-02-28 06:56:55', '2018-04-19 04:47:31'),
 (9, 'Hỗ trợ khách hàng', 'htkh', 1, 6, '2018-02-28 07:19:49', '2018-02-28 07:25:08'),
 (10, 'Sản phẩm', 'dmsp-left', 1, 6, '2018-02-28 16:52:58', '2018-02-28 16:52:58');
 
@@ -1534,7 +1609,9 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (819, 1, 'z1J0xvNwTwzWPsS6cIVoUQkDn62vuwVB', '2018-04-03 00:44:43', '2018-04-03 00:44:43'),
 (820, 1, '6UxGtKre7I7IUz510inaeyD6z36eoXk4', '2018-04-03 00:49:26', '2018-04-03 00:49:26'),
 (825, 1, 'MBWhGF2Q2khD81NtUssxrWmKjvy5h83L', '2018-04-18 02:04:02', '2018-04-18 02:04:02'),
-(826, 1, '6uIz8wvbaHWGaDk5l2ygeoD3tPgWQGdq', '2018-04-18 03:34:15', '2018-04-18 03:34:15');
+(826, 1, '6uIz8wvbaHWGaDk5l2ygeoD3tPgWQGdq', '2018-04-18 03:34:15', '2018-04-18 03:34:15'),
+(827, 1, 'zMowUXsOtQyEEoofUjTP6gOqGO9tp9sV', '2018-04-18 19:03:16', '2018-04-18 19:03:16'),
+(828, 1, '3n7L4khB5NBwukFanjPLhog7mDlG0TJo', '2018-04-18 21:35:02', '2018-04-18 21:35:02');
 
 -- --------------------------------------------------------
 
@@ -1567,92 +1644,6 @@ CREATE TABLE `post_param` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Đang đổ dữ liệu cho bảng `post_param`
---
-
-INSERT INTO `post_param` (`id`, `post_id`, `param_id`, `created_at`, `updated_at`) VALUES
-(22, 9, 10, '2018-02-27 05:02:45', '2018-02-27 05:02:45'),
-(23, 9, 54, '2018-02-27 05:02:45', '2018-02-27 05:02:45'),
-(24, 10, 10, '2018-02-27 05:03:46', '2018-02-27 05:03:46'),
-(25, 10, 54, '2018-02-27 05:03:46', '2018-02-27 05:03:46'),
-(26, 11, 10, '2018-02-27 17:49:34', '2018-02-27 17:49:34'),
-(27, 11, 53, '2018-02-27 17:49:34', '2018-02-27 17:49:34'),
-(30, 12, 10, '2018-02-27 17:52:23', '2018-02-27 17:52:23'),
-(31, 12, 54, '2018-02-27 17:52:23', '2018-02-27 17:52:23'),
-(32, 13, 10, '2018-02-27 17:56:08', '2018-02-27 17:56:08'),
-(33, 13, 53, '2018-02-27 17:56:08', '2018-02-27 17:56:08'),
-(34, 14, 10, '2018-02-27 17:57:52', '2018-02-27 17:57:52'),
-(35, 14, 54, '2018-02-27 17:57:52', '2018-02-27 17:57:52'),
-(36, 15, 10, '2018-02-27 18:06:27', '2018-02-27 18:06:27'),
-(37, 15, 53, '2018-02-27 18:06:27', '2018-02-27 18:06:27'),
-(38, 16, 10, '2018-02-27 18:08:03', '2018-02-27 18:08:03'),
-(39, 16, 53, '2018-02-27 18:08:03', '2018-02-27 18:08:03'),
-(76, 35, 12, '2018-02-28 03:40:45', '2018-02-28 03:40:45'),
-(77, 35, 54, '2018-02-28 03:40:45', '2018-02-28 03:40:45'),
-(78, 36, 12, '2018-02-28 03:44:03', '2018-02-28 03:44:03'),
-(79, 36, 53, '2018-02-28 03:44:03', '2018-02-28 03:44:03'),
-(80, 37, 53, '2018-02-28 03:45:18', '2018-02-28 03:45:18'),
-(81, 38, 12, '2018-02-28 03:47:44', '2018-02-28 03:47:44'),
-(82, 38, 53, '2018-02-28 03:47:44', '2018-02-28 03:47:44'),
-(83, 39, 12, '2018-02-28 03:50:58', '2018-02-28 03:50:58'),
-(84, 39, 53, '2018-02-28 03:50:58', '2018-02-28 03:50:58'),
-(85, 40, 12, '2018-02-28 03:52:21', '2018-02-28 03:52:21'),
-(86, 40, 53, '2018-02-28 03:52:21', '2018-02-28 03:52:21'),
-(87, 41, 10, '2018-02-28 04:30:37', '2018-02-28 04:30:37'),
-(88, 41, 53, '2018-02-28 04:30:37', '2018-02-28 04:30:37'),
-(89, 42, 10, '2018-02-28 04:32:19', '2018-02-28 04:32:19'),
-(90, 42, 53, '2018-02-28 04:32:19', '2018-02-28 04:32:19'),
-(91, 43, 10, '2018-02-28 04:36:15', '2018-02-28 04:36:15'),
-(92, 43, 53, '2018-02-28 04:36:15', '2018-02-28 04:36:15'),
-(93, 44, 10, '2018-02-28 04:37:28', '2018-02-28 04:37:28'),
-(94, 44, 53, '2018-02-28 04:37:28', '2018-02-28 04:37:28'),
-(95, 45, 10, '2018-02-28 04:42:31', '2018-02-28 04:42:31'),
-(96, 45, 53, '2018-02-28 04:42:31', '2018-02-28 04:42:31'),
-(102, 46, 10, '2018-02-28 04:45:43', '2018-02-28 04:45:43'),
-(103, 46, 53, '2018-02-28 04:45:43', '2018-02-28 04:45:43'),
-(166, 1, 10, '2018-03-03 03:46:00', '2018-03-03 03:46:00'),
-(167, 1, 23, '2018-03-03 03:46:00', '2018-03-03 03:46:00'),
-(168, 1, 53, '2018-03-03 03:46:00', '2018-03-03 03:46:00'),
-(169, 1, 62, '2018-03-03 03:46:00', '2018-03-03 03:46:00'),
-(170, 1, 68, '2018-03-03 03:46:00', '2018-03-03 03:46:00'),
-(171, 2, 10, '2018-03-03 03:46:22', '2018-03-03 03:46:22'),
-(172, 2, 23, '2018-03-03 03:46:22', '2018-03-03 03:46:22'),
-(173, 2, 53, '2018-03-03 03:46:22', '2018-03-03 03:46:22'),
-(174, 2, 61, '2018-03-03 03:46:22', '2018-03-03 03:46:22'),
-(175, 2, 70, '2018-03-03 03:46:22', '2018-03-03 03:46:22'),
-(176, 3, 10, '2018-03-03 03:47:23', '2018-03-03 03:47:23'),
-(177, 3, 23, '2018-03-03 03:47:23', '2018-03-03 03:47:23'),
-(178, 3, 53, '2018-03-03 03:47:23', '2018-03-03 03:47:23'),
-(179, 3, 61, '2018-03-03 03:47:23', '2018-03-03 03:47:23'),
-(180, 3, 71, '2018-03-03 03:47:23', '2018-03-03 03:47:23'),
-(181, 4, 10, '2018-03-03 03:48:01', '2018-03-03 03:48:01'),
-(182, 4, 23, '2018-03-03 03:48:01', '2018-03-03 03:48:01'),
-(183, 4, 53, '2018-03-03 03:48:01', '2018-03-03 03:48:01'),
-(184, 4, 61, '2018-03-03 03:48:01', '2018-03-03 03:48:01'),
-(185, 4, 70, '2018-03-03 03:48:01', '2018-03-03 03:48:01'),
-(186, 5, 10, '2018-03-03 03:48:40', '2018-03-03 03:48:40'),
-(187, 5, 23, '2018-03-03 03:48:40', '2018-03-03 03:48:40'),
-(188, 5, 53, '2018-03-03 03:48:40', '2018-03-03 03:48:40'),
-(189, 5, 61, '2018-03-03 03:48:40', '2018-03-03 03:48:40'),
-(190, 5, 70, '2018-03-03 03:48:40', '2018-03-03 03:48:40'),
-(191, 6, 10, '2018-03-03 03:49:11', '2018-03-03 03:49:11'),
-(192, 6, 23, '2018-03-03 03:49:11', '2018-03-03 03:49:11'),
-(193, 6, 53, '2018-03-03 03:49:11', '2018-03-03 03:49:11'),
-(194, 6, 61, '2018-03-03 03:49:11', '2018-03-03 03:49:11'),
-(195, 6, 69, '2018-03-03 03:49:11', '2018-03-03 03:49:11'),
-(196, 7, 10, '2018-03-03 03:49:41', '2018-03-03 03:49:41'),
-(197, 7, 23, '2018-03-03 03:49:41', '2018-03-03 03:49:41'),
-(198, 7, 53, '2018-03-03 03:49:41', '2018-03-03 03:49:41'),
-(199, 7, 61, '2018-03-03 03:49:41', '2018-03-03 03:49:41'),
-(200, 7, 68, '2018-03-03 03:49:41', '2018-03-03 03:49:41'),
-(201, 8, 10, '2018-03-03 03:50:07', '2018-03-03 03:50:07'),
-(202, 8, 23, '2018-03-03 03:50:07', '2018-03-03 03:50:07'),
-(203, 8, 53, '2018-03-03 03:50:07', '2018-03-03 03:50:07'),
-(204, 8, 61, '2018-03-03 03:50:07', '2018-03-03 03:50:07'),
-(205, 8, 68, '2018-03-03 03:50:07', '2018-03-03 03:50:07'),
-(210, 47, 10, '2018-03-08 08:24:38', '2018-03-08 08:24:38');
 
 -- --------------------------------------------------------
 
@@ -1785,41 +1776,6 @@ CREATE TABLE `product` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
-
---
--- Đang đổ dữ liệu cho bảng `product`
---
-
-INSERT INTO `product` (`id`, `code`, `fullname`, `meta_keyword`, `meta_description`, `alias`, `image`, `status`, `child_image`, `price`, `sale_price`, `intro`, `detail`, `technical_detail`, `video_id`, `count_view`, `category_id`, `sort_order`, `created_at`, `updated_at`) VALUES
-(1, '128746935', 'Lenovo IdeaPad 120S 11IAP N3350 (81A40072VN)', 'metakeyword Lenovo IdeaPad', 'metadescription Lenovo IdeaPad', 'lenovo-ideapad-120s-11iap-n3350-81a40072vn', 'laptop-1.png', 1, '[\"laptop-2.png\",\"laptop-3.png\",\"laptop-4.png\"]', '5190000.00', '4600000.00', 'giới thiệu Lenovo IdeaPad', '<p>chi tiết&nbsp;Lenovo IdeaPad</p>', '', '', 68, 1, 1, '2018-02-27 03:25:36', '2018-04-17 02:40:26'),
-(2, '781234596', 'Acer Aspire ES1 432 N3350', 'metakeyword Acer Aspire ES1 432 N3350', 'metadescription Acer Aspire ES1 432 N3350', 'acer-aspire-es1-432-n3350', 'laptop-2.png', 1, '[\"laptop-1.png\",\"laptop-3.png\",\"laptop-4.png\"]', '6290000.00', '0.00', 'giới thiệu Acer Aspire ES1 432 N3350', '<p>chi tiết&nbsp;Acer Aspire ES1 432 N3350</p>', '', '', 87, 1, 2, '2018-02-27 04:11:33', '2018-04-17 18:53:26'),
-(3, '138796452', 'Asus X441NA N4200 (GA070T)', 'metakeyword Asus X441NA N4200 (GA070T)', 'metadescription Asus X441NA N4200 (GA070T)', 'asus-x441na-n4200-ga070t', 'laptop-3.png', 1, '[\"laptop-1.png\",\"laptop-2.png\",\"laptop-4.png\"]', '7490000.00', '0.00', 'giới thiệu Asus X441NA N4200 (GA070T)', '<p>chi tiết&nbsp;Asus X441NA N4200 (GA070T)</p>', '', '', 82, 1, 3, '2018-02-27 04:13:15', '2018-04-17 22:08:43'),
-(4, '476285319', 'Acer ES1 533 N4200 (NX.GFTSV.003)', 'metakeyword Acer ES1 533 N4200 (NX.GFTSV.003)', 'metadescription Acer ES1 533 N4200 (NX.GFTSV.003)', 'acer-es1-533-n4200-nxgftsv003', 'laptop-4.png', 1, '[\"laptop-1.png\",\"laptop-2.png\",\"laptop-3.png\"]', '7490000.00', '0.00', 'giới thiệu Acer ES1 533 N4200 (NX.GFTSV.003)', '<p>chi tiết&nbsp;Acer ES1 533 N4200 (NX.GFTSV.003)</p>', '', '', 81, 1, 4, '2018-02-27 04:14:16', '2018-04-17 22:15:30'),
-(5, '719853246', 'Acer ES1 533 P6L2 N4200 (NX.GFTSV.008)', 'metakeyword Acer ES1 533 P6L2 N4200 (NX.GFTSV.008)', 'metadescription Acer ES1 533 P6L2 N4200 (NX.GFTSV.008)', 'acer-es1-533-p6l2-n4200-nxgftsv008', 'laptop-5.png', 1, '[\"laptop-1.png\",\"laptop-2.png\",\"laptop-3.png\"]', '7490000.00', '0.00', 'giới thiệu Acer ES1 533 P6L2 N4200 (NX.GFTSV.008)', '<p>chi tiết&nbsp;Acer ES1 533 P6L2 N4200 (NX.GFTSV.008)</p>', '', '', 80, 1, 5, '2018-02-27 04:16:35', '2018-04-17 22:13:49'),
-(6, '415723689', 'HP 15 bs578TU N3710 (2LR89PA)', 'metakeyword HP 15 bs578TU N3710 (2LR89PA)', 'metadescription HP 15 bs578TU N3710 (2LR89PA)', 'hp-15-bs578tu-n3710-2lr89pa', 'laptop-6.png', 1, '[\"laptop-1.png\",\"laptop-2.png\",\"laptop-3.png\"]', '7690000.00', '0.00', 'giới thiệu HP 15 bs578TU N3710 (2LR89PA)', '<p>chi tiết&nbsp;HP 15 bs578TU N3710 (2LR89PA)</p>', '', '', 81, 1, 6, '2018-02-27 04:17:44', '2018-04-17 08:25:46'),
-(7, '419327658', 'Lenovo Ideapad 320 14ISK i3 6006 (80XG0083VN)', 'metakeyword Lenovo Ideapad 320 14ISK i3 6006 (80XG0083VN)', 'metadescription Lenovo Ideapad 320 14ISK i3 6006 (80XG0083VN)', 'lenovo-ideapad-320-14isk-i3-6006-80xg0083vn', 'laptop-7.png', 1, '[\"laptop-1.png\",\"laptop-2.png\",\"laptop-3.png\"]', '8990000.00', '0.00', 'giới thiệu Lenovo Ideapad 320 14ISK i3 6006 (80XG0083VN)', '<p>chi tiết&nbsp;Lenovo Ideapad 320 14ISK i3 6006 (80XG0083VN)</p>', '', '', 79, 1, 7, '2018-02-27 04:18:58', '2018-04-17 12:02:42'),
-(8, '924175638', 'Lenovo IdeaPad 110 15ISK i3 6006U (80UD018KVN)', 'metakeyword Lenovo IdeaPad 110 15ISK i3 6006U (80UD018KVN)', 'metadescription Lenovo IdeaPad 110 15ISK i3 6006U (80UD018KVN)', 'lenovo-ideapad-110-15isk-i3-6006u-80ud018kvn', 'laptop-8.png', 1, '[\"laptop-1.png\",\"laptop-2.png\",\"laptop-3.png\"]', '9290000.00', '0.00', 'giới thiệu Lenovo IdeaPad 110 15ISK i3 6006U (80UD018KVN)', '<p>chi tiết&nbsp;Lenovo IdeaPad 110 15ISK i3 6006U (80UD018KVN)</p>', '', '', 71, 1, 8, '2018-02-27 04:20:39', '2018-04-17 10:34:19'),
-(9, '352461897', 'Asus TP203NAH N4200 (BP052T)', 'metakeyword Asus TP203NAH N4200 (BP052T)', 'metadescription Asus TP203NAH N4200 (BP052T)', 'asus-tp203nah-n4200-bp052t', 'laptop-9.png', 1, '[\"laptop-1.png\",\"laptop-2.png\",\"laptop-3.png\"]', '9890000.00', '0.00', 'giới thiệu Asus TP203NAH N4200 (BP052T)', '<p>chi tiết&nbsp;Asus TP203NAH N4200 (BP052T)</p>', NULL, NULL, 92, 1, 9, '2018-02-27 05:02:45', '2018-04-17 21:05:53'),
-(10, '328519647', 'HP 15 bs571TU i3 6006U (2JQ68PA)', 'metakeyword HP 15 bs571TU i3 6006U (2JQ68PA)', 'metadescription HP 15 bs571TU i3 6006U (2JQ68PA)', 'hp-15-bs571tu-i3-6006u-2jq68pa', 'laptop-10.png', 1, '[\"laptop-4.png\",\"laptop-5.png\",\"laptop-6.png\"]', '10490000.00', '0.00', 'giới thiệu HP 15 bs571TU i3 6006U (2JQ68PA)', '<p>chi tiết&nbsp;HP 15 bs571TU i3 6006U (2JQ68PA)</p>', NULL, NULL, 115, 1, 10, '2018-02-27 05:03:46', '2018-04-18 03:13:37'),
-(11, '971358246', 'Máy tính để bàn ACER ASPIRE ATC-780 DT.B59SV.002', 'metakeyword Máy tính để bàn ACER ASPIRE ATC-780 DT.B59SV.002', 'metadescription Máy tính để bàn ACER ASPIRE ATC-780 DT.B59SV.002', 'may-tinh-de-ban-acer-aspire-atc-780-dtb59sv002', 'may-bo-1.png', 1, '[\"may-bo-2.png\",\"may-bo-3.png\",\"may-bo-4.png\"]', '8490000.00', '0.00', 'giới thiệu Máy tính để bàn ACER ASPIRE ATC-780 DT.B59SV.002', '<p>chi tiết&nbsp;M&aacute;y t&iacute;nh để b&agrave;n ACER ASPIRE ATC-780 DT.B59SV.002</p>', NULL, NULL, 78, 12, 11, '2018-02-27 17:49:34', '2018-04-17 22:10:25'),
-(12, '849162357', 'Máy tính để bàn ACER ASPIRE TC-780 (DT.B89SV.008)', 'metakeyword ACER ASPIRE TC-780 (DT.B89SV.008)', 'metadescription ACER ASPIRE TC-780 (DT.B89SV.008)', 'may-tinh-de-ban-acer-aspire-tc-780-dtb89sv008', 'may-bo-2.png', 1, '[\"may-bo-1.png\",\"may-bo-3.png\",\"may-bo-4.png\",\"may-bo-5.png\"]', '8690000.00', '0.00', 'giới thiệu ACER ASPIRE TC-780 (DT.B89SV.008)', '<p>chi tiết&nbsp;ACER ASPIRE TC-780 (DT.B89SV.008)</p>', NULL, NULL, 79, 12, 12, '2018-02-27 17:51:40', '2018-04-17 09:10:08'),
-(13, '179526348', 'Máy tính để bàn DELL VOSTRO 3268 (CORE I5)', 'metakeyword DELL VOSTRO 3268 (CORE I5)', 'metadescription DELL VOSTRO 3268 (CORE I5)', 'may-tinh-de-ban-dell-vostro-3268-core-i5', 'may-bo-3.png', 1, '[\"may-bo-4.png\",\"may-bo-5.png\",\"may-bo-6.png\"]', '11490000.00', '0.00', 'giới thiệu DELL VOSTRO 3268 (CORE I5)', '<p>chi tiết&nbsp;DELL VOSTRO 3268 (CORE I5)</p>', NULL, NULL, 73, 12, 13, '2018-02-27 17:56:08', '2018-04-17 13:22:56'),
-(14, '329156847', 'Máy tính để bàn ACER ASPIRE TC-780', 'metakeyword ACER ASPIRE TC-780 (COREi3/RAM4GB/HDD1TB)', 'metadescription ACER ASPIRE TC-780 (COREi3/RAM4GB/HDD1TB)', 'may-tinh-de-ban-acer-aspire-tc-780', 'may-bo-4.png', 1, '[\"may-bo-1.png\",\"may-bo-2.png\",\"may-bo-3.png\"]', '8490000.00', '0.00', 'giới thiệu ACER ASPIRE TC-780 (COREi3/RAM4GB/HDD1TB)', '<p>chi tiết&nbsp;ACER ASPIRE TC-780 (COREi3/RAM4GB/HDD1TB)</p>', NULL, NULL, 106, 12, 14, '2018-02-27 17:57:52', '2018-04-17 19:25:42'),
-(15, '489257361', 'Máy tính để bàn ACER ASPIRE TC-780 (DT.B89SV.005)', '', '', 'may-tinh-de-ban-acer-aspire-tc-780-dtb89sv005', 'may-bo-5.png', 1, NULL, '8590000.00', '0.00', '', '', NULL, NULL, 96, 12, 15, '2018-02-27 18:06:27', '2018-04-17 22:23:36'),
-(16, '657428319', 'Máy tính để bàn FPT ELEAD NK930 6811', 'metakeyword FPT ELEAD NK930 6811', 'metadescription FPT ELEAD NK930 6811', 'may-tinh-de-ban-fpt-elead-nk930-6811', 'may-bo-6.png', 1, '[\"may-bo-1.png\",\"may-bo-2.png\",\"may-bo-3.png\"]', '7290000.00', '0.00', 'giới thiệu FPT ELEAD NK930 6811', '<p>chi tiết&nbsp;ACER ASPIRE TC-780 (DT.B89SV.005)</p>', NULL, NULL, 88, 12, 16, '2018-02-27 18:08:03', '2018-04-18 04:35:36'),
-(35, '163597842', 'Tai Nghe PHILIPS SHE1350', 'metakeyword Miếng Dán Màn Hình Laptop 15.5\"', 'metadescription Miếng Dán Màn Hình Laptop 15.5\"', 'tai-nghe-philips-she1350', 'pk-may-tinh-1.png', 1, '[\"pk-may-tinh-2.png\",\"pk-may-tinh-3.png\",\"pk-may-tinh-4.png\"]', '49000.00', '0.00', 'giới thiệu Miếng Dán Màn Hình Laptop 15.5\"', '<p>chi tiết&nbsp;Miếng D&aacute;n M&agrave;n H&igrave;nh Laptop 15.5&quot;</p>', NULL, NULL, 76, 16, 35, '2018-02-28 03:40:45', '2018-04-17 19:24:00'),
-(36, '324759816', 'Chuột KD KONIG KN915', 'metakeyword CHUỘT KD KONIG KN915', 'metadescription CHUỘT KD KONIG KN915', 'chuot-kd-konig-kn915', 'pk-may-tinh-2.png', 1, '[\"pk-may-tinh-1.png\",\"pk-may-tinh-3.png\",\"pk-may-tinh-4.png\"]', '89000.00', '0.00', 'giới thiệu CHUỘT KD KONIG KN915', '<p>chi tiết&nbsp;CHUỘT KD KONIG KN915</p>', NULL, NULL, 75, 16, 36, '2018-02-28 03:44:03', '2018-04-17 08:31:17'),
-(37, '315294876', 'USB SANDISK 8GB CZ50 CRUZER GLIDE', 'metakeyword USB SANDISK 8GB CZ50 CRUZER GLIDE', 'metadescription USB SANDISK 8GB CZ50 CRUZER GLIDE', 'usb-sandisk-8gb-cz50-cruzer-glide', 'pk-may-tinh-3.png', 1, '[\"pk-may-tinh-1.png\",\"pk-may-tinh-2.png\",\"pk-may-tinh-4.png\"]', '89000.00', '0.00', 'giới thiệu USB SANDISK 8GB CZ50 CRUZER GLIDE', '<p>chi tiết&nbsp;USB SANDISK 8GB CZ50 CRUZER GLIDE</p>', NULL, NULL, 70, 16, 37, '2018-02-28 03:45:18', '2018-04-17 14:22:46'),
-(38, '589643127', 'Ổ Cứng Di Động 8GB CZ50 CRUZER BLADE USB 2.0 SANDISK', 'metakeyword Ổ CỨNG DI ĐỘNG 8GB CZ50 CRUZER BLADE USB 2.0 SANDISK', 'metadescription Ổ CỨNG DI ĐỘNG 8GB CZ50 CRUZER BLADE USB 2.0 SANDISK', 'o-cung-di-dong-8gb-cz50-cruzer-blade-usb-20-sandisk', 'pk-may-tinh-4.png', 1, '[\"pk-may-tinh-1.png\",\"pk-may-tinh-2.png\",\"pk-may-tinh-3.png\"]', '89000.00', '0.00', 'giới thiệu Ổ CỨNG DI ĐỘNG 8GB CZ50 CRUZER BLADE USB 2.0 SANDISK', '<p>chi tiết&nbsp;Ổ CỨNG DI ĐỘNG 8GB CZ50 CRUZER BLADE USB 2.0 SANDISK</p>', NULL, NULL, 68, 16, 38, '2018-02-28 03:47:44', '2018-04-17 12:05:21'),
-(39, '967324158', 'Miếng Dán Màn Hình LAPTOP 15.5\"', 'metakeyword Tai Nghe PHILIPS SHE1350', 'metadescription Tai Nghe PHILIPS SHE1350', 'mieng-dan-man-hinh-laptop-155', 'pk-may-tinh-5.png', 1, '[\"pk-may-tinh-2.png\",\"pk-may-tinh-3.png\",\"pk-may-tinh-4.png\"]', '49000.00', '0.00', 'giới thiệu Tai Nghe PHILIPS SHE1350', '<p>chi tiết&nbsp;Tai Nghe PHILIPS SHE1350</p>', NULL, NULL, 78, 16, 39, '2018-02-28 03:50:58', '2018-04-17 16:58:37'),
-(40, '183954762', 'Headphone A4 TECH HS - 12', 'metakeyword HEADPHONE A4 TECH HS - 12', 'metadescription HEADPHONE A4 TECH HS - 12', 'headphone-a4-tech-hs-12', 'pk-may-tinh-6.png', 1, '[\"pk-may-tinh-3.png\",\"pk-may-tinh-4.png\",\"pk-may-tinh-5.png\"]', '50000.00', '0.00', 'giới thiệu HEADPHONE A4 TECH HS - 12', '<p>chi tiết&nbsp;HEADPHONE A4 TECH HS - 12</p>', NULL, NULL, 83, 16, 40, '2018-02-28 03:52:21', '2018-04-18 08:46:32'),
-(41, '134682795', 'Loa ARIRANG JANT I', 'metakeyword Loa ARIRANG JANT I', 'metadescription Loa ARIRANG JANT I', 'loa-arirang-jant-i', 'loa-1.png', 1, '[\"loa-2.png\",\"loa-3.png\",\"loa-4.png\"]', '1990000.00', '0.00', 'giới thiệu Loa ARIRANG JANT I', '<p>chi tiết&nbsp;Loa ARIRANG JANT I</p>', NULL, NULL, 86, 17, 41, '2018-02-28 04:30:37', '2018-04-17 21:00:48'),
-(42, '827963415', 'Loa RINTON RT-705', 'metakeyword Loa RINTON RT-705', 'metadescription Loa RINTON RT-705', 'loa-rinton-rt-705', 'loa-2.png', 1, '[\"loa-1.png\",\"loa-2.png\",\"loa-4.png\"]', '2490000.00', '0.00', 'giới thiệu Loa RINTON RT-705', '<p>chi tiết&nbsp;Loa RINTON RT-705</p>', NULL, NULL, 77, 17, 42, '2018-02-28 04:32:19', '2018-04-17 21:04:11'),
-(43, '831425769', 'Máy Tăng Âm RINTON PA-7600', 'metakeyword MÁY TĂNG ÂM RINTON PA-7600', 'metadescription MÁY TĂNG ÂM RINTON PA-7600', 'may-tang-am-rinton-pa-7600', 'loa-3.png', 1, '[\"loa-1.png\",\"loa-2.png\",\"loa-4.png\"]', '2690000.00', '0.00', 'giới thiệu MÁY TĂNG ÂM RINTON PA-7600', '<p>chi tiết&nbsp;M&Aacute;Y TĂNG &Acirc;M RINTON PA-7600</p>', NULL, NULL, 75, 17, 43, '2018-02-28 04:36:15', '2018-04-17 11:14:36'),
-(44, '928475136', 'Máy Tăng Âm ARIRANG SPA 203 III', 'metakeyword MÁY TĂNG ÂM ARIRANG SPA 203 III', 'metadescription MÁY TĂNG ÂM ARIRANG SPA 203 III', 'may-tang-am-arirang-spa-203-iii', 'loa-4.png', 1, '[\"loa-1.png\",\"loa-2.png\",\"loa-3.png\"]', '2490000.00', '0.00', 'giới thiệu MÁY TĂNG ÂM ARIRANG SPA 203 III', '<p>chi tiết&nbsp;M&Aacute;Y TĂNG &Acirc;M ARIRANG SPA 203 III</p>', NULL, NULL, 75, 17, 44, '2018-02-28 04:37:28', '2018-04-17 13:40:35'),
-(45, '519438267', 'Loa Kéo RINTON PL-1', 'metakeyword Loa Kéo RINTON PL-1', 'metadescription Loa Kéo RINTON PL-1', 'loa-keo-rinton-pl-1', 'loa-5.png', 1, '[\"loa-2.png\",\"loa-3.png\",\"loa-4.png\"]', '4790000.00', '0.00', 'giới thiệu Loa Kéo RINTON PL-1', '<p>chi tiết&nbsp;Loa K&eacute;o RINTON PL-1</p>', NULL, NULL, 87, 17, 45, '2018-02-28 04:42:31', '2018-04-17 09:35:31'),
-(46, '387621594', 'Loa BOSE ACOUSTIMASS 6 SERIES V', 'metakeyword LOA BOSE ACOUSTIMASS 6 SERIES V', 'metadescription LOA BOSE ACOUSTIMASS 6 SERIES V', 'loa-bose-acoustimass-6-series-v', 'loa-6.png', 1, '[\"loa-1.png\",\"loa-2.png\",\"loa-3.png\"]', '18760000.00', '0.00', 'giới thiệu LOA BOSE ACOUSTIMASS 6 SERIES V', '<p>chi tiết&nbsp;LOA BOSE ACOUSTIMASS 6 SERIES V</p>', NULL, NULL, 85, 17, 46, '2018-02-28 04:44:11', '2018-04-17 09:45:53'),
-(47, '579241683', 'Dell Latitude E6530 Core i7 3620M', 'Laptop Dell Latitude E6530 Core i7 3620M Ram 4G HDD 250G 15.6\" VGA ON', 'Laptop cũ Dell Laitutde E6530 i7 là dòng laptop chuyên gam và đồ họa. Có thể nói đây là dòng máy có cấu hình siêu mạnh. Hình dáng và cấu hình của nó phù hợp với game thủ và các chuyên viên IT. Máy được bọc nhôm nguyên khối theo tiêu chuẩn của quân đội Mỹ. Đây là dòng máy cao cấp của Dell ', 'dell-latitude-e6530-core-i7-3620m', 'laptop-cu-dell-latitude-e6530-i7-1.png', 1, NULL, '8000000.00', '0.00', '', '<p style=\"text-align:justify\"><strong>Laptop cũ Dell Latitude E6530 i7</strong>&nbsp;l&agrave; d&ograve;ng doanh nh&acirc;n cao cấp. Tuy nhi&ecirc;n hiện nay ch&uacute;ng được d&ugrave;ng nhiều cho c&aacute;c kĩ thuật vi&ecirc;n, lập tr&igrave;nh vi&ecirc;n, IT hay game thủ. Thiết kế kh&aacute; l&agrave; bắt mắt theo kiểu d&aacute;ng cho doanh nh&acirc;n. Tuy vậy th&igrave; k&iacute;ch cỡ, khối lượng cũng như cấu h&igrave;nh của n&oacute; thi ph&ugrave; hợp cho IT hơn l&agrave; doanh nh&acirc;n. D&ograve;ng laptop Dell E6530 i7 n&agrave;y c&oacute; gi&aacute; xuất xưởng l&agrave; cực k&igrave; cao, nhưng bạn chỉ cần bỏ ra 1/3 chi ph&iacute; l&agrave; c&oacute; thể sở hữu 1 chiếc m&aacute;y cực đỉnh. Những chiếc laptop cũ đang cực k&igrave; được ưa chuộng tại Việt Nam.N&oacute;i về khả năng của<strong>&nbsp;laptop cũ Dell Latitude E6530 i7</strong>&nbsp;th&igrave; phải n&oacute;i đến khả năng xử l&yacute; đồ họa cực đỉnh c&ugrave;ng khả năng chơi game ở cấu h&igrave;nh cao v&ocirc; c&ugrave;ng mượt m&agrave;. Đương nhi&ecirc;n 1 chiếc&nbsp;laptop&nbsp;mạnh như thế n&agrave;y th&igrave; chuyện văn ph&ograve;ng, học tập, nghi&ecirc;n cứu, chơi game l&agrave; rất b&igrave;nh thường. Tuy nhi&ecirc;n để thấy hết khả năng ưu việt của chiếc laptop th&igrave; ch&uacute;ng ta sẽ cho n&oacute; ở đ&uacute;ng cấu h&igrave;nh. Cấu h&igrave;nh chuẩn của laptop cũ Dell Latitude E6530 i7:<br />\n<br />\n- Cấu h&igrave;nh 1: Core i7 3620M Ram 8G HDD 500G M&agrave;n h&igrave;nh 15.6&quot; full HD trị gi&aacute; 9.5 triệu đồng<br />\n- Cấu h&igrave;nh 3: Core i7 3620M Ram 16G HDD 1TB M&agrave;n h&igrave;nh 15.6&quot; full HD trị gi&aacute; 11.5 triệu đồng<br />\n<br />\nKhi n&oacute;i về&nbsp;<strong>laptop cũ Dell Latitude E6530 i7</strong>&nbsp;người ta kh&ocirc;ng c&ograve;n từ g&igrave; để n&oacute;i về cấu h&igrave;nh m&aacute;y n&agrave;y ngo&agrave;i 1 chữ: khủng. Chiếc m&aacute;y si&ecirc;u khủng n&agrave;y cho bạn trải nghiệm ho&agrave;n to&agrave;n tuyệt vời. Muốn chơi game nặng như Li&ecirc;n Minh Huyền Thoại, Fifa online 3, Battleground, CF, V&otilde; L&acirc;m... Hay đồ họa nặng như 3Dmax, 3D, Corel, Photoshop, autocad, dựng phim...Đương nhi&ecirc;n đi k&egrave;m với m&aacute;y si&ecirc;u khủng th&igrave; cần c&oacute; những phần qu&agrave; si&ecirc;u khủng.<br />\n<br />\nTham khảo th&ecirc;m những mẫu&nbsp;<strong>laptop cũ</strong>&nbsp;của DC mobile<br />\n&nbsp;</p>\n\n<h3 style=\"text-align:justify\"><strong>Khi mua&nbsp;laptop cũ Dell Latitude E6530 i7 tại DC mobile bạn sẽ được tặng k&egrave;m:</strong></h3>\n\n<p style=\"text-align:justify\">1 balo cao cấp trị gi&aacute; 300.000 đồng</p>\n\n<p style=\"text-align:justify\">1 bộ vệ sinh m&agrave;n h&igrave;nh 6 m&oacute;n trị gi&aacute; 69.000 đồng</p>\n\n<p style=\"text-align:justify\">3 th&aacute;ng bảo h&agrave;nh nguy&ecirc;n m&aacute;y</p>\n\n<p style=\"text-align:justify\">G&oacute;i vệ sinh v&agrave; thay keo tản nhiệt 1 năm trị gi&aacute; 100.000 đồng.</p>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<h3 style=\"text-align:justify\"><strong>Kh&aacute;ch h&agrave;ng c&oacute; thể chọn c&aacute;c cấu h&igrave;nh mạnh hơn nh&eacute;</strong></h3>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\">Ram 4G n&acirc;ng l&ecirc;n 8G th&ecirc;m 500k<br />\n<br />\nVGA ON l&ecirc;n VGA rời NVS 5200M th&ecirc;m 300k</p>\n\n<p style=\"text-align:justify\"><strong>Cấu h&igrave;nh 1:</strong>&nbsp;Core i7 3620m - Ram 4g - hdd 250g&nbsp;=&nbsp;<em>8.000.000vnd</em></p>\n\n<p style=\"text-align:justify\"><strong>Cấu h&igrave;nh 2:</strong>&nbsp;Core i7 3620m - Ram 4g - hdd 320g&nbsp;=&nbsp;<em>8.200.000vnd</em></p>\n\n<p style=\"text-align:justify\"><strong>Cấu h&igrave;nh 3:</strong>&nbsp;Core i7 3620m - Ram 4g - hdd 500g =&nbsp;<em>8.500.000vnd</em></p>\n\n<p style=\"text-align:justify\"><strong>Cấu h&igrave;nh 4:</strong>&nbsp;Core i7 3620m - Ram 4g -&nbsp;<strong>SSD 120g</strong>&nbsp;=&nbsp;<em>9.000.000vnd</em></p>\n\n<p style=\"text-align:justify\"><strong>Cấu h&igrave;nh 5:</strong>&nbsp;Core i7 3620m - Ram 4g -&nbsp;<strong>SSD 240g</strong>&nbsp;=&nbsp;<em>10.000.000vnd</em><br />\n<br />\nH&atilde;y đến với&nbsp;<strong>DC mobile</strong>&nbsp;để xem m&aacute;y trực tiếp hoặc c&oacute; thể gọi v&agrave;o hotline để đặt h&agrave;ng nh&eacute;. Ch&uacute;ng t&ocirc;i c&oacute; hệ thống giao h&agrave;ng to&agrave;n quốc chỉ cần kh&aacute;ch h&agrave;ng đặt h&agrave;ng l&agrave; sẽ c&oacute; người giao tận tay cho qu&yacute; kh&aacute;ch. Nếu cần th&ecirc;m th&ocirc;ng tin c&oacute; thể chat với chuy&ecirc;n vi&ecirc;n tư vấn để chọn m&aacute;y ph&ugrave; hợp nh&eacute;.&nbsp;<br />\n<br />\nH&igrave;nh ảnh thực tế của&nbsp;<strong>laptop cũ Dell Latitude E6530 i7</strong><br />\n&nbsp;</p>\n\n<p style=\"text-align:justify\"><img alt=\"Laptop Dell Latitude E6530 i7\" src=\"https://dcmobile.vn/uploads/shops/laptop-dell/latitude/e6530/laptop-dell-latitude-e6530-i7.jpg\" style=\"height:605px; width:800px\" /></p>\n\n<p style=\"text-align:justify\">laptop Dell Latitude E6530 i7</p>\n\n<p style=\"text-align:justify\"><img alt=\"Laptop Dell Latitude E6530 i7\" src=\"https://dcmobile.vn/uploads/shops/laptop-dell/latitude/e6530/laptop-dell-latitude-e6530-i7-3.jpg\" style=\"height:602px; width:800px\" /></p>\n\n<p style=\"text-align:justify\">Laptop Dell Latitude E6530 i7</p>\n\n<p style=\"text-align:justify\"><img alt=\"Laptop Dell Latitude E6530 i7 \" src=\"https://dcmobile.vn/uploads/shops/laptop-dell/latitude/e6530/laptop-dell-latitude-e6530-i7-1.jpg\" style=\"height:609px; width:800px\" /></p>\n\n<p style=\"text-align:justify\">Laptop Dell Latitude E6530 i7</p>\n\n<p style=\"text-align:justify\"><img alt=\"laptop Dell Latitude E6530 i7\" src=\"https://dcmobile.vn/uploads/shops/laptop-dell/latitude/e6530/laptop-dell-latitude-e6530-i7-2.jpg\" style=\"height:629px; width:800px\" /></p>\n\n<p style=\"text-align:justify\">Laptop Dell Latitude E6530 i7</p>', '<h2 style=\"text-align:justify\"><strong>Th&ocirc;ng số kỹ thuật&nbsp;laptop cũ Dell Latitude E6530 i7</strong></h2>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\"><strong>CPU:</strong>&nbsp;Intel&nbsp;<strong>Core i7</strong><strong>&nbsp;362</strong><strong>0m&nbsp;3.0</strong><strong>Ghz&nbsp;</strong>turbo boost<strong>&nbsp;3.2GHz</strong>,&nbsp;3M Cache&nbsp;Ivy&nbsp;Brigde&nbsp;(thế hệ 3) Xử l&yacute; si&ecirc;u&nbsp;nhanh</p>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\"><strong>Ram:&nbsp;4G</strong>&nbsp;ddr3&nbsp;bus 1600 Mhz<strong>&nbsp;</strong>(n&acirc;ng cấp l&ecirc;n 8G&nbsp;th&ecirc;m 500k)</p>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\"><strong>HDD: 250G</strong>&nbsp;(n&acirc;ng cấp l&ecirc;n HDD lớn hơn &nbsp;hoặc SSD thoải m&aacute;i)</p>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\">Card m&agrave;n h&igrave;nh<strong>&nbsp;Onboad</strong>:&nbsp;<strong>Intel HD 4400 up to 2.1G</strong>&nbsp;- m&aacute;t, tiết kiệm pin, bền v&agrave; ổn định</p>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\"><strong>Độ lớn m&agrave;n h&igrave;nh:</strong>&nbsp;<strong>15.6&nbsp;inch LED Full HD (1920*1080)</strong>-&nbsp;s&aacute;ng đẹp, phủ lớp&nbsp;chống ch&oacute;i d&agrave;nh cho doanh nh&acirc;n</p>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\">Option gồm c&oacute;:&nbsp;<strong>WC Camera,</strong>&nbsp; DVD, Display port(xuất&nbsp;HDMi), Vga out, Lan, SD, SC PCi, Wifi chuẩn N,<strong>&nbsp;</strong></p>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\"><strong>Sạc zin, Pin&nbsp;zin 6&nbsp;cell, 9 cell</strong></p>\n\n<p style=\"text-align:justify\">&nbsp;</p>\n\n<p style=\"text-align:justify\">Win7 pro theo m&aacute;y, c&oacute; thể&nbsp;c&agrave;i Win 10 bản quyền nh</p>', '', 105, 1, 47, '2018-03-08 08:07:46', '2018-04-17 10:15:57');
 
 -- --------------------------------------------------------
 
@@ -2697,7 +2653,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `permissions`, `last_login`, `fullname`, `address`, `phone`, `image`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'diennk@dienkim.com', '$2y$10$nxBXFyAJNjPSLEI0RlPv8edQAw4ebTioV9JZaosCErs3VM/LYluuK', NULL, '2018-04-18 03:34:15', 'Nguyễn Kim Điền', NULL, NULL, 'logo-5-983456149.png', 6, 1, '2017-11-12 07:23:56', '2018-04-18 03:34:15'),
+(1, 'admin', 'diennk@dienkim.com', '$2y$10$nxBXFyAJNjPSLEI0RlPv8edQAw4ebTioV9JZaosCErs3VM/LYluuK', NULL, '2018-04-18 21:35:02', 'Nguyễn Kim Điền', NULL, NULL, 'logo-5-983456149.png', 6, 1, '2017-11-12 07:23:56', '2018-04-18 21:35:02'),
 (8, 'tiennv', 'tiennv@dienkim.com', '$2y$10$9sq3u.mDu/Bk1vvpv4sU7.Ior67wjHR5n1slgsv/sz63zBQxAfZ4K', NULL, '2018-02-23 01:16:10', 'Nguyễn Văn Tiến', '14 Tân Canh', '0988152782', NULL, 5, 0, '2018-02-05 20:06:26', '2018-02-23 01:16:10'),
 (9, 'vinhlt', 'vinhht@dienkim.com', '$2y$10$ib1fvlTyvQLoRQcVt.Qrt.VAZtN3lPSMWHwpoqYwx5OM/4/vSUE9q', NULL, '2018-02-04 11:57:07', 'Huỳnh Thúc Vinh', '23 Bùi Quang Là', '0988162722', NULL, 1, 0, '2018-02-04 05:35:55', '2018-02-04 11:57:07'),
 (14, 'phamduy', 'truonghuychuong1994@gmail.com', '$2y$10$j4aFmIopHHaRVXUSwKFIiOm59nc80jQzqfzEN58zTe87wWcgZHfJa', NULL, '2018-03-13 20:44:48', 'Phạm duy', NULL, NULL, NULL, 1, 1, '2018-03-13 19:46:01', '2018-03-13 20:44:48'),
@@ -3069,7 +3025,7 @@ ALTER TABLE `category_param`
 -- AUTO_INCREMENT cho bảng `category_product`
 --
 ALTER TABLE `category_product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT cho bảng `category_video`
@@ -3111,7 +3067,7 @@ ALTER TABLE `invoice_detail`
 -- AUTO_INCREMENT cho bảng `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=426;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=490;
 
 --
 -- AUTO_INCREMENT cho bảng `menu_type`
@@ -3147,7 +3103,7 @@ ALTER TABLE `payment_method`
 -- AUTO_INCREMENT cho bảng `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=827;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=829;
 
 --
 -- AUTO_INCREMENT cho bảng `photo`
@@ -3159,7 +3115,7 @@ ALTER TABLE `photo`
 -- AUTO_INCREMENT cho bảng `post_param`
 --
 ALTER TABLE `post_param`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `privilege`
@@ -3171,7 +3127,7 @@ ALTER TABLE `privilege`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT cho bảng `project`
