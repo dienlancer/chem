@@ -350,11 +350,11 @@ if(!empty($alias)){
             case 'three-column':
             ?>
             <div class="col-lg-3">
-                <div class="cate-product-horizontal-right" >
+                
                     <?php     
                     $args = array(                         
                         'menu_class'            => 'cateprodhorizontalright',                                        
-                        'before_wrapper'        => '<div>',
+                        'before_wrapper'        => '<div class="cate-product-horizontal-right">',
                         'before_title'          => '<h2>',
                         'after_title'           => '</h2>',
                         'before_wrapper_ul'     =>  '<div>',
@@ -369,7 +369,7 @@ if(!empty($alias)){
                     );                    
                     wp_nav_menu($args);
                     ?>                 
-                    <div class="clr"></div>
+                    
                 </div>
             </div>
             <div class="col-lg-6"></div>
