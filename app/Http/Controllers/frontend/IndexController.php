@@ -45,114 +45,16 @@ class IndexController extends Controller {
   var $_ssNameUser="vmuser";
   var $_ssNameCart="vmart";      
   var $_ssNameInvoice="vminvoice";
-  public function getHome(Request $request){       
-    $checked=1;
-        $msg=array();
-        $data=array();
-        $msg=array();           
-        $layout="two-column";     
-        $component='contact';
-        $alias="lien-he-voi-chung-toi";   
-        if($request->isMethod('post'))     {  
-          $data=$request->all();                    
-          $fullname   = @$request->fullname;
-          $email      = @$request->email;   
-          $telephone  = @$request->telephone;
-          $title      = @$request->title;
-         
-          $content    = @$request->content;
-          /* begin load config contact */
-          $setting=getSettingSystem();    
-          $smtp_host      = @$setting['smtp_host']['field_value'];
-          $smtp_port      = @$setting['smtp_port']['field_value'];
-          $smtp_auth      = @$setting['authentication']['field_value'];
-          $encription     = @$setting['encription']['field_value'];
-          $smtp_username  = @$setting['smtp_username']['field_value'];
-          $smtp_password  = @$setting['smtp_password']['field_value'];
-          $email_from     = $email;
-          $email_to       = @$setting['email_to']['field_value'];
-          $contacted_person = @$setting['contacted_person']['field_value'];          
-          /* end load config contact */       
-          if(mb_strlen($fullname) < 6){
-            $msg["fullname"] = 'Họ tên phải chứa từ 6 ký tự trở lên';
-            $data["fullname"] = "";          
-            $checked=0;
-          }
-          if(!preg_match("#^[a-z][a-z0-9_\.]{4,31}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$#",$email )){
-            $msg["email"] = 'Email không hợp lệ';
-            $data["email"] = '';
-            $checked=0;
-          }
-          if(mb_strlen($telephone) < 10){
-            $msg["telephone"] = 'Số điện thoại không hợp lệ';
-            $data["telephone"] = "";          
-            $checked=0;
-          }
-          if(mb_strlen($title) < 10){
-            $msg["title"] = 'Tiêu đề không hợp lệ';
-            $data["title"] = "";         
-            $checked=0;
-          }   
-          
-          if(mb_strlen($content) < 10){
-            $msg["content"] = 'Nội dung không hợp lệ';
-            $data["content"] = "";         
-            $checked=0;
-          }     
-          if((int)@$checked==1){
-            $mail = new PHPMailer(true);
-            try{
-              $mail->SMTPDebug = 0;                           
-              $mail->isSMTP();     
-              $mail->CharSet = "UTF-8";                           
-              $mail->Host = $smtp_host; 
-              $mail->SMTPAuth = $smtp_auth;                         
-              $mail->Username = $smtp_username;             
-              $mail->Password = $smtp_password;             
-              $mail->SMTPSecure = $encription;                       
-              $mail->Port = $smtp_port;                            
-              $mail->setFrom($email_from, $fullname);
-              $mail->addAddress($email_to, $contacted_person);   
-              $mail->Subject = 'Thông tin liên hệ từ khách hàng '.$fullname.' - '.$telephone ;   
-              $html_content='';     
-              $html_content .='<table border="1" cellspacing="5" cellpadding="5">';
-              $html_content .='<thead>';
-              $html_content .='<tr>';
-              $html_content .='<th colspan="2"><h3>Thông tin liên lạc từ khách hàng '.$fullname.'</h3></th>';
-              $html_content .='</tr>';
-              $html_content .='</thead>';
-              $html_content .='<tbody>';
-
-              $html_content .='<tr><td>Họ và tên</td><td>'.$fullname.'</td></tr>';
-              $html_content .='<tr><td>Email</td><td>'.$email.'</td></tr>';
-              $html_content .='<tr><td>Telephone</td><td>'.$telephone.'</td></tr>';
-              $html_content .='<tr><td>Tiêu đề</td><td>'.$title.'</td></tr>';              
-              $html_content .='<tr><td>Nội dung</td><td>'.$content.'</td></tr>';          
-
-              $html_content .='</tbody>';
-              $html_content .='</table>';                            
-              $mail->msgHTML($html_content);
-              if ($mail->Send()) {                
-                $msg['success']='Gửi thông tin hoàn tất'; 
-                echo '<script language="javascript" type="text/javascript">alert("Gửi thông tin hoàn tất");</script>'; 
-              }
-              else{
-                $msg["exception_error"]='Quá trình gửi dữ liệu gặp sự cố'; 
-                echo '<script language="javascript" type="text/javascript">alert("Có sự cố trong quá trình gửi dữ liệu");</script>'; 
-              }
-            }catch (Exception $e){
-              $msg["exception_error"]='Quá trình gửi dữ liệu gặp sự cố'; 
-              echo '<script language="javascript" type="text/javascript">alert("Có sự cố trong quá trình gửi dữ liệu");</script>'; 
-            }            
-          }        
-        }     
+  public function getHome(Request $request){                       
+        $component='home';        
+        $layout="three-column";     
         \Artisan::call('sitemap:auto');   
-        return view("frontend.home",compact("component",'msg',"data","success","alias","layout"));        
+        return view("frontend.index",compact("component","layout"));        
   }  
   
   public function search(Request $request){
     /* begin standard */    
-    $layout="two-column";                                                           
+    $layout="three-column";                                                           
     $totalItems=0;
     $totalItemsPerPage=0;
     $pageRange=0;      
@@ -325,21 +227,21 @@ class IndexController extends Controller {
                     ->toArray();        
         $items=convertToArray($data);                            
       }              
-      $layout="two-column";  
+      $layout="three-column";  
       break;
       case 'article':
       $row=ArticleModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();              
       if(count($row) > 0){
         $item=$row[0];
       }            
-      $layout="two-column";       
+      $layout="three-column";       
       break;        
       case 'page':
       $row=PageModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();              
       if(count($row) > 0){
         $item=$row[0];
       }      
-      $layout="two-column";         
+      $layout="three-column";         
       break; 
       case 'category-product':
       $category_id=0;
@@ -379,14 +281,14 @@ class IndexController extends Controller {
         $items=convertToArray($data);                  
       }    
       
-      $layout="two-column";             
+      $layout="three-column";             
       break; 
       case 'product':
       $row=ProductModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();              
       if(count($row) > 0){
         $item=$row[0];
       }    
-      $layout="two-column";       
+      $layout="three-column";       
       break;     
       case 'products':              
       $query=DB::table('product')->where('product.status',1);
@@ -414,7 +316,7 @@ class IndexController extends Controller {
                     ->get()
                     ->toArray();            
         $items=convertToArray($data);           
-      $layout="two-column";        
+      $layout="three-column";        
       break;            
     }  
     if(count($menu) > 0){
@@ -446,7 +348,7 @@ class IndexController extends Controller {
 
       
       public function viewCart(Request $request){   
-          $layout="two-column";     
+          $layout="three-column";     
           $component='cart';                 
         if($request->isMethod('post')){
             $arrQTY=$request->quantity;                 
@@ -642,7 +544,7 @@ class IndexController extends Controller {
         $msg=array();  
         $data=array();        
         $component="register";    
-        $layout="two-column";      
+        $layout="three-column";      
         if($request->isMethod('post')){                          
           $data             =   $request->all();     
           $username         =   trim(@$request->username) ;    
@@ -732,7 +634,7 @@ class IndexController extends Controller {
         $msg=array();   
         $data=array();        
         $component="login";                
-        $layout="two-column";     
+        $layout="three-column";     
         $arrUser=array();              
       	$user = Sentinel::forceCheck();       	
       	if(!empty($user)){                
@@ -760,7 +662,7 @@ class IndexController extends Controller {
       	$msg=array();   
       	$data=array();        
       	$component="security";   
-      	$layout="two-column";        
+      	$layout="three-column";        
       	$arrUser=array();              
       	$user = Sentinel::forceCheck(); 
       	if(!empty($user)){                
@@ -806,7 +708,7 @@ class IndexController extends Controller {
       	$msg=array();   
       	$data=array();        
       	$component="account";   
-      	$layout="two-column";       
+      	$layout="three-column";       
       	$id=0;         
       	$arrUser=array();              
       	$user = Sentinel::forceCheck(); 
@@ -886,7 +788,7 @@ class IndexController extends Controller {
       	$msg=array();  
       	$data=array();        
       	$component="xac-nhan-thanh-toan";    
-      	$layout="two-column";   
+      	$layout="three-column";   
       	$id=0;         
       	$arrUser=array();              
       	$user = Sentinel::forceCheck(); 
@@ -1146,7 +1048,7 @@ class IndexController extends Controller {
       		Session::forget($this->_ssNameInvoice);
       	}   
       	$component="hoan-tat-thanh-toan";    
-        $layout="two-column";   
+        $layout="three-column";   
         return view("frontend.index",compact("component","layout"));                     
       }
       public function cancelInvoice(){
@@ -1173,7 +1075,7 @@ class IndexController extends Controller {
       		return redirect()->route("frontend.index.viewCart");   
       	}    
         $component="cancel-invoice";    
-        $layout="two-column";   
+        $layout="three-column";   
         return view("frontend.index",compact("component","layout"));       
       }
       public function finishCheckout(){
@@ -1200,7 +1102,7 @@ class IndexController extends Controller {
       		return redirect()->route("frontend.index.viewCart");   
       	}    
       	$component="hoan-tat-thanh-toan";    
-        $layout="two-column";   
+        $layout="three-column";   
         return view("frontend.index",compact("component","layout"));                  
       }  
       public function loginCheckout(Request $request){          
@@ -1209,7 +1111,7 @@ class IndexController extends Controller {
         $msg=array();  
         $data=array();        
         $component="dang-nhap-thanh-toan";    
-        $layout="two-column";
+        $layout="three-column";
         $customer=array();                            
         $arrCart=array();
         if(Session::has($this->_ssNameCart)){
@@ -1312,7 +1214,7 @@ class IndexController extends Controller {
       }
       public function getInvoice(){              
         $component="hoa-don";                
-        $layout="two-column";      
+        $layout="three-column";      
         $id=0;    
         $arrUser=array();              
         $user = Sentinel::forceCheck();         
