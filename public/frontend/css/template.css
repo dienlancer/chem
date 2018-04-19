@@ -14,7 +14,7 @@ body{
     font-size:14px;
     color:#333;
     background:#ffffff;
-    font-family: 'OpenSans';    
+    font-family: 'arial';    
 }
 table{max-width:100%;}
 p{margin:1em 0;}
@@ -2135,7 +2135,17 @@ header{
 .ddsmoothmenu ul li ul li a{
   width: 250px;
 }
-
+.cate-product-horizontal-right{
+    margin-top: 10px;
+}
+.cate-product-horizontal-right h2{
+        background: linear-gradient(#3FAF5F,#258941);
+    font-size: 15px;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 10px 0px;
+}
 @media (max-width: 768px){    
     .mobilemenu{
         display: block;

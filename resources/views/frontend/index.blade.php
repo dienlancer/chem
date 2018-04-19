@@ -349,35 +349,33 @@ if(!empty($alias)){
             break;
             case 'three-column':
             ?>
-            <div class="col-lg-3">
-                
-                    <?php     
-                    $args = array(                         
-                        'menu_class'            => 'cateprodhorizontalright',                                        
-                        'before_wrapper'        => '<div class="cate-product-horizontal-right">',
-                        'before_title'          => '<h2>',
-                        'after_title'           => '</h2>',
-                        'before_wrapper_ul'     =>  '<div>',
-                        'after_wrapper_ul'      =>  '</div>',
-                        'after_wrapper'         => '</div>'     ,
-                        'link_before'           => '<i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;&nbsp;', 
-                        'link_after'            => '<i class="fa fa-caret-down pull-right" aria-hidden="true"></i>',                                        
-                        'theme_location'        => 'category-side-bar' ,
-                        'menu_li_actived'       => 'current-menu-item',
-                        'menu_item_has_children'=> 'menu-item-has-children',
-                        'alias'                 => $seo_alias
-                    );                    
-                    wp_nav_menu($args);
-                    ?>                 
-                    
-                </div>
+            <div class="col-lg-3">                
+                <?php     
+                $args = array(                         
+                    'menu_class'            => 'cateprodhorizontalright',                                        
+                    'before_wrapper'        => '<div class="cate-product-horizontal-right">',
+                    'before_title'          => '<h2>',
+                    'after_title'           => '</h2>',
+                    'before_wrapper_ul'     =>  '<div>',
+                    'after_wrapper_ul'      =>  '</div>',
+                    'after_wrapper'         => '</div>'     ,
+                    'link_before'           => '<i class="fa fa-angle-double-right" aria-hidden="true"></i>&nbsp;&nbsp;', 
+                    'link_after'            => '<i class="fa fa-caret-down pull-right" aria-hidden="true"></i>',                                        
+                    'theme_location'        => 'category-side-bar' ,
+                    'menu_li_actived'       => 'current-menu-item',
+                    'menu_item_has_children'=> 'menu-item-has-children',
+                    'alias'                 => $seo_alias
+                );                    
+                wp_nav_menu($args);
+                ?>                                     
             </div>
-            <div class="col-lg-6"></div>
-            <div class="col-lg-3"></div>
-            <?php
-            break;
-        }
-        ?>    
-    </div>           
+        </div>
+        <div class="col-lg-6"></div>
+        <div class="col-lg-3"></div>
+        <?php
+        break;
+    }
+    ?>    
+</div>           
 </div>
 @endsection()               
