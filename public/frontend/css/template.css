@@ -1509,8 +1509,12 @@ div.ducati  h2{
     margin: 5px 0px;
 }
 form[name='frm-search']{
-    position: relative;
-  
+    position: absolute;
+    top: 0;
+    right:0;
+    background: #A9C342;
+    padding: 5px 5px;
+    display: flex;
 }
 .bg-menu{
     background: #1F3B73;
@@ -1863,19 +1867,19 @@ ul.bankList {
     height: 100%;
 }
 form[name='frm-search'] a{
-    padding: 6px 10px 6px 0px;
-    font-size: 17px;
-    color: #333333;
-    position: absolute;
-    top: 0px;
-    right: 0px;
+        padding: 5px 10px 5px 10px;
+    font-size: 14px;
+    background: #e74142;
+    color: #ffffff;
+    margin: 0px 0px 0px 0px;
+    display: block;
+    text-align: center;
 }
 form[name='frm-search'] input[name='q']{
     border: none;
     outline: none;
-    padding: 8px 10px;
-    width: 100%;
-    border-radius: 20px;
+    padding: 5px 10px;
+    width: 100%;   
 }
 .rimex{
        display: flex;

@@ -24,31 +24,38 @@ $company=$setting['contacted_person']['field_value'];
 				$items2=$data_slideshow2["items"];
 				if(count($items2) > 0){
 					?>
-					<div class="slideshow">
-						<script type="text/javascript" language="javascript">        
-							$(document).ready(function(){
-								$(".slick-slideshow").slick({
-									dots: false,
-									autoplay:true,
-									arrows:false,
-									adaptiveHeight:true,
-									slidesToShow: 1,
-									slidesToScroll: 1,        
-								});  
-							});     
-						</script>
-						<div class="slick-slideshow">    
-							<?php 
-							foreach ($items2 as $key => $value) {
-								$alt2=$value["alt"];
-								$featuredImg2=asset('upload/'.$value["image"]);
-								?>
-								<div><img src="<?php echo $featuredImg2; ?>" alt="<?php echo $alt2; ?>" /></div>
+					<div class="relative">
+						<div class="slideshow">
+							<script type="text/javascript" language="javascript">        
+								$(document).ready(function(){
+									$(".slick-slideshow").slick({
+										dots: false,
+										autoplay:true,
+										arrows:false,
+										adaptiveHeight:true,
+										slidesToShow: 1,
+										slidesToScroll: 1,        
+									});  
+								});     
+							</script>
+							<div class="slick-slideshow">    
 								<?php 
-							}
-							?>              
+								foreach ($items2 as $key => $value) {
+									$alt2=$value["alt"];
+									$featuredImg2=asset('upload/'.$value["image"]);
+									?>
+									<div><img src="<?php echo $featuredImg2; ?>" alt="<?php echo $alt2; ?>" /></div>
+									<?php 
+								}
+								?>              
+							</div>
 						</div>
-					</div>
+						<form action="<?php echo route('frontend.index.search'); ?>" method="post" name="frm-search" >
+							{{ csrf_field() }}
+							<div><input type="text" name="q" autocomplete="off" placeholder="Tìm kiếm sản phẩm" value=""></div>
+							<div><a href="javascript:void(0);" onclick="document.forms['frm-search'].submit();">Tìm kiếm</a></div>
+						</form>
+					</div>					
 					<?php
 				}  
 			}
