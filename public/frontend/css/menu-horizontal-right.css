@@ -17,12 +17,7 @@
 	font-size: 14px;
 }
 
-.cateprodhorizontalright li a span{
-	display: block; 
-	/*background: url(images/blue-arrow.png) left center no-repeat;*/
-	padding-left: 20px;
-	margin-left: 10px;
-}
+
 
 .cateprodhorizontalright li a:hover{
 	background-color:#ffffff;
@@ -44,18 +39,12 @@
 	border-top:1px solid #e1e1e1;
 }
 
-.cateprodhorizontalright > li.menu-item-has-children > a{
-	position: relative;
-}
 
-.cateprodhorizontalright li ul li a > i{
-	display: none;
-}
+
 .cateprodhorizontalright li{
 	margin-left: 0;
 }
 .cateprodhorizontalright {
-	width: 100%;
 	list-style: none;
 }
 .cateprodhorizontalright li a{	

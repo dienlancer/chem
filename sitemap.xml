@@ -2,33 +2,9 @@
 <?xml-stylesheet href="http://chem.dienkim/vendor/sitemap/styles/xml.xsl" type="text/xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 	<url>
-	<loc>http://chem.dienkim/kinh-nghiem-laptop.html</loc>
+	<loc>http://chem.dienkim/tin-tuc.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-03-13T05:15:41+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-	</url>
-	<url>
-	<loc>http://chem.dienkim/dien-tu-gia-dung.html</loc>
-		<priority>0.9</priority>
-		<lastmod>2018-02-28T08:09:03+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-	</url>
-	<url>
-	<loc>http://chem.dienkim/san-pham.html</loc>
-		<priority>0.9</priority>
-		<lastmod>2018-02-28T08:08:49+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-	</url>
-	<url>
-	<loc>http://chem.dienkim/doi-song-so.html</loc>
-		<priority>0.9</priority>
-		<lastmod>2018-02-28T08:08:31+00:00</lastmod>
-		<changefreq>monthly</changefreq>
-	</url>
-	<url>
-	<loc>http://chem.dienkim/ho-tro-khach-hang.html</loc>
-		<priority>0.9</priority>
-		<lastmod>2018-02-28T07:22:22+00:00</lastmod>
+		<lastmod>2018-04-20T05:20:53+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
@@ -206,93 +182,105 @@
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/laptop-gia-re-cau-hinh-manh-cho-sinh-vien-de-phuc-vu-viec-hoc-tot-hon.html</loc>
+	<loc>http://chem.dienkim/mau-hong-sen-erythrosine-red.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-17T16:27:39+00:00</lastmod>
+		<lastmod>2018-04-20T05:16:31+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/cach-kiem-tra-may-khi-mua-laptop-cu-chuan-nhat.html</loc>
+	<loc>http://chem.dienkim/mau-den-than-black-dung-trong-thuc-pham.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-18T01:32:14+00:00</lastmod>
+		<lastmod>2018-04-20T05:14:57+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/mua-laptop-dell-dong-nao-tot-nhat-hien-nay.html</loc>
+	<loc>http://chem.dienkim/mau-vang-quinoline-yellow-thuc-pham-thu-y.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-17T16:27:42+00:00</lastmod>
+		<lastmod>2018-04-20T05:13:36+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/tong-hop-nhung-kinh-nghiem-khi-mua-may-tinh-cu.html</loc>
+	<loc>http://chem.dienkim/mau-vang-hot-ga-egg-yellow.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-16T20:49:01+00:00</lastmod>
+		<lastmod>2018-04-20T05:12:27+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/dong-laptop-nao-tot-nhat-hien-nay.html</loc>
+	<loc>http://chem.dienkim/mau-tu-nhien-riboflavin-e101-thay-the-tartrazinee-102.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-18T07:24:08+00:00</lastmod>
+		<lastmod>2018-04-20T05:08:05+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/cach-ket-noi-laptop-voi-tivi-qua-cong-vga.html</loc>
+	<loc>http://chem.dienkim/mau-tim-la-cam.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-16T20:15:23+00:00</lastmod>
+		<lastmod>2018-04-20T05:07:01+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/cap-ket-noi-o-cung-voi-laptop.html</loc>
+	<loc>http://chem.dienkim/mau-den-goi-banh-it-la-gai.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-17T09:18:45+00:00</lastmod>
+		<lastmod>2018-04-20T05:06:04+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/phan-mem-test-laptop-tot-nhat-hien-nay.html</loc>
+	<loc>http://chem.dienkim/mau-tu-nhien-paprika-mau-ot-e-160c.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-16T20:15:29+00:00</lastmod>
+		<lastmod>2018-04-20T05:05:02+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/nen-mua-may-tinh-xach-tay-cua-hang-nao.html</loc>
+	<loc>http://chem.dienkim/mau-carotene-mau-trung-ga-e-160a.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-18T02:51:29+00:00</lastmod>
+		<lastmod>2018-04-20T05:04:04+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/cach-ket-noi-laptop-voi-tivi-qua-cong-hdmi.html</loc>
+	<loc>http://chem.dienkim/mau-tu-nhien-tumeric-e-100.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-18T01:19:32+00:00</lastmod>
+		<lastmod>2018-04-20T05:02:44+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/cua-hang-laptop-uy-tin-o-thanh-pho-ho-chi-minh.html</loc>
+	<loc>http://chem.dienkim/huong-trai-cay-dung-trong-thuc-pham.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-16T22:12:16+00:00</lastmod>
+		<lastmod>2018-04-20T04:59:53+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/tai-sao-laptop-khong-nhan-usb.html</loc>
+	<loc>http://chem.dienkim/huong-bo.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-17T00:25:03+00:00</lastmod>
+		<lastmod>2018-04-20T04:39:14+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/dich-vu-ban-laptop-tphcm.html</loc>
+	<loc>http://chem.dienkim/huong-thit-heo.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-17T11:52:16+00:00</lastmod>
+		<lastmod>2018-04-20T04:37:29+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/noi-ban-laptop-gia-tot-nhat.html</loc>
+	<loc>http://chem.dienkim/huong-bo-dang-bot.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-18T05:27:16+00:00</lastmod>
+		<lastmod>2018-04-20T04:35:55+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 	<url>
-	<loc>http://chem.dienkim/laptop-hp-co-tot-khong.html</loc>
+	<loc>http://chem.dienkim/huong-tom-dang-long.html</loc>
 		<priority>0.9</priority>
-		<lastmod>2018-04-17T05:15:46+00:00</lastmod>
+		<lastmod>2018-04-20T04:32:28+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+	<loc>http://chem.dienkim/huong-muc-dang-long.html</loc>
+		<priority>0.9</priority>
+		<lastmod>2018-04-20T04:32:56+00:00</lastmod>
+		<changefreq>monthly</changefreq>
+	</url>
+	<url>
+	<loc>http://chem.dienkim/huong-ga.html</loc>
+		<priority>0.9</priority>
+		<lastmod>2018-04-20T04:58:02+00:00</lastmod>
 		<changefreq>monthly</changefreq>
 	</url>
 </urlset>
