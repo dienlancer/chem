@@ -46,10 +46,43 @@ class IndexController extends Controller {
   var $_ssNameCart="vmart";      
   var $_ssNameInvoice="vminvoice";
   public function getHome(Request $request){                       
-        $component='home';        
-        $layout="three-column";     
-        \Artisan::call('sitemap:auto');   
-        return view("frontend.index",compact("component","layout"));        
+    $component='home';        
+    $layout="three-column";     
+    $totalItems=0;
+    $totalItemsPerPage=0;
+    $pageRange=0;      
+    $currentPage=1;  
+    $pagination='' ;     
+    $items=array();     
+    $query=DB::table('product')   ;         
+    $query->where('product.status',1);    
+    $data=$query->select('product.id')
+    ->groupBy('product.id')                
+    ->get()->toArray();    
+    $data=convertToArray($data);
+    $totalItems=count($data);
+    $totalItemsPerPage=15; 
+    $pageRange=$this->_pageRange;
+    if(!empty(@$request->filter_page)){
+        $currentPage=@$request->filter_page;
+    }         
+    $arrPagination=array(
+      "totalItems"=>$totalItems,
+      "totalItemsPerPage"=>$totalItemsPerPage,
+      "pageRange"=>$pageRange,
+      "currentPage"=>$currentPage   
+    );           
+    $pagination=new PaginationModel($arrPagination);
+    $position   = ((int)@$arrPagination['currentPage']-1)*$totalItemsPerPage;        
+    $data=$query->select('product.id','product.alias','product.fullname','product.price','product.sale_price','product.image','product.intro','product.count_view')
+    ->groupBy('product.id','product.alias','product.fullname','product.price','product.sale_price','product.image','product.intro','product.count_view')
+    ->orderBy('product.id', 'desc')
+    ->skip($position)
+    ->take($totalItemsPerPage)
+    ->get()->toArray();   
+    $items=convertToArray($data);      
+    \Artisan::call('sitemap:auto');       
+    return view("frontend.index",compact("component","layout","items","pagination"));   
   }  
   
   public function search(Request $request){

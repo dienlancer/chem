@@ -40,7 +40,7 @@
 				'after_wrapper'         => '</div>'     ,
 				'link_before'       	=> '', 
 				'link_after'        	=> '',                                        
-				'theme_location'        => 'danhmucspfooter' ,
+				'theme_location'        => 'category-footer' ,
 				'menu_li_actived'       => 'current-menu-item',
 				'menu_item_has_children'=> 'menu-item-has-children',
 				'alias'                 => $seo_alias

@@ -541,7 +541,7 @@ ul.list-style-none{
  padding: 5px 11px;
 }
 .zuna-home{
-    border-bottom: solid 2px #273896;
+    border-bottom: solid 2px #076b1b;
         background: -webkit-linear-gradient(left, #eceeed , #ffffff);
     background: -o-linear-gradient(right, #eceeed, #ffffff);
     background: -moz-linear-gradient(right, #eceeed, #ffffff);
@@ -550,7 +550,7 @@ ul.list-style-none{
 
 .cot-1{
         float: left;
-    background: url(../images/gochome.png) #273896 no-repeat top right;
+    background: url(../images/gohome.png) #067A1E no-repeat top right;
     height: 32px;
     width: 300px;
     display: flex;
@@ -1034,7 +1034,7 @@ div.ducati  h2{
 .box-product-intro-title{
     margin: 5px 15px 0px 15px;
     text-align: center;
-        height: 65px;
+        height: 85px;
 }
 .box-product-intro-title a{
         color: #004A8F;
@@ -1911,7 +1911,7 @@ form[name='frm-search'] input[name='q']{
     background: #ffffff
 }
 .box-product-img{
-    margin: 15px 15px 0px 15px;
+    margin:5px 5px 0px 5px;
 
 }
 .box-product-price{
@@ -2108,6 +2108,7 @@ header{
     text-align: center;
     text-transform: uppercase;
     padding: 10px 0px;
+    font-family: 'robotocondensed';
 }
 .zizakide{
     border-left: 1px solid #dedede;
@@ -2122,6 +2123,18 @@ header{
 .box-support{
     width: 100%;    
     box-shadow: 1px 1px 1px #888888;
+}
+
+.diva{
+    border-bottom:2px solid #258941;
+}
+.fixbuggest{
+        float: left;
+    background: #258941;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 7px 20px;
+    font-family: 'robotocondensed';
 }
 @media (max-width: 768px){    
     .mobilemenu{

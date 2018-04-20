@@ -102,7 +102,15 @@ $seo=getSeo();
                     </div>
                 </div>                                 
             </div>        
-            <div class="col-lg-6"></div>
+            <div class="col-lg-6">
+                <?php 
+                switch ($component) {
+                    case 'home':
+                        ?>@include("frontend.home")<?php                     
+                        break;                    
+                }
+                ?>
+            </div>
             <div class="col-lg-3">
                 <div class="cate-product-horizontal-right">
                     <h2>TIN TỨC SỰ KIỆN</h2>
@@ -191,7 +199,32 @@ $seo=getSeo();
                             </div>
                         </div>                              
                     </div>
-                </div>              
+                </div>     
+                <?php 
+                $ads_source=getBanner('advertising');
+                if(count($ads_source) > 0){
+                    $ads_items=$ads_source['items'];                    
+                    ?>
+                    <div class="cate-product-horizontal-right">
+                        <h2><?php echo $ads_source['fullname']; ?></h2>
+                        <div>
+                            <?php 
+                            if(count(@$ads_items) > 0){
+                                foreach (@$ads_items as $key => $value) {
+                                    $ads_image=asset('/upload/'.$value['image']);
+                                    $ads_alt=$value['alt'];
+                                    $ads_page_url=$value['page_url'];
+                                    ?>
+                                    <div class="margin-top-5"><a href="<?php echo $ads_page_url; ?>"><img src="<?php echo $ads_image; ?>" alt="<?php echo $ads_alt; ?>" /></a></div>
+                                    <?php   
+                                }                                
+                            }
+                            ?>
+                        </div>
+                    </div>     
+                    <?php
+                }                
+                ?>                
             </div>
             <?php
             break;
