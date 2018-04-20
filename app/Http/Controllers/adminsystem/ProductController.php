@@ -112,9 +112,7 @@ public function save(Request $request){
   $status               =   trim($request->status);
   $price                =   trim($request->price);   
   $sale_price           =   trim($request->sale_price);                    
-  $detail               =   trim($request->detail);
-  $technical_detail               =   trim($request->technical_detail);
-  $video_id = trim($request->video_id);
+  $detail               =   trim($request->detail);    
   $intro                =   trim($request->intro);
   $image_hidden         =   trim($request->image_hidden);                       
   $sort_order           =   trim($request->sort_order);          
@@ -164,7 +162,7 @@ if(empty($fullname)){
   }      	
 }          
 
-if(empty($category_id)){
+if((int)@$category_id==0){
   $checked = 0;
   
   $msg["category_id"]      = "Thiếu danh mục";
@@ -209,9 +207,7 @@ if ($checked == 1) {
   $item->status           = (int)@$status; 
   $item->price            = (int)(str_replace('.', '',@$price)) ;
   $item->sale_price       = (int)(str_replace('.', '',@$sale_price)) ;                                 
-  $item->detail           = $detail;  
-  $item->technical_detail           = $technical_detail;    
-  $item->video_id = $video_id;   
+  $item->detail           = $detail;      
   $item->intro            = $intro;            
   $item->category_id      = (int)@$category_id;                                      
   $item->sort_order 	    =	(int)@$sort_order;                
@@ -241,34 +237,7 @@ if ($checked == 1) {
       DB::statement($sql);    
     }          
   }    
-  /* begin category param */
-  if(!empty(@$category_param_id)){
-    $source_category_param_id=explode(',', $category_param_id) ; 
-    $arrPostParam=PostParamModel::whereRaw("post_id = ?",[(int)@$item->id])->select("param_id")->get()->toArray();
-    $arrCategoryParamID=array();
-    foreach ($arrPostParam as $key => $value) {
-      $arrCategoryParamID[]=$value["param_id"];
-    }                  
-    $selected=@$source_category_param_id;
-    sort($selected);
-    sort($arrCategoryParamID);                           
-    $resultCompare=0;
-    if($selected == $arrCategoryParamID){
-      $resultCompare=1;       
-    }
-    if($resultCompare==0){
-      PostParamModel::whereRaw("post_id = ?",[(int)@$item->id])->delete();  
-      foreach ($selected as $key => $value) {
-        $param_id=$value;
-        $postParam=new PostParamModel;
-        $postParam->post_id=(int)@$item->id;
-        $postParam->param_id=(int)@$param_id;            
-        $postParam->save();
-      }
-    }       
-  }  
-  PostParamModel::whereRaw("param_id = ?",[0])->delete();
-  /* end category param */                         
+        
   $msg['success']='Lưu thành công';  
 }
 $info = array(

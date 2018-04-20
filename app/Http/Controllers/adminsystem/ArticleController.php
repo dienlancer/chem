@@ -128,7 +128,12 @@ class ArticleController extends Controller {
     	if( ($category_id) == null ){    		
     		$checked = 0;                
     		$msg["category_id"]      = "Thiếu danh mục";
-    	}          
+    	}else{
+        if((int)@$category_id[0]==0){
+          $msg["category_id"] = 'Vui lòng chọn danh mục';              
+          $checked = 0;      
+        }
+      }               
     	if(empty($sort_order)){
     		$checked = 0;               
     		$msg["sort_order"] 		= "Thiếu sắp xếp";

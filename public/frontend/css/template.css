@@ -11,7 +11,7 @@
 @font-face{font-family:"OpenSans";src:url("../fonts/OpenSans.ttf") format('truetype');}
 @font-face{font-family:"OpenSans-Bold";src:url("../fonts/OpenSans-Bold.ttf") format('truetype');}
 body{
-    font-size:14px;
+    font-size:13px;
     color:#333;
     background:#ffffff;
     font-family: 'arial';    
@@ -20,7 +20,7 @@ table{max-width:100%;}
 p{margin:1em 0;}
 img{max-width:100%;}
 .clr{clear:both;margin:0 !important;padding: 0 !important}
-a:hover,a:focus{text-decoration:none;color:#0c62ad;}
+a:hover,a:focus{text-decoration:none;}
 ul{margin:0;padding:0;}
 ul li{margin-left:15px;}
 ol li{margin-left:15px;margin-bottom: 15px;}
@@ -2098,48 +2098,11 @@ header{
 .rafaen{
     float: right;
 }
-.ddsmoothmenu > ul > li > a:link,.ddsmoothmenu > ul > li > a:visited{    
-    background: linear-gradient(to bottom, #23853D, #067A1E);
-    color: #ffffff;
-        padding: 10px 14px;
-    border-right: 0px;
-    font-weight: bold;    
-    border-radius: 10px 10px 0px 0px;
-    font-size: 13px;
-}
-.ddsmoothmenu > ul > li{
-    margin-left: 5px
-}
-.ddsmoothmenu > ul > li > a:hover  {
-    background: #29AA4C !important;
-    color: #ffffff
-}
-.ddsmoothmenu ul li a.selected{
-    background: #29AA4C !important;  
-    color: #ffffff  
-}
-.ddsmoothmenu ul li a{
-    text-transform: uppercase;
-}
-.ddsmoothmenu ul li ul li a{
-    background: #067a1edb;
-    padding: 10px 10px;
-}
-.ddsmoothmenu ul li ul li a{
-  border-bottom: 1px solid #23853D;
-  border-right: 1px solid #23853D;
-}
-.ddsmoothmenu ul li ul li a:hover{
-  background:#29AA4C !important;
-}
-.ddsmoothmenu ul li ul li a{
-  width: 250px;
-}
 .cate-product-horizontal-right{
     margin-top: 10px;
 }
 .cate-product-horizontal-right h2{
-        background: linear-gradient(#3FAF5F,#258941);
+    background: linear-gradient(#3FAF5F,#258941);
     font-size: 15px;
     color: #ffffff;
     text-align: center;

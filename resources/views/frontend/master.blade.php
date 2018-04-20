@@ -120,7 +120,8 @@ if(count($arrCart) > 0){
 	<!-- end font-awesome -->	
 	<!-- begin ddsmoothmenu -->
 	<script src="{{ asset('public/frontend/js/ddsmoothmenu.js') }}"></script>
-	<link rel="stylesheet" href="{{ asset('public/frontend/css/ddsmoothmenu.css') }}" />		
+	<link rel="stylesheet" href="{{ asset('public/frontend/css/ddsmoothmenu.css') }}" />	
+	<link rel="stylesheet" href="{{ asset('public/frontend/css/ddsmoothmenu-v2.css') }}" />	
 	<!-- end ddsmoothmenu -->
 	<!-- begin slick slider -->
 	<script src="{{ asset('public/frontend/slick/slick.min.js') }}"></script>

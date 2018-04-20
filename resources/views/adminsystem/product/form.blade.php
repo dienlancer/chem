@@ -17,12 +17,11 @@ $arrStatus              =   array(-1 => '- Select status -', 1 => 'Publish', 0 =
 $ddlStatus              =   cmsSelectbox("status","form-control",$arrStatus,$status,"");
 $inputIntro            =   '<textarea  name="intro" rows="5" cols="100" class="form-control" >'.@$arrRowData['intro'].'</textarea>'; 
 $inputDetail            =   '<textarea name="detail" rows="5" cols="100" class="form-control" >'.@$arrRowData['detail'].'</textarea>'; 
-$inputTechnicalDetail            =   '<textarea name="technical_detail" rows="5" cols="100" class="form-control" >'.@$arrRowData['technical_detail'].'</textarea>'; 
-$inputVideoId          =   '<input type="text" class="form-control" name="video_id"       value="'.@$arrRowData['video_id'].'">';
+
 $inputSortOrder         =   '<input type="text" class="form-control" name="sort_order"      value="'.@$arrRowData['sort_order'].'">';
 
 $ddlCategoryProduct      =   cmsSelectboxCategory("category_id","form-control",$arrCategoryProductRecursive,@$arrRowData['category_id'],"",'Chọn danh mục');
-$ddlCategoryParam        =cmsSelectboxCategoryParamMultiple("category_param_id[]", 'form-control', @$arrCategoryParamRecursive, @$arrPostParam,"",'Chọn danh mục');
+
 $id                     =   (count($arrRowData) > 0) ? @$arrRowData['id'] : "" ;
 $inputID                =   '<input type="hidden" name="id" value="'.@$id.'" />'; 
 $inputAliasMenu       =   '<input type="hidden" name="alias_menu" value="'.@$arrRowData['alias'].'" />'; 
@@ -110,15 +109,7 @@ $inputPictureHidden     =   '<input type="hidden" name="image_hidden"   value="'
                         </div>
                     </div> 
                 </div>   
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <label class="col-md-2 control-label"><b>Thuộc tính</b></label>
-                        <div class="col-md-10">
-                            <?php echo $ddlCategoryParam; ?>
-                            <span class="help-block"></span>
-                        </div>
-                    </div> 
-                </div>                
+                          
                 <div class="row">                      
                     <div class="form-group col-md-12">
                         <label class="col-md-2 control-label"><b>Hình</b></label>
@@ -212,31 +203,7 @@ $inputPictureHidden     =   '<input type="hidden" name="image_hidden"   value="'
                             <span class="help-block"></span>
                         </div>
                     </div>     
-                </div> 
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <label class="col-md-2 control-label"><b>VideoID</b></label>
-                        <div class="col-md-10">                            
-                            <?php echo $inputVideoId; ?>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>     
-                </div> 
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <label class="col-md-2 control-label"><b>Chi tiết kỹ thuật</b></label>
-                        <div class="col-md-10">                            
-                            <?php echo $inputTechnicalDetail; ?>
-                            <span class="help-block"></span>
-                            <script type="text/javascript" language="javascript">
-                                CKEDITOR.replace('technical_detail',{
-                                   height:300
-                               });
-                           </script>
-                           <span class="help-block"></span>
-                       </div>
-                   </div>                       
-                </div> 
+                </div>                             
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-2 control-label"><b>Chi tiết</b></label>
@@ -280,7 +247,7 @@ $inputPictureHidden     =   '<input type="hidden" name="image_hidden"   value="'
         var meta_keyword=$('textarea[name="meta_keyword"]').val();
         var meta_description=$('textarea[name="meta_description"]').val();
         var category_id=$('select[name="category_id"]').val();  
-        var category_param_id=$('select[name="category_param_id[]"]').val();      
+        
         
         /* begin xử lý image */
         var image_file=null;
@@ -320,9 +287,7 @@ $inputPictureHidden     =   '<input type="hidden" name="image_hidden"   value="'
         var price=$('input[name="price"]').val();
         var sale_price=$('input[name="sale_price"]').val();       
         var intro=$('textarea[name="intro"]').val(); 
-        var detail=CKEDITOR.instances['detail'].getData(); 
-        var technical_detail=CKEDITOR.instances['technical_detail'].getData();                
-        var video_id=$('input[name="video_id"]').val();
+        var detail=CKEDITOR.instances['detail'].getData();                 
         var sort_order=$('input[name="sort_order"]').val();        
         var token = $('input[name="_token"]').val();   
                         
@@ -340,11 +305,9 @@ $inputPictureHidden     =   '<input type="hidden" name="image_hidden"   value="'
         dataItem.append('price',price);
         dataItem.append('sale_price',sale_price);
         dataItem.append('intro',intro);
-        dataItem.append('detail',detail);
-        dataItem.append('technical_detail',technical_detail);     
-        dataItem.append('video_id',video_id);
+        dataItem.append('detail',detail);                
         dataItem.append('category_id',category_id);        
-        dataItem.append('category_param_id',category_param_id);        
+        
         dataItem.append('sort_order',sort_order);         
         dataItem.append('_token',token);       
         $.ajax({

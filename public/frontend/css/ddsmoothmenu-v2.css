@@ -1,0 +1,37 @@
+.ddsmoothmenu > ul > li > a:link,.ddsmoothmenu > ul > li > a:visited{    
+    background: linear-gradient(to bottom, #23853D, #067A1E);
+    color: #ffffff;
+        padding: 10px 14px;
+    border-right: 0px;
+    font-weight: bold;    
+    border-radius: 10px 10px 0px 0px;
+    font-size: 13px;
+}
+.ddsmoothmenu > ul > li{
+    margin-left: 5px
+}
+.ddsmoothmenu > ul > li > a:hover  {
+    background: #29AA4C !important;
+    color: #ffffff
+}
+.ddsmoothmenu ul li a.selected{
+    background: #29AA4C !important;  
+    color: #ffffff  
+}
+.ddsmoothmenu ul li a{
+    text-transform: uppercase;
+}
+.ddsmoothmenu ul li ul li a{
+    background: #067a1edb;
+    padding: 10px 10px;
+}
+.ddsmoothmenu ul li ul li a{
+  border-bottom: 1px solid #23853D;
+  border-right: 1px solid #23853D;
+}
+.ddsmoothmenu ul li ul li a:hover{
+  background:#29AA4C !important;
+}
+.ddsmoothmenu ul li ul li a{
+  width: 250px;
+}
