@@ -2109,6 +2109,20 @@ header{
     text-transform: uppercase;
     padding: 10px 0px;
 }
+.zizakide{
+    border-left: 1px solid #dedede;
+    border-right:  1px solid #dedede ;
+    border-top:1px solid #dedede ;
+}
+.npan{
+        display: flex;
+    border-bottom: 1px solid #dedede;
+    padding: 5px 0px;
+}
+.box-support{
+    width: 100%;    
+    box-shadow: 1px 1px 1px #888888;
+}
 @media (max-width: 768px){    
     .mobilemenu{
         display: block;

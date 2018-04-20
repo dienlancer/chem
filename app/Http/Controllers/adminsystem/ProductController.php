@@ -41,7 +41,7 @@ public function loadData(Request $request){
   $arrCategoryID[]=@$category_id;
   getStringCategoryID($category_id,$arrCategoryID,'category_product');        
   $query=DB::table('product')
-  ->join('category_product','product.category_id','=','category_product.id')  ;      
+  ->leftJoin('category_product','product.category_id','=','category_product.id')  ;      
   if(!empty(@$request->filter_search)){
     $query->where('product.fullname','like','%'.trim(@$request->filter_search).'%');
   }     
