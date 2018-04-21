@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 21, 2018 lúc 07:07 AM
+-- Thời gian đã tạo: Th4 21, 2018 lúc 07:48 AM
 -- Phiên bản máy phục vụ: 10.1.29-MariaDB
 -- Phiên bản PHP: 7.0.26
 
@@ -731,13 +731,13 @@ INSERT INTO `menu` (`id`, `fullname`, `alias`, `parent_id`, `menu_type_id`, `lev
 (375, 'Quy chế hoạt động', 'quy-che-hoat-dong', 0, 9, 0, '', 4, 1, '2018-02-28 07:26:27', '2018-02-28 07:26:27'),
 (376, 'Giới thiệu', 'gioi-thieu', 0, 9, 0, '', 5, 1, '2018-02-28 07:26:39', '2018-04-21 03:54:31'),
 (377, 'Liên hệ', 'lien-he', 0, 9, 0, '', 6, 1, '2018-02-28 07:26:56', '2018-02-28 07:27:00'),
-(406, 'Sản phẩm', 'nen-mua-may-tinh-xach-tay-cua-hang-nao', 0, 5, 0, '', 2, 1, '2018-03-04 12:48:56', '2018-03-19 10:34:58'),
-(407, 'Laptop', 'laptop', 406, 5, 1, '', 1, 1, '2018-03-04 12:49:11', '2018-03-04 12:49:11'),
-(408, 'Máy tính', 'may-tinh', 406, 5, 1, '', 2, 1, '2018-03-04 12:49:22', '2018-03-04 12:49:22'),
-(412, 'Phụ kiện máy tính', 'phu-kien-may-tinh', 406, 5, 1, '', 6, 1, '2018-03-04 12:50:11', '2018-03-04 12:50:11'),
-(413, 'Loa âm thanh', 'loa-am-thanh', 406, 5, 1, '', 7, 1, '2018-03-04 12:50:22', '2018-03-04 12:50:22'),
+(406, 'Sản phẩm', '', 0, 5, 0, '', 2, 1, '2018-03-04 12:48:56', '2018-04-21 05:30:26'),
+(407, 'Hương liệu thực phẩm', 'huong-lieu-thuc-pham', 406, 5, 1, '', 1, 1, '2018-03-04 12:49:11', '2018-04-21 05:30:40'),
+(408, 'Hương mặn', 'huong-man', 407, 5, 2, '', 1, 1, '2018-03-04 12:49:22', '2018-04-21 05:32:46'),
+(412, 'Hương ngọt', 'huong-ngot', 407, 5, 2, '', 2, 1, '2018-03-04 12:50:11', '2018-04-21 05:32:46'),
+(413, 'Màu thực phẩm', 'mau-thuc-pham', 406, 5, 1, '', 2, 1, '2018-03-04 12:50:22', '2018-04-21 05:33:32'),
 (414, 'Tin tức', 'tin-tuc', 0, 9, 0, '', 7, 1, '2018-03-19 11:41:25', '2018-04-21 03:53:44'),
-(415, 'Sản phẩm', 'doi-tac', 0, 1, 0, '', 2, 1, '2018-04-18 09:41:33', '2018-04-21 01:38:59'),
+(415, 'Sản phẩm', '', 0, 1, 0, '', 2, 1, '2018-04-18 09:41:33', '2018-04-21 05:30:01'),
 (416, 'Trang chủ', 'trang-chu', 0, 1, 0, '', 1, 1, '2018-04-18 09:42:20', '2018-04-21 01:38:52'),
 (417, 'Quy trình sản xuất', 'quy-trinh-san-xuat', 0, 1, 0, '', 3, 1, '2018-04-18 09:42:55', '2018-04-18 09:42:55'),
 (418, 'Đối tác', 'doi-tac', 0, 1, 0, '', 4, 1, '2018-04-18 09:43:16', '2018-04-18 09:43:16'),
@@ -807,7 +807,13 @@ INSERT INTO `menu` (`id`, `fullname`, `alias`, `parent_id`, `menu_type_id`, `lev
 (492, 'Chất bảo quản', 'chat-bao-quan', 0, 11, 0, '', 3, 1, '2018-04-20 09:33:52', '2018-04-20 09:33:52'),
 (493, 'Chất tạo ngọt', 'chat-tao-ngot', 0, 11, 0, '', 4, 1, '2018-04-20 09:34:37', '2018-04-20 09:34:37'),
 (494, 'Chất điều vị', 'chat-dieu-vi', 0, 11, 0, '', 5, 1, '2018-04-20 09:34:47', '2018-04-20 09:34:47'),
-(495, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', 0, 11, 0, '', 6, 1, '2018-04-20 09:35:00', '2018-04-20 09:35:00');
+(495, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', 0, 11, 0, '', 6, 1, '2018-04-20 09:35:00', '2018-04-20 09:35:00'),
+(496, 'Chất bảo quản', 'chat-bao-quan', 406, 5, 1, '', 3, 1, '2018-04-21 05:32:03', '2018-04-21 05:32:46'),
+(497, 'Chất tạo ngọt', 'chat-tao-ngot', 406, 5, 1, '', 4, 1, '2018-04-21 05:32:21', '2018-04-21 05:32:46'),
+(498, 'Chất điều vị', 'chat-dieu-vi', 406, 5, 1, '', 5, 1, '2018-04-21 05:33:04', '2018-04-21 05:33:11'),
+(499, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', 406, 5, 1, '', 6, 1, '2018-04-21 05:33:47', '2018-04-21 05:33:47'),
+(500, 'Chất tạo xốp', 'chat-tao-xop', 406, 5, 1, '', 7, 1, '2018-04-21 05:38:02', '2018-04-21 05:38:02'),
+(501, 'Chất làm đầy', 'chat-lam-day', 406, 5, 1, '', 8, 1, '2018-04-21 05:38:18', '2018-04-21 05:38:18');
 
 -- --------------------------------------------------------
 
@@ -1556,7 +1562,8 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (830, 1, 'BPEVxHCdwXX8QvqTQQ7rz2Bj8I5j1Ldz', '2018-04-19 20:56:33', '2018-04-19 20:56:33'),
 (831, 1, 'bgqn4cv8ik417S68XTUFHPGyGE8aKXtQ', '2018-04-20 18:13:40', '2018-04-20 18:13:40'),
 (832, 1, 'MTJoKlyX9bjToim4ePj04vp3cxkh0qta', '2018-04-20 18:37:33', '2018-04-20 18:37:33'),
-(833, 1, 'GxZiZYXeFl2GLJ1YPq0tsCjUQnc6QZ1S', '2018-04-20 20:22:20', '2018-04-20 20:22:20');
+(833, 1, 'GxZiZYXeFl2GLJ1YPq0tsCjUQnc6QZ1S', '2018-04-20 20:22:20', '2018-04-20 20:22:20'),
+(834, 1, 'JpFvbrdWGOsCrBwTL5brqCdu0ALnZ1UV', '2018-04-20 22:29:03', '2018-04-20 22:29:03');
 
 -- --------------------------------------------------------
 
@@ -2628,7 +2635,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `permissions`, `last_login`, `fullname`, `address`, `phone`, `image`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'diennk@dienkim.com', '$2y$10$nxBXFyAJNjPSLEI0RlPv8edQAw4ebTioV9JZaosCErs3VM/LYluuK', NULL, '2018-04-20 20:22:20', 'Nguyễn Kim Điền', NULL, NULL, 'logo-5-983456149.png', 6, 1, '2017-11-12 07:23:56', '2018-04-20 20:22:20'),
+(1, 'admin', 'diennk@dienkim.com', '$2y$10$nxBXFyAJNjPSLEI0RlPv8edQAw4ebTioV9JZaosCErs3VM/LYluuK', NULL, '2018-04-20 22:29:03', 'Nguyễn Kim Điền', NULL, NULL, 'logo-5-983456149.png', 6, 1, '2017-11-12 07:23:56', '2018-04-20 22:29:03'),
 (8, 'tiennv', 'tiennv@dienkim.com', '$2y$10$9sq3u.mDu/Bk1vvpv4sU7.Ior67wjHR5n1slgsv/sz63zBQxAfZ4K', NULL, '2018-02-23 01:16:10', 'Nguyễn Văn Tiến', '14 Tân Canh', '0988152782', NULL, 5, 0, '2018-02-05 20:06:26', '2018-02-23 01:16:10'),
 (9, 'vinhlt', 'vinhht@dienkim.com', '$2y$10$ib1fvlTyvQLoRQcVt.Qrt.VAZtN3lPSMWHwpoqYwx5OM/4/vSUE9q', NULL, '2018-02-04 11:57:07', 'Huỳnh Thúc Vinh', '23 Bùi Quang Là', '0988162722', NULL, 1, 0, '2018-02-04 05:35:55', '2018-02-04 11:57:07'),
 (14, 'phamduy', 'truonghuychuong1994@gmail.com', '$2y$10$j4aFmIopHHaRVXUSwKFIiOm59nc80jQzqfzEN58zTe87wWcgZHfJa', NULL, '2018-03-13 20:44:48', 'Phạm duy', NULL, NULL, NULL, 1, 1, '2018-03-13 19:46:01', '2018-03-13 20:44:48'),
@@ -3042,7 +3049,7 @@ ALTER TABLE `invoice_detail`
 -- AUTO_INCREMENT cho bảng `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=496;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=502;
 
 --
 -- AUTO_INCREMENT cho bảng `menu_type`
@@ -3078,7 +3085,7 @@ ALTER TABLE `payment_method`
 -- AUTO_INCREMENT cho bảng `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=834;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=835;
 
 --
 -- AUTO_INCREMENT cho bảng `photo`
