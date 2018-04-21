@@ -83,7 +83,7 @@ $seo=getSeo();
                     <h2>SẢN PHẨM MỚI ĐĂNG</h2>
                     <div class="zizakide">
                         <?php                                                 
-                        $spmd_source=App\ProductModel::whereRaw('status = 1')->orderBy('id','desc')->take(4)->select('id','fullname','alias','image')->get()->toArray();                        
+                        $spmd_source=App\ProductModel::whereRaw('status = 1')->orderBy('id','desc')->take(8)->select('id','fullname','alias','image')->get()->toArray();                        
                         if(count($spmd_source) > 0){
                             foreach ($spmd_source as $key => $value) {
                                 $spmd_id=$value['id'];
@@ -154,7 +154,10 @@ $seo=getSeo();
             		break;
             		case "hoa-don":                                                
             		?>@include("frontend.invoice")<?php
-            		break;                                        
+            		break;  
+                    case "contact":                                                
+                    ?>@include("frontend.contact")<?php
+                    break;                                        
             	}
             	?>
             </div>

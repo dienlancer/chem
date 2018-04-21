@@ -55,7 +55,7 @@ if(count($item) > 0){
                 					autoplay:true,                    
                 					loop:true,
                 					margin:2,                        
-                					nav:true,            
+                					nav:false,            
                 					mouseDrag: true,
                 					touchDrag: true,                                
                 					responsiveClass:true,
@@ -117,139 +117,14 @@ if(count($item) > 0){
                 	}   	
                 	echo $html_price;
                 	?>
-                </div>                
-                <div class="box-product-param">
-                	<!-- begin biến chung -->
-                	<?php 
-                    $query=\DB::table('category_param');
-                    $query->where('alias','<>','mau')->where('alias','<>','kich-thuoc')->where('parent_id','=',0);
-                    $father_data=$query->select('category_param.id','category_param.fullname','category_param.alias')
-                    ->groupBy('category_param.id','category_param.fullname','category_param.alias')
-                    ->orderBy('category_param.sort_order', 'asc')
-                    ->get()
-                    ->toArray();    
-                    $father_data=convertToArray($father_data);                  
-                    if(count($father_data) > 0){
-                        foreach ($father_data as $father_key => $father_value) {
-                            $father_id=$father_value['id'];     
-                            $father_alias=$father_value['alias'];
-                            $father_fullname=$father_value['fullname'];                            
-                            $children_data=App\CategoryParamModel::whereRaw('parent_id = ?',[(int)@$father_id])->select('id','alias','fullname','param_value')->orderBy('sort_order','asc')->get()->toArray();                       
-                            $arr_id=array();
-                            if(count($children_data) > 0){
-                                foreach ($children_data as $child_key => $child_value){
-                                    $arr_id[]=(int)@$child_value['id'];
-                                }
-                                $data_post_param=DB::table('post_param')
-                                    ->whereIn('post_param.param_id',$arr_id)
-                                    ->where('post_param.post_id',(int)@$id)
-                                    ->select('id')
-                                    ->get()
-                                    ->toArray();
-                                if(count($data_post_param) > 0){
-                                    ?>
-                                    <div class="padding-top-10">
-                                        <div class="col-sm-3"><b><?php echo $father_fullname; ?></b></div>
-                                        <div class="col-sm-9">
-                                            <?php 
-                                            foreach ($children_data as $child_key => $child_value) {
-                                                $data_post_param_2=App\PostParamModel::whereRaw('post_id = ? and param_id = ?',[(int)@$id,(int)@$child_value['id']])->select('id')->get()->toArray();
-                                                if(count($data_post_param_2) > 0){
-                                                    ?><div class="block-text"><?php echo $child_value['fullname']; ?></div><?php
-                                                }
-                                            }
-                                            ?>
-                                        </div> 
-                                        <div class="clr"></div>                 
-                                    </div>
-                                    <?php
-                                }
-                            }                            
-                        }                        
-                    }   
-                    ?>                
-                    <!-- end biến chung -->   
-                    <!-- begin màu -->
+                </div>      
+                <div class="margin-top-5 justify">
                     <?php 
-                    $father_data=App\CategoryParamModel::whereRaw('alias = ?',['mau'])->select('id')->orderBy('sort_order','asc')->get()->toArray();
-                    if(count($father_data) > 0){
-                        $children_data=App\CategoryParamModel::whereRaw('parent_id = ?',[(int)@$father_data[0]['id']])->select('id','alias','fullname','param_value')->orderBy('sort_order','asc')->get()->toArray();
-                        $arr_id=array();
-                        if(count($children_data) > 0){
-                            foreach ($children_data as $child_key => $child_value){
-                                $arr_id[]=(int)@$child_value['id'];
-                            }
-                            $data_post_param=DB::table('post_param')
-                            ->whereIn('post_param.param_id',$arr_id)
-                            ->where('post_param.post_id',(int)@$id)
-                            ->select('id')
-                            ->get()
-                            ->toArray();
-                            if(count($data_post_param) > 0){
-                                ?>
-                                <div class="margin-top-10">
-                                    <div class="col-sm-3"><b>Màu</b></div>
-                                    <div class="col-sm-9">
-                                        <?php 
-                                        foreach ($children_data as $child_key => $child_value) {
-                                            $data_post_param_2=App\PostParamModel::whereRaw('product_id = ? and param_id = ?',[(int)@$id,(int)@$child_value['id']])->select('id')->get()->toArray();
-                                            if(count($data_post_param_2) > 0){
-                                                ?><div class="block-color" style="background: <?php echo $child_value['param_value']; ?>"></div><?php
-                                            }
-                                        }
-                                        ?>
-                                    </div> 
-                                    <div class="clr"></div>                 
-                                </div>
-                                <?php
-                            }
+                        if(!empty($intro)) {
+                            echo $intro;
                         }
-                        ?>                  
-                        <?php
-                    }
-                    ?>                
-                    <!-- end màu -->  
-                    <!-- begin kích thước -->
-                    <?php 
-                    $father_data=App\CategoryParamModel::whereRaw('alias = ?',['kich-thuoc'])->select('id')->orderBy('sort_order','asc')->get()->toArray();
-                    if(count($father_data) > 0){
-                        $children_data=App\CategoryParamModel::whereRaw('parent_id = ?',[(int)@$father_data[0]['id']])->select('id','alias','fullname','param_value')->orderBy('sort_order','asc')->get()->toArray();
-                        $arr_id=array();
-                        if(count($children_data) > 0){
-                            foreach ($children_data as $child_key => $child_value){
-                                $arr_id[]=(int)@$child_value['id'];
-                            }
-                            $data_post_param=DB::table('post_param')
-                            ->whereIn('post_param.param_id',$arr_id)
-                            ->where('post_param.post_id',(int)@$id)
-                            ->select('id')
-                            ->get()
-                            ->toArray();
-                            if(count($data_post_param) > 0){
-                                ?>
-                                <div class="margin-top-10">
-                                    <div class="col-sm-3"><b>Kích thước</b></div>
-                                    <div class="col-sm-9">
-                                        <?php 
-                                        foreach ($children_data as $child_key => $child_value) {
-                                            $data_post_param_2=App\PostParamModel::whereRaw('product_id = ? and param_id = ?',[(int)@$id,(int)@$child_value['id']])->select('id')->get()->toArray();
-                                            if(count($data_post_param_2) > 0){
-                                                ?><div class="block-size"><?php echo $child_value['fullname']; ?></div><?php
-                                            }
-                                        }
-                                        ?>
-                                    </div> 
-                                    <div class="clr"></div>                 
-                                </div>
-                                <?php
-                            }
-                        }
-                        ?>                  
-                        <?php
-                    }
-                    ?>                
-                    <!-- end kích thước -->                	
-                </div>   
+                    ?>
+                </div>                          
                 <div class="margin-top-15">
                     <a href="javascript:void(0);" data-toggle="modal" data-target="#modal-alert-add-cart"  onclick="addToCart(document.forms['frm-product-detail']);" class="add-to-cart"><i class="fas fa-shopping-cart"></i><span class="margin-left-15">Mua ngay</span>
                     </a>                    
@@ -367,7 +242,7 @@ if(count($item) > 0){
                 <div class="clr"></div>           
             </div>
             <div id="thong-tin" class="tabcontent">
-               <div class="margin-top-15">
+               <div class="margin-top-15 justify">
                 <?php
                 if(!empty($detail)){
                     echo $detail; 

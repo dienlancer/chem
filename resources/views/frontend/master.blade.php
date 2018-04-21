@@ -159,6 +159,9 @@ if(count($arrCart) > 0){
 	<link rel="stylesheet" href="{{ asset('public/frontend/css/jquery.dataTables.min.css') }}" />
 	<script src="{{ asset('public/frontend/js/table-library.js') }}"></script>    
 	<!-- end datatables -->
+	<!-- begin quick alo phone -->
+	<link rel="stylesheet" href="{{ asset('public/frontend/css/alo-phone.css') }}" />
+	<!-- end quick alo phone -->
 	<!-- begin youtube -->    
 	<script src="{{ asset('public/frontend/js/jquery-modal-video.min.js') }}"></script>
 	<script src="{{ asset('public/frontend/js/modal-video.min.js') }}"></script>
@@ -376,7 +379,7 @@ if(count($arrCart) > 0){
 						<div class="margin-top-5 kipha">
 							<div><b><font color="#700000"><i class="fas fa-phone-volume"></i></font></b></div>
 							<div class="margin-left-5"><b><font color="#ff0000">Hotline</font></b> </div>
-							<div class="margin-left-5"><b><font color="#ff0000">0988162733</font></b></div>
+							<div class="margin-left-5"><b><font color="#ff0000"><?php echo @$telephone; ?></font></b></div>
 						</div>
 					</div>			
 				</div>
@@ -385,6 +388,102 @@ if(count($arrCart) > 0){
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
+					<div class="timex relative">
+						<a href="javascript:void(0);" class="tem-cart"><i class="fas fa-cart-arrow-down"></i></a>
+						<?php
+						$class_cart_box='ridoo'; 
+						$ssName="vmart";
+						$arrCart=array();
+						if(Session::has($ssName)){
+							$arrCart=Session::get($ssName);  
+							ksort($arrCart);  
+						}
+						if(count($arrCart) > 0){
+							$class_cart_box='nadoo';
+						}                       
+						?>
+						<div class="leem <?php echo $class_cart_box; ?>">
+							<form name="frm-product-top"  method="POST" enctype="multipart/form-data">
+								{{ csrf_field() }}                                        
+								<div class="margin-top-5 x-table-cart">
+									<?php                         
+									if(Session::has($ssName)){
+										$arrCart=Session::get($ssName);  
+										ksort($arrCart);  
+										if(count($arrCart) > 0){    
+											?>
+											<table  class="com_product16" cellpadding="0" cellspacing="0" width="100%">
+
+												<tbody>
+													<?php 
+													foreach ($arrCart as $cart_key => $cart_value) {
+														$cart_product_id=$cart_value['product_id'];
+														$cart_product_code=$cart_value['product_code'];
+														$cart_product_name=$cart_value['product_name'];
+														$cart_product_alias=$cart_value['product_alias'];
+														$cart_product_link               =   route('frontend.index.index',[$cart_product_alias]);    
+														$cart_product_image=$cart_value['product_image'];
+														$cart_product_price_text         =   fnPrice($cart_value["product_price"]);
+														$cart_product_total_price_text   =   fnPrice($cart_value["product_total_price"]);
+														$cart_product_quantity           =   $cart_value["product_quantity"];
+														$cart_img=get_product_thumbnail($cart_product_image);                                        
+														?>      
+														<tr pro_id=<?php echo $cart_product_id; ?> >            
+															<td class="com_product20" ><img src="<?php echo $cart_img; ?>" ></td>
+
+															<td align="left" class="com_product22">
+																<div><a href="<?php echo $cart_product_link; ?>"><?php echo $cart_product_name; ?></a></div>
+																<div><input  type="text" onkeypress="return isNumberKey(event)" onblur='changeTotalPrice(this);' value="<?php echo $cart_product_quantity; ?>" size="4" class="com_product19" name="quantity[<?php echo $cart_product_id; ?>]">      </div>  
+															</td>
+															<td align="right" class="com_product23" >
+																<div class="tt-pri"><?php echo $cart_product_total_price_text; ?></div>
+																<div><a href="javascript:void(0);" onclick="deleteRowCart(this);"><i class="fa fa-trash" aria-hidden="true"></i><span class="margin-left-5">Xóa</span></a></div>
+															</td>                                            
+														</tr>                          
+														<?php
+													}         
+													?>
+												</tbody>
+											</table>           
+											<?php                                                                   
+										}
+									}                     
+									?>                
+								</div>    
+								<?php                           
+								$style_ttkh='';
+								if(count($arrCart) > 0){
+									$style_ttkh='block';
+								}else{
+									$style_ttkh='none';
+								}                
+								?>            								
+								<div class="note"  style="display: none;"></div>
+								<div class="margin-top-15 tbl-ttkh" style="display: <?php echo $style_ttkh; ?>">
+									<div class="ttkh">Thông tin khách hàng</div>
+									<div class="margin-top-15">
+										<input type="text" class="ttkh-text" name="customer_name" value="" placeholder="Tên người nhận">
+									</div>
+									<div class="margin-top-15">
+										<input type="text" class="ttkh-text" name="customer_phone" value="" placeholder="Số điện thoại">
+									</div>
+									<div class="margin-top-15">
+										<input type="text" class="ttkh-text" name="customer_address" value="" placeholder="Địa chỉ">
+									</div>
+									<div class="margin-top-15">
+										<input type="text" class="ttkh-text" name="customer_email" value="" placeholder="Email">
+									</div>
+									<div class="margin-top-15">
+										<input type="text" class="ttkh-text" name="customer_note" value="" placeholder="Ghi chú: Màu sắc, thời gian giao hàng,...">
+									</div>
+									<div class="margin-top-15">
+										<a href="javascript:void(0);" onclick="checkout(this);" class="kh-checkout_2">Thanh toán</a>
+										<a href="<?php echo url('/'); ?>" class="kh-mua-them_2">Mua thêm</a>
+									</div>
+								</div>                                                                   
+							</form>           
+						</div>
+					</div>	
 					<div class="rafaen">
 						<?php     
 						$args = array(                         
@@ -404,7 +503,8 @@ if(count($arrCart) > 0){
 						);                    
 						wp_nav_menu($args);
 						?>       
-					</div>					
+					</div>
+
 				</div>
 			</div>
 		</div>			
@@ -449,6 +549,28 @@ if(count($arrCart) > 0){
 	</header>
 	@yield("content")
 	@include("frontend.footer")
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+			s1.async=true;
+			s1.src='https://embed.tawk.to/5ad8d8b4227d3d7edc241f50/default';
+			s1.charset='UTF-8';
+			s1.setAttribute('crossorigin','*');
+			s0.parentNode.insertBefore(s1,s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
+	<!-- begin quick alo phone -->
+	<div class="quick-alo-phone quick-alo-green quick-alo-show" id="quick-alo-phoneIcon" style="left: 10px; top: 20%;">
+		<a href="tel:<?php echo $telephone; ?>" title="Liên hệ nhanh">
+			<div class="quick-alo-ph-circle"></div>
+			<div class="quick-alo-ph-circle-fill"></div>
+			<div class="quick-alo-ph-img-circle"></div>
+		</a>
+	</div>
+	<!-- end quick alo phone -->
 </body>
 </html>
 

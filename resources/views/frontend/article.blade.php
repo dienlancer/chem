@@ -35,7 +35,7 @@ if(count($item) > 0){
 		$category_name=implode(' / ', $arr_category_name);		
 	}		
 	?>	
-	<div class="margin-top-15 box-article">
+	<div class="margin-top-10 box-article">
 		<h1 class="tieu-de-bai-viet">
 			<?php echo $title; ?>		
 		</h1>

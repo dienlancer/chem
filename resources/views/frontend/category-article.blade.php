@@ -1,4 +1,4 @@
-<form method="post" class="frm margin-top-15" name="frm">
+<form method="post" class="frm margin-top-10" name="frm">
 	<input type="hidden" name="filter_page" value="1">         
 	{{ csrf_field() }}		
 	<?php 			
