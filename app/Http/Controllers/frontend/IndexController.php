@@ -110,20 +110,16 @@ class IndexController extends Controller {
       }      
     }                 
     $arr_category_id=array();
-    if(isset($request->category_id)){   
-      if(!empty($request->category_id)){
+    if(!empty(@$request->category_id)){
         $category_id    = $request->category_id;              
         $arr_category_id[]=$category_id;      
         getStringCategoryID($category_id,$arr_category_id,'category_product');      
         $query->whereIn('product.category_id', $arr_category_id);        
         $category=CategoryProductModel::find($category_id);       
-      }         
     }    
-    if(isset($request->q)){
-      if(!empty($request->q)){
+    if(!empty($request->q)){
         $q=@$request->q;
         $query->where('product.fullname','like', '%'.trim(@$q).'%');
-      }      
     }      
 
     $query->where('product.status',1);    
@@ -283,8 +279,7 @@ class IndexController extends Controller {
         $category     = $category[0];
         $category_id    = $category['id'];        
         $arr_category_id[]=(int)@$category_id;        
-
-        getStringCategoryID($category_id,$arr_category_id,'category_product');    
+        getStringCategoryID($category_id,$arr_category_id,'category_product');            
         $query=DB::table('product')                      
                 ->whereIn('product.category_id', $arr_category_id)
                 ->where('product.status',1)  ;
@@ -292,7 +287,7 @@ class IndexController extends Controller {
         $data=convertToArray($data);
 
         $totalItems=count($data);
-        $totalItemsPerPage=(int)$setting['product_perpage']['field_value']; 
+        $totalItemsPerPage=(int)@$setting['product_perpage']['field_value']; 
         $pageRange=$this->_pageRange;
         if(!empty(@$request->filter_page)){
           $currentPage=@$request->filter_page;

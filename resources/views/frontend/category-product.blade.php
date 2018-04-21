@@ -1,4 +1,4 @@
-<form method="post" class="frm margin-top-15" name="frm">
+<form method="post" class="frm margin-top-10" name="frm">
 	<input type="hidden" name="filter_page" value="1">         
 	{{ csrf_field() }}	
 	<?php 	
@@ -7,7 +7,7 @@
 	$seo_title=$seo["title"];
 	$seo_meta_keyword=$seo["meta_keyword"];
 	$seo_meta_description=$seo["meta_description"];	
-	if(count($category) > 0){
+	if(@$category != null){
 		$breadcrumb= getBreadCrumbCategoryProduct(@$category);		
 		?>
 		<h1 style="display: none;"><?php echo @$category['fullname']; ?></h1>
@@ -47,7 +47,7 @@
 					$html_price='<span class="price-on">'.fnPrice($product_price).'</span>' ;                  
 				}   					
 				?>
-				<div class="col-sm-3 no-padding">
+				<div class="col-sm-4 no-padding">
 					<div class="box-product box-product-rian">
 						<div class="box-product-img">
 							<center><figure><a href="<?php echo $product_permalink; ?>"><img src="<?php echo $product_img; ?>"></a></figure></center>
@@ -59,7 +59,7 @@
 					</div>
 				</div>
 				<?php			
-				if($k%4==0 || $k==count($items)){
+				if($k%3==0 || $k==count($items)){
 					echo '<div class="clr"></div>';
 				}
 				$k++;

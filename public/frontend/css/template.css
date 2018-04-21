@@ -664,7 +664,7 @@ footer{
 }
 .tieu-de-bai-viet{
     font-size: 15px;
-    color:#0c62ad;
+    color:#067A1E;
     font-weight: bold;
     padding-top: 15px;
 }
@@ -699,7 +699,7 @@ footer{
     margin-right: 10px;
 }
 .breadcrumb-title a{
-    color: #0c62ad;
+    color: #067A1E;
 }
 .article-excerpt{
     color: #000000;
@@ -999,7 +999,7 @@ div.ducati  h2{
 .product-detail-title{
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 13px;
 }
 .product-price{
     border-top: 1px solid #d8d8d8;
@@ -2014,7 +2014,7 @@ form[name='frm-search'] input[name='q']{
 .pdetail-price-on{
         color: #F00;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
 }
 .ridoo{
     display: none;

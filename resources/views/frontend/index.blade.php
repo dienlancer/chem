@@ -103,13 +103,60 @@ $seo=getSeo();
                 </div>                                 
             </div>        
             <div class="col-lg-6">
-                <?php 
-                switch ($component) {
-                    case 'home':
-                        ?>@include("frontend.home")<?php                     
-                        break;                    
-                }
-                ?>
+            	<?php 
+            	switch ($component) {
+            		case 'home':
+            		?>@include("frontend.home")<?php                     
+            		break;  
+            		case "category-article":    
+            		case "articles":                                                                          
+            		?>@include("frontend.category-article")<?php
+            		break;                                         
+            		case "article":                                                            
+            		?>@include("frontend.article")<?php
+            		break;                
+            		case "page":                                                            
+            		?>@include("frontend.page")<?php
+            		break;            
+            		case "search-product":             
+            		case "category-product":                                       
+            		?>@include("frontend.category-product")<?php
+            		break; 
+            		case "product":                                                
+            		?>@include("frontend.product")<?php
+            		break;
+            		case "gio-hang":                                                
+            		?>@include("frontend.cart")<?php
+            		break; 
+            		case "register":                                                
+            		?>@include("frontend.register")<?php
+            		break;
+            		case "account":                                                
+            		?>@include("frontend.account")<?php
+            		break;
+            		case "login":                                                
+            		?>@include("frontend.login")<?php
+            		break;
+            		case "login-join-project":                                                
+            		?>@include("frontend.login-join-project")<?php
+            		break;
+            		case "security":                                                
+            		?>@include("frontend.security")<?php
+            		break;
+            		case "xac-nhan-thanh-toan":                                                
+            		?>@include("frontend.confirm-checkout")<?php
+            		break;
+            		case "dang-nhap-thanh-toan":                                                
+            		?>@include("frontend.login-checkout")<?php
+            		break;
+            		case "hoan-tat-thanh-toan":                                                
+            		?>@include("frontend.finished-checkout")<?php
+            		break;
+            		case "hoa-don":                                                
+            		?>@include("frontend.invoice")<?php
+            		break;                                        
+            	}
+            	?>
             </div>
             <div class="col-lg-3">
                 <div class="cate-product-horizontal-right">

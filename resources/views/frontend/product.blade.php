@@ -9,8 +9,8 @@ if(count($item) > 0){
 
 	$intro=$item["intro"];
 	$detail=$item['detail'];
-    $technical_detail=$item['technical_detail'];  
-    $video_id=$item['video_id'];
+    
+    
 	$small_img=get_product_thumbnail($item['image']);
 	$large_img=asset('upload/'.$item['image']) ;
 	/* begin cập nhật count view */
@@ -36,7 +36,7 @@ if(count($item) > 0){
 	$breadcrumb= getBreadCrumbCategoryProduct($dataCategory);	
     ?>    
     
-        <div class="breadcrumb-title margin-top-15">
+        <div class="breadcrumb-title margin-top-10">
             <?php echo $breadcrumb; ?>
         </div>        	           
             <div class="col-lg-4 no-padding-left">
@@ -67,7 +67,7 @@ if(count($item) > 0){
                 							items:1
                 						},
                 						1000:{
-                							items:4
+                							items:3
                 						}
                 					}
                 				});
@@ -303,8 +303,7 @@ if(count($item) > 0){
                         }                     
                         ?>                
                     </div>    
-                    <?php                           
-                        
+                    <?php                                                   
                     $style_ttkh='';
                     if(count($arrCart) > 0){
                         $style_ttkh='block';
@@ -361,8 +360,8 @@ if(count($item) > 0){
             </script>       
             <div class="tab">
                 <button class="tablinks h-title" onclick="openCity(event, 'thong-tin')">Thông tin</button>
-                <button class="tablinks h-title" onclick="openCity(event, 'technical')">Thông số kỹ thuật</button>               
-                <button class="tablinks h-title" onclick="openCity(event, 'video')">Video</button>
+                
+                
                               
                 <button class="tablinks h-title" onclick="openCity(event, 'comments')">Bình luận</button>                                 
                 <div class="clr"></div>           
@@ -376,28 +375,8 @@ if(count($item) > 0){
                 ?>                   
                </div>
             </div>
-            <div id="technical" class="tabcontent">
-                <div class="margin-top-15">
-                    <?php
-                    if(!empty($technical_detail)){
-                        echo $technical_detail; 
-                    }                 
-                    ?>
-                        
-                    </div>
-            </div>          
-            <div id="video" class="tabcontent">
-                <div class="margin-top-15">
-                    <?php 
-                    if(!empty($video_id)){
-                        ?>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $video_id; ?>?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                        <?php 
-                    }
-                    ?>
+            
                     
-                </div> 
-            </div>                
             <div id="comments" class="tabcontent">
                 <div class="margin-top-15">
                     <div class="fb-comments" data-href="<?php echo $permalink; ?>" data-numposts="10"></div>
@@ -406,7 +385,7 @@ if(count($item) > 0){
         </div>        
         <?php              
         $category_id=$item['category_id'];               
-        $dataProduct=DB::table('product')                        
+        $source_related_product=DB::table('product')                        
         ->select('product.id','product.alias','product.fullname','product.image','product.intro','product.price','product.sale_price')
         ->where('product.category_id', $category_id)
         ->where('product.id','<>',(int)@$id)
@@ -415,8 +394,8 @@ if(count($item) > 0){
         ->orderBy('product.created_at', 'desc')                
         ->get()
         ->toArray();         
-        $dataProduct=convertToArray($dataProduct);     
-        if(count($dataProduct) > 0){
+        $source_related_product=convertToArray($source_related_product);     
+        if(count($source_related_product) > 0){
         	?>
         	<div class="margin-top-15 product-detail-content">
         		Sản phẩm liên quan
@@ -434,13 +413,13 @@ if(count($item) > 0){
         					responsiveClass:true,
         					responsive:{
         						0:{
-        							items:1
+        							items:3
         						},
         						600:{
-        							items:1
+        							items:3
         						},
         						1000:{
-        							items:4
+        							items:3
         						}
         					}
         				});
@@ -452,7 +431,7 @@ if(count($item) > 0){
         		</script>
         		<div class="owl-carousel prodetail owl-theme">
         			<?php 
-        			foreach($dataProduct as $key => $value){
+        			foreach($source_related_product as $key => $value){
         				$pdetail_id=$value['id'];
         				$pdetail_alias=$value['alias'];
         				$pdetail_fullname=$value['fullname'];
