@@ -364,7 +364,7 @@ if(count($arrCart) > 0){
 					<div class="fapto">
 						<center>
 							<a href="<?php echo url('/'); ?>">                
-								<img src="<?php echo $seo_logo_frontend;?>" />
+								<img src="<?php echo $seo_logo_frontend;?>" width="209" />
 							</a>
 						</center>	
 					</div>
