@@ -125,10 +125,7 @@ h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:0;}
 .no-margin-left{
     margin-left: 0;
 }
-.relative{
-    position: relative;
-    
-}
+
 .justify{
     text-align: justify;
 }
@@ -216,15 +213,7 @@ div.opacity-absolute::before{
     content: "";
     opacity: .5;
 }
-ul.inline-block{
-    list-style: none;
-}
-ul.inline-block > li{
-    display: inline-block;
-}
-ul.list-style-none{
-    list-style: none;
-}
+
 .pagination{
     margin: 0
 }
@@ -1508,12 +1497,11 @@ div.ducati  h2{
     margin: 5px 0px;
 }
 form[name='frm-search']{
-    position: absolute;
-    top: 0;
-    right:0;
+        position: absolute;
+    top: 5px;
+    right: 15px;
     background: #A9C342;
     padding: 5px 5px;
-    display: flex;
 }
 .bg-menu{
     background: #1F3B73;
@@ -1866,7 +1854,7 @@ ul.bankList {
     height: 100%;
 }
 form[name='frm-search'] a{
-        padding: 5px 10px 5px 10px;
+        padding:4px 10px 4px 10px;
     font-size: 14px;
     background: #e74142;
     color: #ffffff;
@@ -2136,7 +2124,16 @@ header{
 .supper-cart{
     float: right;
 }
-@media (max-width: 768px){    
+.rikatua{
+    float: left;
+}
+.duamia{
+    float: right;
+}
+@media (max-width: 768px){   
+    .rafaen{
+        display: none;
+    } 
     .cate-product{
         display: none;
     }
@@ -2153,9 +2150,7 @@ header{
     }
     .timex{
         display: none;
-    }
-
-    
+    }    
     div.tab button{
         font-size: 13px;
         margin-right: 30px;

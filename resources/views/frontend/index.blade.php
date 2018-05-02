@@ -45,8 +45,8 @@ $seo=getSeo();
                         </div>
                         <form action="<?php echo route('frontend.index.search'); ?>" method="post" name="frm-search" >
                             {{ csrf_field() }}
-                            <div><input type="text" name="q" autocomplete="off" placeholder="Tìm kiếm sản phẩm" value=""></div>
-                            <div><a href="javascript:void(0);" onclick="document.forms['frm-search'].submit();">Tìm kiếm</a></div>
+                            <div class="rikatua"><input type="text" name="q" autocomplete="off" placeholder="Tìm kiếm sản phẩm" value=""></div>
+                            <div class="duamia"><a href="javascript:void(0);" onclick="document.forms['frm-search'].submit();">Tìm kiếm</a></div>
                         </form>
                     </div>                  
                     <?php
