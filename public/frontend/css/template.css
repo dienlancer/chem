@@ -971,9 +971,7 @@ div.ducati  h2{
     right: 0;
     top: -39px;
 }
-.connected-social li{
-    margin-left: 0;
-}
+
 .box-inner-content{
     background: #ffffff;
     padding-bottom: 15px;
@@ -2129,6 +2127,9 @@ header{
 }
 .duamia{
     float: right;
+}
+.connected-social li{
+    display: inline-block;
 }
 @media (max-width: 768px){   
     .rafaen{
