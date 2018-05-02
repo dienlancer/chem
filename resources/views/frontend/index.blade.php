@@ -64,7 +64,7 @@ $seo=getSeo();
                 <?php     
                 $args = array(                         
                     'menu_class'            => 'cateprodhorizontalright',                                        
-                    'before_wrapper'        => '<div class="cate-product-horizontal-right">',
+                    'before_wrapper'        => '<div class="cate-product-horizontal-right cate-product">',
                     'before_title'          => '<h2>',
                     'after_title'           => '</h2>',
                     'before_wrapper_ul'     =>  '<div>',

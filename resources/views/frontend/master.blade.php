@@ -369,10 +369,10 @@ if(count($arrCart) > 0){
 						</center>	
 					</div>
 					<div class="faptap">
-						<div class="slogan-1">CÔNG TY TNHH XNK SÀI GÒN CHEM</div>
+						<div class="slogan-1">CÔNG TY CỔ PHẦN KAIZEN FOODS</div>
 						<hr class="mikae margin-top-5" />
-						<div class="slogan-1 margin-top-5">SÀI GÒN CHEMICALS</div>
-						<div class="cchc">Nhà cung cấp hóa chất uy tín hàng đầu</div>
+						<!--<div class="slogan-1 margin-top-5">KAIZEN FOODS</div>-->
+						<div class="cchc">Thanh mát cơ thể sáng đẹp làn da</div>
 						<div class="margin-top-5 kipha">
 							<div><b><font color="#700000"><i class="fas fa-phone-volume"></i></font></b></div>
 							<div class="margin-left-5"><b><font color="#ff0000">Hotline</font></b> </div>

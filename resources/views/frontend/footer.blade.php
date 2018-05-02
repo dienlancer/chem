@@ -13,13 +13,10 @@
 				?>		
 				<div class="margin-top-25">
 					<div>
-
-							<a href="<?php echo url('/'); ?>">                
-								<img src="<?php echo $seo_logo_frontend;?>" />
-							</a>
-						
-					</div>	
-					<div ><?php echo $fullname; ?></div>
+						<a href="<?php echo url('/'); ?>">                
+								<img src="<?php echo $seo_logo_frontend;?>" width="150" />
+							</a>					
+					</div>						
 					<div class="tialia margin-top-15">
 						<?php echo $content; ?>
 					</div>					

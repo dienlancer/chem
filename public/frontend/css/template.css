@@ -2137,6 +2137,9 @@ header{
     float: right;
 }
 @media (max-width: 768px){    
+    .cate-product{
+        display: none;
+    }
     .mobilemenu{
         display: block;
         background: #ffffff;
@@ -2173,5 +2176,8 @@ header{
     .cot-1 a {color: #004A8F;font-size: 15px}
     .pdetail-price-detail-on{
         font-size: 13px;
+    }
+    .form[name='frm-search'] a{
+        padding: 5px 10px 5px 10px;
     }
 }
