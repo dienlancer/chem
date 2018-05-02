@@ -137,10 +137,10 @@ figure:hover img{-webkit-transform:scale3d(1.2, 1.2, 1);transform:scale3d(1.2, 1
     display: none;
 }
 .navbar-default {
-    background-color:#86C127;
-    border-top:1px solid #78b21b;
-    border-left:1px solid #78b21b;
-    border-right:1px solid #78b21b;
+    background-color:#258941;
+    border-top:1px solid #1e883c;
+    border-left:1px solid #1e883c;
+    border-right:1px solid #1e883c;
 }
 .navbar-default .navbar-toggle {
     border-color: #ffffff;
@@ -149,14 +149,14 @@ figure:hover img{-webkit-transform:scale3d(1.2, 1.2, 1);transform:scale3d(1.2, 1
     background-color: #ffffff;
 }
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
-    background-color:#86C127;
+    background-color:#1e883c;
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
-    border-top:1px solid #78b21b;
+    border-top:1px solid #1e883c;
 }
 .navbar-default .navbar-nav > li > a {
     color: #ffffff;
-    border-bottom:1px solid #78b21b;
+    border-bottom:1px solid #1e883c;
     padding-left:15px;
     padding-right: 15px;
     font-size: 16px;
@@ -2131,7 +2131,26 @@ header{
 .connected-social li{
     display: inline-block;
 }
+.category-right{
+    display: none;
+}
 @media (max-width: 768px){   
+    .category-left{
+        display: none;
+    }
+    .category-right{
+        display: block;
+    }
+    .fapto{
+        width: 100%;
+    }
+    .slogan-1,.cchc{
+        text-align: center;
+    }
+    .kipha{
+        justify-content: center;
+    }
+
     .rafaen{
         display: none;
     } 
@@ -2161,6 +2180,7 @@ header{
         margin-right: 0;
         width: 100%;
     }
+
 }
 
 @media (max-width: 576px){
@@ -2168,6 +2188,16 @@ header{
         width: auto;
         background:none;
         
+    }
+    form[name='frm-search']{
+        position: relative;
+        right: 0;
+    }
+    form[name='frm-search'] a{
+        padding: 4px 4px 4px 4px;
+    }
+    .slideshow{
+        display: none;
     }
     .cot-1 a {color: #004A8F;font-size: 15px}
     .pdetail-price-detail-on{

@@ -47,6 +47,7 @@ $seo=getSeo();
                             {{ csrf_field() }}
                             <div class="rikatua"><input type="text" name="q" autocomplete="off" placeholder="Tìm kiếm sản phẩm" value=""></div>
                             <div class="duamia"><a href="javascript:void(0);" onclick="document.forms['frm-search'].submit();">Tìm kiếm</a></div>
+                            <div class="clr"></div>
                         </form>
                     </div>                  
                     <?php
@@ -79,7 +80,7 @@ $seo=getSeo();
                 );                    
                 wp_nav_menu($args);
                 ?>    
-                <div class="cate-product-horizontal-right">
+                <div class="cate-product-horizontal-right category-left">
                     <h2>SẢN PHẨM MỚI ĐĂNG</h2>
                     <div class="zizakide">
                         <?php                                                 
@@ -184,6 +185,28 @@ $seo=getSeo();
                         ?>                        
                     </div>
                 </div>  
+                <div class="cate-product-horizontal-right category-right">
+                    <h2>SẢN PHẨM MỚI ĐĂNG</h2>
+                    <div class="zizakide">
+                        <?php                                                 
+                        $spmdr_source=App\ProductModel::whereRaw('status = 1')->orderBy('id','desc')->take(8)->select('id','fullname','alias','image')->get()->toArray();                        
+                        if(count($spmdr_source) > 0){
+                            foreach ($spmdr_source as $key => $value) {
+                                $spmdr_id=$value['id'];
+                                $spmdr_fullname=$value['fullname'];
+                                $spmdr_permalink=route('frontend.index.index',[$value['alias']]);
+                                $spmdr_featured_img=get_product_thumbnail($value['image']);
+                                ?>
+                                <div class="npan">
+                                    <div class="col-xs-4"><img src="<?php echo $spmdr_featured_img; ?>" /></div>
+                                    <div class="col-xs-8 no-padding-left"><a href="<?php echo $spmdr_permalink; ?>"><?php echo $spmdr_fullname; ?></a></div>
+                                </div>
+                                <?php
+                            }
+                        }                        
+                        ?>                        
+                    </div>
+                </div>
                 <div class="cate-product-horizontal-right">
                     <h2>HỖ TRỢ TRỰC TUYẾN</h2>
                     <?php 
