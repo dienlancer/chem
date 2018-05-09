@@ -349,10 +349,11 @@ Route::group(["prefix"=>"adminsystem","middleware"=>"TestLogin"],function(){
 		Route::post("load-data",["as"=>"adminsystem.media.loadData","uses"=>"adminsystem\MediaController@loadData"]);		
 		Route::get("form/{task}/{id?}",["as"=>"adminsystem.media.getForm","uses"=>"adminsystem\MediaController@getForm"]);
 		Route::post("save",["as"=>"adminsystem.media.save","uses"=>"adminsystem\MediaController@save"]);
+		Route::post("saveSummerFile",["as"=>"adminsystem.media.saveSummerFile","uses"=>"adminsystem\MediaController@saveSummerFile"]);
 		Route::post("delete-item",["as"=>"adminsystem.media.deleteItem","uses"=>"adminsystem\MediaController@deleteItem"]);				
 		Route::post("trash",["as"=>"adminsystem.media.trash","uses"=>"adminsystem\MediaController@trash"]);		
 		
-	});		
+	});			
 	Route::group(["prefix"=>"group-member"],function(){		
 		Route::get("list",["as"=>"adminsystem.group-member.getList","uses"=>"adminsystem\GroupMemberController@getList"]);
 		Route::post("load-data",["as"=>"adminsystem.group-member.loadData","uses"=>"adminsystem\GroupMemberController@loadData"]);		
@@ -422,14 +423,5 @@ Route::group(["prefix"=>"invoice"],function(){
 		Route::post("trash",["as"=>"frontend.invoice.trash","uses"=>"frontend\InvoiceController@trash"]);
 	});
 
-Route::group(["prefix"=>"media"],function(){		
-	Route::get("list",["as"=>"frontend.media.getList","uses"=>"frontend\MediaController@getList"]);
-	Route::post("load-data",["as"=>"frontend.media.loadData","uses"=>"frontend\MediaController@loadData"]);		
-	Route::get("form/{task}/{id?}",["as"=>"frontend.media.getForm","uses"=>"frontend\MediaController@getForm"]);
-	Route::post("save",["as"=>"frontend.media.save","uses"=>"frontend\MediaController@save"]);
-	Route::post("delete-item",["as"=>"frontend.media.deleteItem","uses"=>"frontend\MediaController@deleteItem"]);				
-	Route::post("trash",["as"=>"frontend.media.trash","uses"=>"frontend\MediaController@trash"]);		
-	
-});
 
 ?>
