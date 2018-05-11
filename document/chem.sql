@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 07, 2018 lúc 09:57 AM
--- Phiên bản máy phục vụ: 10.1.29-MariaDB
--- Phiên bản PHP: 7.0.26
+-- Host: 127.0.0.1
+-- Generation Time: May 11, 2018 at 05:07 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.1.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `chem`
+-- Database: `chem`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `activations`
+-- Table structure for table `activations`
 --
 
 DROP TABLE IF EXISTS `activations`;
@@ -40,7 +40,7 @@ CREATE TABLE `activations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `activations`
+-- Dumping data for table `activations`
 --
 
 INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`, `created_at`, `updated_at`) VALUES
@@ -59,7 +59,7 @@ INSERT INTO `activations` (`id`, `user_id`, `code`, `completed`, `completed_at`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `album`
+-- Table structure for table `album`
 --
 
 DROP TABLE IF EXISTS `album`;
@@ -79,7 +79,7 @@ CREATE TABLE `album` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `article`
+-- Table structure for table `article`
 --
 
 DROP TABLE IF EXISTS `article`;
@@ -101,7 +101,7 @@ CREATE TABLE `article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `article`
+-- Dumping data for table `article`
 --
 
 INSERT INTO `article` (`id`, `fullname`, `alias`, `image`, `intro`, `content`, `description`, `meta_keyword`, `meta_description`, `count_view`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -121,7 +121,7 @@ INSERT INTO `article` (`id`, `fullname`, `alias`, `image`, `intro`, `content`, `
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `article_category`
+-- Table structure for table `article_category`
 --
 
 DROP TABLE IF EXISTS `article_category`;
@@ -134,7 +134,7 @@ CREATE TABLE `article_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `article_category`
+-- Dumping data for table `article_category`
 --
 
 INSERT INTO `article_category` (`id`, `article_id`, `category_id`, `created_at`, `updated_at`) VALUES
@@ -154,7 +154,7 @@ INSERT INTO `article_category` (`id`, `article_id`, `category_id`, `created_at`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `banner`
+-- Table structure for table `banner`
 --
 
 DROP TABLE IF EXISTS `banner`;
@@ -172,7 +172,7 @@ CREATE TABLE `banner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `banner`
+-- Dumping data for table `banner`
 --
 
 INSERT INTO `banner` (`id`, `category_id`, `caption`, `alt`, `image`, `page_url`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -186,7 +186,7 @@ INSERT INTO `banner` (`id`, `category_id`, `caption`, `alt`, `image`, `page_url`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_article`
+-- Table structure for table `category_article`
 --
 
 DROP TABLE IF EXISTS `category_article`;
@@ -205,16 +205,16 @@ CREATE TABLE `category_article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_article`
+-- Dumping data for table `category_article`
 --
 
 INSERT INTO `category_article` (`id`, `fullname`, `meta_keyword`, `meta_description`, `alias`, `parent_id`, `image`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
-(4, 'Tin tức', 'metakeyword Tin tức', 'metadescription Tin tức', 'tin-tuc', 0, NULL, 1, 1, '2017-12-18 02:17:10', '2018-04-20 05:20:53');
+(4, 'Tin tức thị trường', 'metakeyword Tin tức', 'metadescription Tin tức', 'tin-tuc-thi-truong', 0, NULL, 1, 1, '2017-12-18 02:17:10', '2018-05-11 14:27:32');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_banner`
+-- Table structure for table `category_banner`
 --
 
 DROP TABLE IF EXISTS `category_banner`;
@@ -229,7 +229,7 @@ CREATE TABLE `category_banner` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_banner`
+-- Dumping data for table `category_banner`
 --
 
 INSERT INTO `category_banner` (`id`, `fullname`, `theme_location`, `status`, `sort_order`, `created_at`, `updated_at`) VALUES
@@ -239,7 +239,7 @@ INSERT INTO `category_banner` (`id`, `fullname`, `theme_location`, `status`, `so
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_param`
+-- Table structure for table `category_param`
 --
 
 DROP TABLE IF EXISTS `category_param`;
@@ -256,7 +256,7 @@ CREATE TABLE `category_param` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_param`
+-- Dumping data for table `category_param`
 --
 
 INSERT INTO `category_param` (`id`, `fullname`, `alias`, `parent_id`, `param_value`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -329,7 +329,7 @@ INSERT INTO `category_param` (`id`, `fullname`, `alias`, `parent_id`, `param_val
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_product`
+-- Table structure for table `category_product`
 --
 
 DROP TABLE IF EXISTS `category_product`;
@@ -348,44 +348,27 @@ CREATE TABLE `category_product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Đang đổ dữ liệu cho bảng `category_product`
+-- Dumping data for table `category_product`
 --
 
 INSERT INTO `category_product` (`id`, `fullname`, `meta_keyword`, `meta_description`, `alias`, `image`, `status`, `parent_id`, `sort_order`, `created_at`, `updated_at`) VALUES
-(18, 'Hương liệu thực phẩm', 'metakeyword Hương liệu thực phẩm', 'metadescription Hương liệu thực phẩm', 'huong-lieu-thuc-pham', NULL, 1, 0, 1, '2018-04-19 02:10:14', '2018-04-19 02:10:53'),
-(19, 'Màu thực phẩm', 'metakeyword Màu thực phẩm', 'metadescription Màu thực phẩm', 'mau-thuc-pham', NULL, 1, 0, 2, '2018-04-19 02:11:15', '2018-04-19 02:11:15'),
-(20, 'Chất bảo quản', 'metakeyword Chất bảo quản', 'metadescription Chất bảo quản', 'chat-bao-quan', NULL, 1, 0, 3, '2018-04-19 02:11:37', '2018-04-19 02:11:40'),
-(21, 'Chất tạo ngọt', 'metakeyword Chất tạo ngọt', 'metadescription Chất tạo ngọt', 'chat-tao-ngot', NULL, 1, 0, 4, '2018-04-19 02:12:06', '2018-04-19 02:12:06'),
-(22, 'Chất điều vị', 'metakeyword Chất điều vị', 'metadescription Chất điều vị', 'chat-dieu-vi', NULL, 1, 0, 5, '2018-04-19 02:12:29', '2018-04-19 02:12:34'),
-(23, 'Chất chống oxy hóa', 'metakeyword Chất chống oxy hóa', 'metadescription Chất chống oxy hóa', 'chat-chong-oxy-hoa', NULL, 1, 0, 6, '2018-04-19 02:12:58', '2018-04-19 02:12:58'),
-(24, 'Chất tạo xốp', 'metakeyword Chất tạo xốp', 'metadescription Chất tạo xốp', 'chat-tao-xop', NULL, 1, 0, 7, '2018-04-19 02:13:22', '2018-04-19 02:13:26'),
-(25, 'Chất làm đầy', 'metakeyword Chất làm đầy', 'metadescription Chất làm đầy', 'chat-lam-day', NULL, 1, 0, 8, '2018-04-19 02:13:48', '2018-04-19 02:13:48'),
-(26, 'Chất điều chỉnh acid', 'metakeyword Chất điều chỉnh axit', 'metadescription Chất điều chỉnh axit', 'chat-dieu-chinh-acid', NULL, 1, 0, 9, '2018-04-19 02:14:22', '2018-04-19 02:15:17'),
-(27, 'Chất làm rắn chắc', 'metakeyword Chất làm rắn chắc', 'metadescription Chất làm rắn chắc', 'chat-lam-ran-chac', NULL, 1, 0, 10, '2018-04-19 02:15:47', '2018-04-19 02:15:51'),
-(28, 'Chất nhũ hóa', 'metakeyword Chất nhũ hóa', 'metadescription Chất nhũ hóa', 'chat-nhu-hoa', NULL, 1, 0, 11, '2018-04-19 02:16:14', '2018-04-19 02:27:27'),
-(29, 'Chất ổn định', 'metakeyword Chất ổn định', 'metadescription Chất ổn định', 'chat-on-dinh', NULL, 1, 0, 12, '2018-04-19 02:16:38', '2018-04-19 02:35:02'),
-(30, 'Chất làm bóng', 'metakeyword Chất làm bóng', 'metadescription Chất làm bóng', 'chat-lam-bong', NULL, 1, 0, 13, '2018-04-19 02:32:28', '2018-04-19 02:32:35'),
-(31, 'Chất chống vón', 'metakeyword Chất chống vón', 'metadescription Chất chống vón', 'chat-chong-von', NULL, 1, 0, 14, '2018-04-19 02:35:43', '2018-04-19 02:35:43'),
-(32, 'Chất tạo phức', 'metakeyword Chất tạo phức', 'metadescription Chất tạo phức', 'chat-tao-phuc', NULL, 1, 0, 15, '2018-04-19 02:36:13', '2018-04-19 02:36:18'),
-(33, 'Chất chống tạo bọt', 'metakeyword Chất chống tạo bọt', 'metadescription Chất chống tạo bọt', 'chat-chong-tao-bot', NULL, 1, 0, 16, '2018-04-19 02:37:42', '2018-04-19 02:37:42'),
-(34, 'Phụ gia chuyên ngành', 'metakeyword Phụ gia chuyên ngành', 'metadescription Phụ gia chuyên ngành', 'phu-gia-chuyen-nganh', NULL, 1, 0, 17, '2018-04-19 02:38:44', '2018-04-19 02:38:49'),
-(35, 'Bột thực phẩm', 'metakeyword Bột thực phẩm', 'metadescription Bột thực phẩm', 'bot-thuc-pham', NULL, 1, 0, 18, '2018-04-19 02:39:14', '2018-04-19 02:39:14'),
-(36, 'Hương mặn', 'metakeyword Hương mặn', 'metadescription Hương mặn', 'huong-man', NULL, 1, 18, 1, '2018-04-19 02:39:56', '2018-04-19 02:39:56'),
-(37, 'Hương ngọt', 'metakeyword Hương ngọt', 'metadescription Hương ngọt', 'huong-ngot', NULL, 1, 18, 2, '2018-04-19 02:40:21', '2018-04-19 02:40:21'),
-(38, 'Chế biến thịt cá', 'metakeyword Chế biến thịt cá', 'metadescription Chế biến thịt cá', 'che-bien-thit-ca', NULL, 1, 34, 1, '2018-04-19 02:41:22', '2018-04-19 02:41:22'),
-(39, 'Nước chấm , gia vị', 'metakeyword Nước chấm , gia vị', 'metadescription Nước chấm , gia vị', 'nuoc-cham-gia-vi', NULL, 1, 34, 2, '2018-04-19 02:41:49', '2018-04-19 02:41:49'),
-(40, 'Chế biến cà phê', 'metakeyword Chế biến cà phê', 'metadescription Chế biến cà phê', 'che-bien-ca-phe', NULL, 1, 34, 3, '2018-04-19 02:42:20', '2018-04-19 02:42:20'),
-(41, 'Nước giải khát', 'metakeyword Nước giải khát', 'metadescription Nước giải khát', 'nuoc-giai-khat', NULL, 1, 34, 4, '2018-04-19 02:43:01', '2018-04-19 02:43:29'),
-(42, 'Phụ gia chế biến các sản phẩm từ tinh bột', 'metakeyword Phụ gia chế biến các sản phẩm từ tinh bột', 'metadescription Phụ gia chế biến các sản phẩm từ tinh bột', 'phu-gia-che-bien-cac-san-pham-tu-tinh-bot', NULL, 1, 34, 5, '2018-04-19 02:44:43', '2018-04-19 02:44:53'),
-(43, 'Phụ gia chế biến thực phẩm chay', 'metakeyword Phụ gia chế biến thực phẩm chay', 'metadescription Phụ gia chế biến thực phẩm chay', 'phu-gia-che-bien-thuc-pham-chay', NULL, 1, 34, 6, '2018-04-19 02:45:44', '2018-04-19 02:45:44'),
-(44, 'Phụ gia chế biến các sản phẩm rau củ ngâm', 'metakeyword Phụ gia chế biến các sản phẩm rau củ ngâm', 'metadescription Phụ gia chế biến các sản phẩm rau củ ngâm', 'phu-gia-che-bien-cac-san-pham-rau-cu-ngam', NULL, 1, 34, 7, '2018-04-19 02:46:42', '2018-04-19 02:46:42'),
-(45, 'Chế biến mì và snack', 'metakeyword Chế biến mì và snack', 'metadescription Chế biến mì và snack', 'che-bien-mi-va-snack', NULL, 1, 34, 8, '2018-04-19 02:47:42', '2018-04-19 02:47:42'),
-(46, 'Bánh kẹo', 'metakeyword Bánh kẹo', 'metadescription Bánh kẹo', 'banh-keo', NULL, 1, 34, 9, '2018-04-19 02:48:18', '2018-04-19 02:48:18');
+(18, 'Gia vị nước tương nước mắm', 'metakeyword Hương liệu thực phẩm', 'metadescription Hương liệu thực phẩm', 'gia-vi-nuoc-tuong-nuoc-mam', NULL, 1, 0, 2, '2018-04-19 02:10:14', '2018-05-11 14:54:28'),
+(19, 'Chế biến thạch rau câu', 'metakeyword Màu thực phẩm', 'metadescription Màu thực phẩm', 'che-bien-thach-rau-cau', NULL, 1, 0, 5, '2018-04-19 02:11:15', '2018-05-11 14:54:28'),
+(20, 'Trà, cà phê, ca cao', 'metakeyword Chất bảo quản', 'metadescription Chất bảo quản', 'tra-ca-phe-ca-cao', NULL, 1, 0, 7, '2018-04-19 02:11:37', '2018-05-11 14:54:28'),
+(21, 'Tinh bột- tinh bột biến tính', 'metakeyword Chất tạo ngọt', 'metadescription Chất tạo ngọt', 'tinh-bot-tinh-bot-bien-tinh', NULL, 1, 0, 9, '2018-04-19 02:12:06', '2018-05-11 14:54:28'),
+(22, 'Thực phẩm chay', 'metakeyword Chất điều vị', 'metadescription Chất điều vị', 'thuc-pham-chay', NULL, 1, 0, 10, '2018-04-19 02:12:29', '2018-05-11 14:54:28'),
+(23, 'Nguyên liệu trà sữa', 'metakeyword Chất chống oxy hóa', 'metadescription Chất chống oxy hóa', 'nguyen-lieu-tra-sua', NULL, 1, 0, 11, '2018-04-19 02:12:58', '2018-05-11 14:54:28'),
+(24, 'Máy móc thiết bị- bao bì thực phẩm', 'metakeyword Chất tạo xốp', 'metadescription Chất tạo xốp', 'may-moc-thiet-bi-bao-bi-thuc-pham', NULL, 1, 0, 12, '2018-04-19 02:13:22', '2018-05-11 14:54:28'),
+(36, 'Mì ăn liền - Bún - Phở', 'metakeyword Hương mặn', 'metadescription Hương mặn', 'mi-an-lien-bun-pho', NULL, 1, 0, 3, '2018-04-19 02:39:56', '2018-05-11 14:54:28'),
+(37, 'Chế biến kem', 'metakeyword Hương ngọt', 'metadescription Hương ngọt', 'che-bien-kem', NULL, 1, 0, 4, '2018-04-19 02:40:21', '2018-05-11 14:54:28'),
+(38, 'Chế biến thịt cá', 'metakeyword Chế biến thịt cá', 'metadescription Chế biến thịt cá', 'che-bien-thit-ca', NULL, 1, 0, 1, '2018-04-19 02:41:22', '2018-05-11 14:36:38'),
+(41, 'Nước giải khát', 'metakeyword Nước giải khát', 'metadescription Nước giải khát', 'nuoc-giai-khat', NULL, 1, 0, 8, '2018-04-19 02:43:01', '2018-05-11 14:54:28'),
+(46, 'Bánh kẹo', 'metakeyword Bánh kẹo', 'metadescription Bánh kẹo', 'banh-keo', NULL, 1, 0, 6, '2018-04-19 02:48:18', '2018-05-11 14:54:28');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `category_video`
+-- Table structure for table `category_video`
 --
 
 DROP TABLE IF EXISTS `category_video`;
@@ -404,7 +387,7 @@ CREATE TABLE `category_video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `category_video`
+-- Dumping data for table `category_video`
 --
 
 INSERT INTO `category_video` (`id`, `fullname`, `meta_keyword`, `meta_description`, `alias`, `parent_id`, `image`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -413,7 +396,7 @@ INSERT INTO `category_video` (`id`, `fullname`, `meta_keyword`, `meta_descriptio
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `district`
+-- Table structure for table `district`
 --
 
 DROP TABLE IF EXISTS `district`;
@@ -429,7 +412,7 @@ CREATE TABLE `district` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `district`
+-- Dumping data for table `district`
 --
 
 INSERT INTO `district` (`id`, `fullname`, `alias`, `province_id`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -445,7 +428,7 @@ INSERT INTO `district` (`id`, `fullname`, `alias`, `province_id`, `sort_order`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `group_member`
+-- Table structure for table `group_member`
 --
 
 DROP TABLE IF EXISTS `group_member`;
@@ -459,7 +442,7 @@ CREATE TABLE `group_member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `group_member`
+-- Dumping data for table `group_member`
 --
 
 INSERT INTO `group_member` (`id`, `fullname`, `alias`, `sort_order`, `created_at`, `updated_at`) VALUES
@@ -471,7 +454,7 @@ INSERT INTO `group_member` (`id`, `fullname`, `alias`, `sort_order`, `created_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `group_privilege`
+-- Table structure for table `group_privilege`
 --
 
 DROP TABLE IF EXISTS `group_privilege`;
@@ -484,7 +467,7 @@ CREATE TABLE `group_privilege` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `group_privilege`
+-- Dumping data for table `group_privilege`
 --
 
 INSERT INTO `group_privilege` (`id`, `group_member_id`, `privilege_id`, `created_at`, `updated_at`) VALUES
@@ -639,7 +622,7 @@ INSERT INTO `group_privilege` (`id`, `group_member_id`, `privilege_id`, `created
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `invoice`
+-- Table structure for table `invoice`
 --
 
 DROP TABLE IF EXISTS `invoice`;
@@ -660,7 +643,7 @@ CREATE TABLE `invoice` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Đang đổ dữ liệu cho bảng `invoice`
+-- Dumping data for table `invoice`
 --
 
 INSERT INTO `invoice` (`id`, `code`, `email`, `fullname`, `address`, `phone`, `note`, `quantity`, `total_price`, `status`, `sort_order`, `created_at`, `updated_at`) VALUES
@@ -670,7 +653,7 @@ INSERT INTO `invoice` (`id`, `code`, `email`, `fullname`, `address`, `phone`, `n
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `invoice_detail`
+-- Table structure for table `invoice_detail`
 --
 
 DROP TABLE IF EXISTS `invoice_detail`;
@@ -689,7 +672,7 @@ CREATE TABLE `invoice_detail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Đang đổ dữ liệu cho bảng `invoice_detail`
+-- Dumping data for table `invoice_detail`
 --
 
 INSERT INTO `invoice_detail` (`id`, `invoice_id`, `product_id`, `product_code`, `product_name`, `product_image`, `product_price`, `product_quantity`, `product_total_price`, `created_at`, `updated_at`) VALUES
@@ -701,7 +684,7 @@ INSERT INTO `invoice_detail` (`id`, `invoice_id`, `product_id`, `product_code`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `menu`
+-- Table structure for table `menu`
 --
 
 DROP TABLE IF EXISTS `menu`;
@@ -720,7 +703,7 @@ CREATE TABLE `menu` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `menu`
+-- Dumping data for table `menu`
 --
 
 INSERT INTO `menu` (`id`, `fullname`, `alias`, `parent_id`, `menu_type_id`, `level`, `menu_class`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -731,55 +714,43 @@ INSERT INTO `menu` (`id`, `fullname`, `alias`, `parent_id`, `menu_type_id`, `lev
 (375, 'Quy chế hoạt động', 'quy-che-hoat-dong', 0, 9, 0, '', 4, 1, '2018-02-28 07:26:27', '2018-02-28 07:26:27'),
 (376, 'Giới thiệu', 'gioi-thieu', 0, 9, 0, '', 5, 1, '2018-02-28 07:26:39', '2018-04-21 03:54:31'),
 (377, 'Liên hệ', 'lien-he', 0, 9, 0, '', 6, 1, '2018-02-28 07:26:56', '2018-02-28 07:27:00'),
-(406, 'Sản phẩm', '', 0, 5, 0, '', 2, 1, '2018-03-04 12:48:56', '2018-04-21 05:30:26'),
-(407, 'Hương liệu thực phẩm', 'huong-lieu-thuc-pham', 406, 5, 1, '', 1, 1, '2018-03-04 12:49:11', '2018-04-21 05:30:40'),
-(408, 'Hương mặn', 'huong-man', 407, 5, 2, '', 1, 1, '2018-03-04 12:49:22', '2018-04-21 05:32:46'),
-(412, 'Hương ngọt', 'huong-ngot', 407, 5, 2, '', 2, 1, '2018-03-04 12:50:11', '2018-04-21 05:32:46'),
-(413, 'Màu thực phẩm', 'mau-thuc-pham', 406, 5, 1, '', 2, 1, '2018-03-04 12:50:22', '2018-04-21 05:33:32'),
-(414, 'Tin tức', 'tin-tuc', 0, 9, 0, '', 7, 1, '2018-03-19 11:41:25', '2018-04-21 03:53:44'),
-(415, 'Sản phẩm', '', 0, 1, 0, '', 2, 1, '2018-04-18 09:41:33', '2018-04-21 05:30:01'),
+(406, 'Sản phẩm', 'chuyen-giao-cong-nghe', 0, 5, 0, '', 2, 1, '2018-03-04 12:48:56', '2018-04-21 05:30:26'),
+(407, 'Hương liệu thực phẩm', 'gia-vi-nuoc-tuong-nuoc-mam', 406, 5, 1, '', 1, 1, '2018-03-04 12:49:11', '2018-04-21 05:30:40'),
+(408, 'Hương mặn', 'mi-an-lien-bun-pho', 407, 5, 2, '', 1, 1, '2018-03-04 12:49:22', '2018-04-21 05:32:46'),
+(412, 'Hương ngọt', 'che-bien-kem', 407, 5, 2, '', 2, 1, '2018-03-04 12:50:11', '2018-04-21 05:32:46'),
+(413, 'Màu thực phẩm', 'che-bien-thach-rau-cau', 406, 5, 1, '', 2, 1, '2018-03-04 12:50:22', '2018-04-21 05:33:32'),
+(414, 'Tin tức', 'tin-tuc-thi-truong', 0, 9, 0, '', 7, 1, '2018-03-19 11:41:25', '2018-04-21 03:53:44'),
+(415, 'Sản phẩm', 'chuyen-giao-cong-nghe', 0, 1, 0, '', 3, 1, '2018-04-18 09:41:33', '2018-05-11 14:19:49'),
 (416, 'Trang chủ', 'trang-chu', 0, 1, 0, '', 1, 1, '2018-04-18 09:42:20', '2018-04-21 01:38:52'),
-(417, 'Quy trình sản xuất', 'quy-trinh-san-xuat', 0, 1, 0, '', 3, 1, '2018-04-18 09:42:55', '2018-04-18 09:42:55'),
-(418, 'Đối tác', 'doi-tac', 0, 1, 0, '', 4, 1, '2018-04-18 09:43:16', '2018-04-18 09:43:16'),
-(419, 'Tin tức', 'tin-tuc', 0, 1, 0, '', 5, 1, '2018-04-18 09:43:40', '2018-04-18 09:43:40'),
+(417, 'Quy trình sản xuất', 'quy-trinh-san-xuat', 0, 1, 0, '', 4, 1, '2018-04-18 09:42:55', '2018-05-11 14:20:27'),
+(418, 'Chuyển giao công nghệ', 'chuyen-giao-cong-nghe', 0, 1, 0, '', 4, 1, '2018-04-18 09:43:16', '2018-05-11 14:20:56'),
+(419, 'Tin tức thị trường', 'tin-tuc-thi-truong', 0, 1, 0, '', 5, 1, '2018-04-18 09:43:40', '2018-05-11 14:21:30'),
 (420, 'Liên hệ', 'lien-he', 0, 1, 0, '', 6, 1, '2018-04-18 09:44:03', '2018-04-18 09:44:03'),
-(421, 'Tuyển dụng', 'tuyen-dung', 0, 1, 0, '', 7, 1, '2018-04-18 09:44:21', '2018-04-18 09:44:26'),
-(429, 'Hương liệu thực phẩm', 'huong-lieu-thuc-pham', 415, 1, 1, '', 1, 1, '2018-04-19 02:50:57', '2018-04-19 02:50:57'),
-(433, 'Màu thực phẩm', 'mau-thuc-pham', 415, 1, 1, '', 2, 1, '2018-04-19 02:54:32', '2018-04-19 02:54:32'),
-(434, 'Chất bảo quản', 'chat-bao-quan', 415, 1, 1, '', 3, 1, '2018-04-19 02:54:43', '2018-04-19 02:54:43'),
-(435, 'Chất tạo ngọt', 'chat-tao-ngot', 415, 1, 1, '', 4, 1, '2018-04-19 02:54:53', '2018-04-19 02:54:53'),
-(436, 'Chất điều vị', 'chat-dieu-vi', 415, 1, 1, '', 5, 1, '2018-04-19 02:55:03', '2018-04-19 02:55:03'),
-(437, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', 415, 1, 1, '', 6, 1, '2018-04-19 02:55:14', '2018-04-19 02:55:14'),
-(438, 'Chất tạo xốp', 'chat-tao-xop', 415, 1, 1, '', 7, 1, '2018-04-19 02:55:26', '2018-04-19 02:55:26'),
-(439, 'Chất làm đầy', 'chat-lam-day', 415, 1, 1, '', 8, 1, '2018-04-19 02:55:37', '2018-04-19 02:55:37'),
-(440, 'Chất điều chỉnh acid', 'chat-dieu-chinh-acid', 415, 1, 1, '', 9, 1, '2018-04-19 02:55:48', '2018-04-19 02:55:48'),
-(441, 'Chất làm rắn chắc', 'chat-lam-ran-chac', 415, 1, 1, '', 10, 1, '2018-04-19 02:56:12', '2018-04-19 02:56:12'),
-(442, 'Chất nhũ hóa', 'chat-nhu-hoa', 415, 1, 1, '', 11, 1, '2018-04-19 02:57:58', '2018-04-19 02:58:22'),
-(443, 'Chất ổn định', 'chat-on-dinh', 415, 1, 1, '', 12, 1, '2018-04-19 02:58:13', '2018-04-19 02:58:22'),
-(444, 'Chất làm bóng', 'chat-lam-bong', 415, 1, 1, '', 13, 1, '2018-04-19 02:58:40', '2018-04-19 02:58:46'),
-(445, 'Chất chống vón', 'chat-chong-von', 415, 1, 1, '', 14, 1, '2018-04-19 02:59:03', '2018-04-19 02:59:09'),
-(446, 'Chất tạo phức', 'chat-tao-phuc', 415, 1, 1, '', 15, 1, '2018-04-19 02:59:26', '2018-04-19 02:59:26'),
-(447, 'Chất chống tạo bọt', 'chat-chong-tao-bot', 415, 1, 1, '', 16, 1, '2018-04-19 02:59:46', '2018-04-19 02:59:46'),
-(448, 'Phụ gia chuyên ngành', 'phu-gia-chuyen-nganh', 415, 1, 1, '', 17, 1, '2018-04-19 03:00:05', '2018-04-19 03:00:05'),
-(449, 'Bột thực phẩm', 'bot-thuc-pham', 415, 1, 1, '', 18, 1, '2018-04-19 03:00:21', '2018-04-19 03:00:21'),
-(450, 'Hương mặn', 'huong-man', 429, 1, 2, '', 1, 1, '2018-04-19 03:00:42', '2018-04-19 03:00:42'),
-(451, 'Hương ngọt', 'huong-ngot', 429, 1, 2, '', 2, 1, '2018-04-19 03:00:51', '2018-04-19 03:00:51'),
-(452, 'Chế biến thịt cá', 'che-bien-thit-ca', 448, 1, 2, '', 1, 1, '2018-04-19 03:01:21', '2018-04-19 03:01:21'),
-(453, 'Nước chấm , gia vị', 'nuoc-cham-gia-vi', 448, 1, 2, '', 2, 1, '2018-04-19 03:11:17', '2018-04-19 03:11:17'),
-(454, 'Chế biến cà phê', 'che-bien-ca-phe', 448, 1, 2, '', 3, 1, '2018-04-19 03:12:18', '2018-04-19 03:12:18'),
-(455, 'Nước giải khát', 'nuoc-giai-khat', 448, 1, 2, '', 4, 1, '2018-04-19 03:12:47', '2018-04-19 03:12:47'),
-(456, 'Phụ gia chế biến các sản phẩm từ tinh bột', 'phu-gia-che-bien-cac-san-pham-tu-tinh-bot', 448, 1, 2, '', 5, 1, '2018-04-19 03:13:19', '2018-04-19 03:13:19'),
-(457, 'Phụ gia chế biến thực phẩm chay', 'phu-gia-che-bien-thuc-pham-chay', 448, 1, 2, '', 6, 1, '2018-04-19 03:14:11', '2018-04-19 03:14:11'),
-(458, 'Phụ gia chế biến các sản phẩm rau củ ngâm', 'phu-gia-che-bien-cac-san-pham-rau-cu-ngam', 448, 1, 2, '', 7, 1, '2018-04-19 03:14:32', '2018-04-19 03:14:32'),
-(459, 'Chế biến mì và snack', 'che-bien-mi-va-snack', 448, 1, 2, '', 8, 1, '2018-04-19 03:14:56', '2018-04-19 03:14:56'),
-(460, 'Bánh kẹo', 'banh-keo', 448, 1, 2, '', 9, 1, '2018-04-19 03:15:08', '2018-04-19 03:15:08'),
-(461, 'Hương liệu thực phẩm', 'huong-lieu-thuc-pham', NULL, 8, 1, '', 1, 1, '2018-04-19 02:50:57', '2018-04-19 02:50:57'),
-(462, 'Màu thực phẩm', 'mau-thuc-pham', NULL, 8, 1, '', 2, 1, '2018-04-19 02:54:32', '2018-04-19 02:54:32'),
-(463, 'Chất bảo quản', 'chat-bao-quan', NULL, 8, 1, '', 3, 1, '2018-04-19 02:54:43', '2018-04-19 02:54:43'),
-(464, 'Chất tạo ngọt', 'chat-tao-ngot', NULL, 8, 1, '', 4, 1, '2018-04-19 02:54:53', '2018-04-19 02:54:53'),
-(465, 'Chất điều vị', 'chat-dieu-vi', NULL, 8, 1, '', 5, 1, '2018-04-19 02:55:03', '2018-04-19 02:55:03'),
-(466, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', NULL, 8, 1, '', 6, 1, '2018-04-19 02:55:14', '2018-04-19 02:55:14'),
-(467, 'Chất tạo xốp', 'chat-tao-xop', NULL, 8, 1, '', 7, 1, '2018-04-19 02:55:26', '2018-04-19 02:55:26'),
+(429, 'Gia vị, nước tương, nước mắm', 'gia-vi-nuoc-tuong-nuoc-mam', 415, 1, 1, '', 1, 1, '2018-04-19 02:50:57', '2018-05-11 14:59:11'),
+(433, 'Màu thực phẩm', 'che-bien-thach-rau-cau', 415, 1, 1, '', 2, 1, '2018-04-19 02:54:32', '2018-04-19 02:54:32'),
+(434, 'Chất bảo quản', 'tra-ca-phe-ca-cao', 415, 1, 1, '', 3, 1, '2018-04-19 02:54:43', '2018-04-19 02:54:43'),
+(435, 'Chất tạo ngọt', 'tinh-bot-tinh-bot-bien-tinh', 415, 1, 1, '', 4, 1, '2018-04-19 02:54:53', '2018-04-19 02:54:53'),
+(436, 'Chất điều vị', 'thuc-pham-chay', 415, 1, 1, '', 5, 1, '2018-04-19 02:55:03', '2018-04-19 02:55:03'),
+(437, 'Chất chống oxy hóa', 'nguyen-lieu-tra-sua', 415, 1, 1, '', 6, 1, '2018-04-19 02:55:14', '2018-04-19 02:55:14'),
+(438, 'Chất tạo xốp', 'may-moc-thiet-bi-bao-bi-thuc-pham', 415, 1, 1, '', 7, 1, '2018-04-19 02:55:26', '2018-04-19 02:55:26'),
+(439, 'Chế biến thịt cá', 'che-bien-thit-ca', 415, 1, 1, '', 8, 1, '2018-04-19 02:55:37', '2018-05-11 14:58:43'),
+(440, 'Chế biến kem', 'che-bien-kem', 415, 1, 1, '', 9, 1, '2018-04-19 02:55:48', '2018-05-11 15:01:15'),
+(441, 'Chế biến thạch rau câu', 'che-bien-thach-rau-cau', 415, 1, 1, '', 10, 1, '2018-04-19 02:56:12', '2018-05-11 15:01:43'),
+(442, 'Bánh kẹo', 'banh-keo', 415, 1, 1, '', 11, 1, '2018-04-19 02:57:58', '2018-05-11 15:02:14'),
+(443, 'Trà, cà phê, ca cao', 'tra-ca-phe-ca-cao', 415, 1, 1, '', 12, 1, '2018-04-19 02:58:13', '2018-05-11 15:02:43'),
+(444, 'Nước giải khát', 'nuoc-giai-khat', 415, 1, 1, '', 13, 1, '2018-04-19 02:58:40', '2018-05-11 15:03:06'),
+(445, 'Tinh bột- tinh bột biến tính', 'tinh-bot-tinh-bot-bien-tinh', 415, 1, 1, '', 14, 1, '2018-04-19 02:59:03', '2018-05-11 15:03:47'),
+(446, 'Thực phẩm chay', 'thuc-pham-chay', 415, 1, 1, '', 15, 1, '2018-04-19 02:59:26', '2018-05-11 15:04:11'),
+(447, 'Nguyên liệu trà sữa', 'nguyen-lieu-tra-sua', 415, 1, 1, '', 16, 1, '2018-04-19 02:59:46', '2018-05-11 15:04:46'),
+(448, 'Máy móc thiết bị- bao bì thực phẩm', 'may-moc-thiet-bi-bao-bi-thuc-pham', 415, 1, 1, '', 17, 1, '2018-04-19 03:00:05', '2018-05-11 15:05:26'),
+(450, 'Mì ăn liền, bún , phở', 'mi-an-lien-bun-pho', 415, 1, 1, '', 1, 1, '2018-04-19 03:00:42', '2018-05-11 14:59:37'),
+(461, 'Hương liệu thực phẩm', 'gia-vi-nuoc-tuong-nuoc-mam', NULL, 8, 1, '', 1, 1, '2018-04-19 02:50:57', '2018-04-19 02:50:57'),
+(462, 'Màu thực phẩm', 'che-bien-thach-rau-cau', NULL, 8, 1, '', 2, 1, '2018-04-19 02:54:32', '2018-04-19 02:54:32'),
+(463, 'Chất bảo quản', 'tra-ca-phe-ca-cao', NULL, 8, 1, '', 3, 1, '2018-04-19 02:54:43', '2018-04-19 02:54:43'),
+(464, 'Chất tạo ngọt', 'tinh-bot-tinh-bot-bien-tinh', NULL, 8, 1, '', 4, 1, '2018-04-19 02:54:53', '2018-04-19 02:54:53'),
+(465, 'Chất điều vị', 'thuc-pham-chay', NULL, 8, 1, '', 5, 1, '2018-04-19 02:55:03', '2018-04-19 02:55:03'),
+(466, 'Chất chống oxy hóa', 'nguyen-lieu-tra-sua', NULL, 8, 1, '', 6, 1, '2018-04-19 02:55:14', '2018-04-19 02:55:14'),
+(467, 'Chất tạo xốp', 'may-moc-thiet-bi-bao-bi-thuc-pham', NULL, 8, 1, '', 7, 1, '2018-04-19 02:55:26', '2018-04-19 02:55:26'),
 (468, 'Chất làm đầy', 'chat-lam-day', NULL, 8, 1, '', 8, 1, '2018-04-19 02:55:37', '2018-04-19 02:55:37'),
 (469, 'Chất điều chỉnh acid', 'chat-dieu-chinh-acid', NULL, 8, 1, '', 9, 1, '2018-04-19 02:55:48', '2018-04-19 02:55:48'),
 (470, 'Chất làm rắn chắc', 'chat-lam-ran-chac', NULL, 8, 1, '', 10, 1, '2018-04-19 02:56:12', '2018-04-19 02:56:12'),
@@ -791,8 +762,8 @@ INSERT INTO `menu` (`id`, `fullname`, `alias`, `parent_id`, `menu_type_id`, `lev
 (476, 'Chất chống tạo bọt', 'chat-chong-tao-bot', NULL, 8, 1, '', 16, 1, '2018-04-19 02:59:46', '2018-04-19 02:59:46'),
 (477, 'Phụ gia chuyên ngành', 'phu-gia-chuyen-nganh', NULL, 8, 1, '', 17, 1, '2018-04-19 03:00:05', '2018-04-19 03:00:05'),
 (478, 'Bột thực phẩm', 'bot-thuc-pham', NULL, 8, 1, '', 18, 1, '2018-04-19 03:00:21', '2018-04-19 03:00:21'),
-(479, 'Hương mặn', 'huong-man', 461, 8, 2, '', 1, 1, '2018-04-19 04:42:27', '2018-04-19 04:42:27'),
-(480, 'Hương ngọt', 'huong-ngot', 461, 8, 2, '', 2, 1, '2018-04-19 04:42:42', '2018-04-19 04:42:42'),
+(479, 'Hương mặn', 'mi-an-lien-bun-pho', 461, 8, 2, '', 1, 1, '2018-04-19 04:42:27', '2018-04-19 04:42:27'),
+(480, 'Hương ngọt', 'che-bien-kem', 461, 8, 2, '', 2, 1, '2018-04-19 04:42:42', '2018-04-19 04:42:42'),
 (481, 'Chế biến thịt cá', 'che-bien-thit-ca', 477, 8, 2, '', 1, 1, '2018-04-19 04:42:58', '2018-04-19 04:42:58'),
 (482, 'Nước chấm , gia vị', 'nuoc-cham-gia-vi', 477, 8, 2, '', 2, 1, '2018-04-19 04:43:15', '2018-04-19 04:43:15'),
 (483, 'Chế biến cà phê', 'che-bien-ca-phe', 477, 8, 2, '', 3, 1, '2018-04-19 04:43:30', '2018-04-19 04:43:30'),
@@ -802,27 +773,28 @@ INSERT INTO `menu` (`id`, `fullname`, `alias`, `parent_id`, `menu_type_id`, `lev
 (487, 'Phụ gia chế biến các sản phẩm rau củ ngâm', 'phu-gia-che-bien-cac-san-pham-rau-cu-ngam', 477, 8, 2, '', 7, 1, '2018-04-19 04:45:11', '2018-04-19 04:45:11'),
 (488, 'Chế biến mì và snack', 'che-bien-mi-va-snack', 477, 8, 2, '', 8, 1, '2018-04-19 04:45:26', '2018-04-19 04:45:26'),
 (489, 'Bánh kẹo', 'banh-keo', 477, 8, 2, '', 9, 1, '2018-04-19 04:45:48', '2018-04-19 04:46:06'),
-(490, 'Hương liệu thực phẩm', 'huong-lieu-thuc-pham', 0, 11, 0, '', 1, 1, '2018-04-20 09:33:35', '2018-04-20 09:33:35'),
-(491, 'Màu thực phẩm', 'mau-thuc-pham', 0, 11, 0, '', 2, 1, '2018-04-20 09:33:43', '2018-04-20 09:33:43'),
-(492, 'Chất bảo quản', 'chat-bao-quan', 0, 11, 0, '', 3, 1, '2018-04-20 09:33:52', '2018-04-20 09:33:52'),
-(493, 'Chất tạo ngọt', 'chat-tao-ngot', 0, 11, 0, '', 4, 1, '2018-04-20 09:34:37', '2018-04-20 09:34:37'),
-(494, 'Chất điều vị', 'chat-dieu-vi', 0, 11, 0, '', 5, 1, '2018-04-20 09:34:47', '2018-04-20 09:34:47'),
-(495, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', 0, 11, 0, '', 6, 1, '2018-04-20 09:35:00', '2018-04-20 09:35:00'),
-(496, 'Chất bảo quản', 'chat-bao-quan', 406, 5, 1, '', 3, 1, '2018-04-21 05:32:03', '2018-04-21 05:32:46'),
-(497, 'Chất tạo ngọt', 'chat-tao-ngot', 406, 5, 1, '', 4, 1, '2018-04-21 05:32:21', '2018-04-21 05:32:46'),
-(498, 'Chất điều vị', 'chat-dieu-vi', 406, 5, 1, '', 5, 1, '2018-04-21 05:33:04', '2018-04-21 05:33:11'),
-(499, 'Chất chống oxy hóa', 'chat-chong-oxy-hoa', 406, 5, 1, '', 6, 1, '2018-04-21 05:33:47', '2018-04-21 05:33:47'),
-(500, 'Chất tạo xốp', 'chat-tao-xop', 406, 5, 1, '', 7, 1, '2018-04-21 05:38:02', '2018-04-21 05:38:02'),
+(490, 'Hương liệu thực phẩm', 'gia-vi-nuoc-tuong-nuoc-mam', 0, 11, 0, '', 1, 1, '2018-04-20 09:33:35', '2018-04-20 09:33:35'),
+(491, 'Màu thực phẩm', 'che-bien-thach-rau-cau', 0, 11, 0, '', 2, 1, '2018-04-20 09:33:43', '2018-04-20 09:33:43'),
+(492, 'Chất bảo quản', 'tra-ca-phe-ca-cao', 0, 11, 0, '', 3, 1, '2018-04-20 09:33:52', '2018-04-20 09:33:52'),
+(493, 'Chất tạo ngọt', 'tinh-bot-tinh-bot-bien-tinh', 0, 11, 0, '', 4, 1, '2018-04-20 09:34:37', '2018-04-20 09:34:37'),
+(494, 'Chất điều vị', 'thuc-pham-chay', 0, 11, 0, '', 5, 1, '2018-04-20 09:34:47', '2018-04-20 09:34:47'),
+(495, 'Chất chống oxy hóa', 'nguyen-lieu-tra-sua', 0, 11, 0, '', 6, 1, '2018-04-20 09:35:00', '2018-04-20 09:35:00'),
+(496, 'Chất bảo quản', 'tra-ca-phe-ca-cao', 406, 5, 1, '', 3, 1, '2018-04-21 05:32:03', '2018-04-21 05:32:46'),
+(497, 'Chất tạo ngọt', 'tinh-bot-tinh-bot-bien-tinh', 406, 5, 1, '', 4, 1, '2018-04-21 05:32:21', '2018-04-21 05:32:46'),
+(498, 'Chất điều vị', 'thuc-pham-chay', 406, 5, 1, '', 5, 1, '2018-04-21 05:33:04', '2018-04-21 05:33:11'),
+(499, 'Chất chống oxy hóa', 'nguyen-lieu-tra-sua', 406, 5, 1, '', 6, 1, '2018-04-21 05:33:47', '2018-04-21 05:33:47'),
+(500, 'Chất tạo xốp', 'may-moc-thiet-bi-bao-bi-thuc-pham', 406, 5, 1, '', 7, 1, '2018-04-21 05:38:02', '2018-04-21 05:38:02'),
 (501, 'Chất làm đầy', 'chat-lam-day', 406, 5, 1, '', 8, 1, '2018-04-21 05:38:18', '2018-04-21 05:38:18'),
 (502, 'Đối tác', 'doi-tac', 0, 5, 0, '', 4, 1, '2018-05-02 06:46:06', '2018-05-02 06:46:06'),
-(503, 'Tin tức', 'tin-tuc', 0, 5, 0, '', 5, 1, '2018-05-02 06:46:32', '2018-05-02 06:46:32'),
+(503, 'Tin tức', 'tin-tuc-thi-truong', 0, 5, 0, '', 5, 1, '2018-05-02 06:46:32', '2018-05-02 06:46:32'),
 (504, 'Liên hệ', 'lien-he', 0, 5, 0, '', 6, 1, '2018-05-02 06:47:07', '2018-05-02 06:47:07'),
-(505, 'Tuyển dụng', 'tuyen-dung', 0, 5, 0, '', 7, 1, '2018-05-02 06:47:17', '2018-05-02 06:47:17');
+(505, 'Tuyển dụng', 'tuyen-dung', 0, 5, 0, '', 7, 1, '2018-05-02 06:47:17', '2018-05-02 06:47:17'),
+(506, 'Giới thiệu', 'gioi-thieu', 0, 1, 0, '', 2, 1, '2018-05-11 14:19:29', '2018-05-11 14:19:49');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `menu_type`
+-- Table structure for table `menu_type`
 --
 
 DROP TABLE IF EXISTS `menu_type`;
@@ -837,7 +809,7 @@ CREATE TABLE `menu_type` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `menu_type`
+-- Dumping data for table `menu_type`
 --
 
 INSERT INTO `menu_type` (`id`, `fullname`, `theme_location`, `status`, `sort_order`, `created_at`, `updated_at`) VALUES
@@ -850,7 +822,7 @@ INSERT INTO `menu_type` (`id`, `fullname`, `theme_location`, `status`, `sort_ord
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `migrations`
+-- Table structure for table `migrations`
 --
 
 DROP TABLE IF EXISTS `migrations`;
@@ -861,7 +833,7 @@ CREATE TABLE `migrations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -871,7 +843,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `module_item`
+-- Table structure for table `module_item`
 --
 
 DROP TABLE IF EXISTS `module_item`;
@@ -891,7 +863,7 @@ CREATE TABLE `module_item` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `organization`
+-- Table structure for table `organization`
 --
 
 DROP TABLE IF EXISTS `organization`;
@@ -918,7 +890,7 @@ CREATE TABLE `organization` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `page`
+-- Table structure for table `page`
 --
 
 DROP TABLE IF EXISTS `page`;
@@ -941,25 +913,26 @@ CREATE TABLE `page` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `page`
+-- Dumping data for table `page`
 --
 
 INSERT INTO `page` (`id`, `fullname`, `alias`, `theme_location`, `image`, `intro`, `content`, `description`, `meta_keyword`, `meta_description`, `count_view`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Công Ty Cổ Phần Kaizen Foods', 'cong-ty-co-phan-kaizen-foods', 'intro-footer', NULL, '', '<p>C&ocirc;ng Ty Cổ Phần Kaizen Foods</p>\r\n\r\n<p>Địa chỉ: Số 92/11 ĐHT 42, P.T&acirc;n Hưng Thuận, Quận 12, TP.Hồ Ch&iacute; Minh</p>\r\n\r\n<p>Điện thoại: 0911 460 639</p>\r\n\r\n<p>Email: nhadamaloka@gmail.com</p>\r\n\r\n<p>Website: www.kaizena.com.vn</p>', '', '', '', NULL, 6, 1, '2017-12-28 04:10:41', '2018-05-02 01:27:40'),
+(1, 'Công Ty Cổ Phần Kaizen Foods', 'cong-ty-co-phan-kaizen-foods', 'intro-footer', NULL, '', '<p>CÔNG TY TNHH XNK CÔNG NGHỆ THP</p>\r\n\r\n<p>Địa chỉ: Số 166/ 26 Lê Trung Đình, P.Sơn Kỳ, Q.Tân Phú, TP.HCM</p>\r\n\r\n<p>Điện thoại: 0911 460 639</p>\r\n\r\n<p>Email: nhadamaloka@gmail.com</p>\r\n\r\n<p>Website: www.kaizena.com.vn</p>', '', '', '', NULL, 6, 1, '2017-12-28 04:10:41', '2018-05-11 14:16:42'),
 (6, 'Fanpage', 'fanpage', 'fanpage-footer', NULL, '<div class=\"fb-page\" data-href=\"https://www.facebook.com/dcmobilecomputer/\" data-tabs=\"timeline\" data-width=\"250\" data-height=\"200\" data-small-header=\"true\" data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\"><blockquote cite=\"https://www.facebook.com/dcmobilecomputer/\" class=\"fb-xfbml-parse-ignore\"><a href=\"https://www.facebook.com/gonguyenlieumy/\">Công ty tnhh Greenecolife</a></blockquote></div>', '', '', '', '', NULL, 7, 1, '2018-01-19 02:31:15', '2018-03-21 03:07:54'),
-(15, 'Quy trình sản xuất', 'quy-trinh-san-xuat', '', NULL, 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.', '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '', 'metakeyword Quy trình sản xuất', 'metadescription Quy trình sản xuất', 19, 1, 1, '2018-04-18 09:37:38', '2018-05-02 02:23:53'),
+(15, 'Quy trình sản xuất', 'quy-trinh-san-xuat', '', NULL, 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don\'t look even slightly believable.', '<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>', '', 'metakeyword Quy trình sản xuất', 'metadescription Quy trình sản xuất', 20, 1, 1, '2018-04-18 09:37:38', '2018-05-11 14:28:38'),
 (16, 'Đối tác', 'doi-tac', '', NULL, '', 'Đang cập nhật ...', '', 'metakeyword Đối tác', 'metadescription Đối tác', 5, 5, 1, '2018-04-21 02:19:08', '2018-05-02 02:23:56'),
 (17, 'Thông tin liên hệ', 'thong-tin-lien-he', 'thong-tin-lien-he', NULL, '', '<h3><span style=\"color:#067a1e\"><strong>C&ocirc;ng Ty Cổ Phần Kaizen Foods</strong></span></h3>\r\n\r\n<p><em><strong>Địa chỉ:</strong></em> Số 92/11 ĐHT 42, P.T&acirc;n Hưng Thuận, Quận 12, TP.Hồ Ch&iacute; Minh</p>\r\n\r\n<p><em><strong>Điện thoại:</strong></em> 0911 460 639</p>\r\n\r\n<p><em><strong>Email:</strong></em> nhadamaloka@gmail.com</p>\r\n\r\n<p><em><strong>Website:</strong></em> www.kaizena.com.vn -&nbsp;www.thachnhadam.com</p>', '', '', '', NULL, 1, 1, '2018-04-21 03:23:24', '2018-05-02 01:20:36'),
 (18, 'Chính sách giao hàng', 'chinh-sach-giao-hang', '', NULL, '', '<p>Đang cập nhật</p>', '', '', '', 6, 1, 1, '2018-04-21 03:49:54', '2018-05-02 01:47:41'),
 (20, 'Hướng dẫn mua hàng', 'huong-dan-mua-hang', '', NULL, '', '<p>Đang cập nhật...</p>', '', '', '', 4, 1, 1, '2018-04-21 03:51:08', '2018-05-02 01:47:50'),
 (21, 'Quy chế hoạt động', 'quy-che-hoat-dong', '', NULL, '', '<p>Đang cập nhật</p>', '', '', '', 4, 1, 1, '2018-04-21 03:51:49', '2018-05-02 01:47:59'),
-(22, 'Giới thiệu', 'gioi-thieu', '', NULL, '', '<p>Đang cập nhật</p>', '', '', '', 3, 1, 1, '2018-04-21 03:52:30', '2018-05-02 01:48:09'),
-(23, 'Tuyển dụng', 'tuyen-dung', '', NULL, '', '<p>Đang cập nhật</p>', '', '', '', 3, 1, 1, '2018-04-21 04:01:33', '2018-05-02 01:48:16');
+(22, 'Giới thiệu', 'gioi-thieu', '', NULL, '', '<p>Đang cập nhật</p>', '', '', '', 4, 1, 1, '2018-04-21 03:52:30', '2018-05-11 14:28:24'),
+(23, 'Tuyển dụng', 'tuyen-dung', '', NULL, '', '<p>Đang cập nhật</p>', '', '', '', 3, 1, 1, '2018-04-21 04:01:33', '2018-05-02 01:48:16'),
+(24, 'Chuyển giao công nghệ', 'chuyen-giao-cong-nghe', '', NULL, '', '<p><br></p>', '', '', '', 2, 1, 1, '2018-05-11 14:26:56', '2018-05-11 14:28:51');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `password_resets`
+-- Table structure for table `password_resets`
 --
 
 DROP TABLE IF EXISTS `password_resets`;
@@ -972,7 +945,7 @@ CREATE TABLE `password_resets` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `payment_method`
+-- Table structure for table `payment_method`
 --
 
 DROP TABLE IF EXISTS `payment_method`;
@@ -988,7 +961,7 @@ CREATE TABLE `payment_method` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `payment_method`
+-- Dumping data for table `payment_method`
 --
 
 INSERT INTO `payment_method` (`id`, `fullname`, `alias`, `content`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -1003,7 +976,7 @@ INSERT INTO `payment_method` (`id`, `fullname`, `alias`, `content`, `sort_order`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `persistences`
+-- Table structure for table `persistences`
 --
 
 DROP TABLE IF EXISTS `persistences`;
@@ -1016,7 +989,7 @@ CREATE TABLE `persistences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `persistences`
+-- Dumping data for table `persistences`
 --
 
 INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
@@ -1572,12 +1545,16 @@ INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`)
 (836, 1, 'n9k1u85JCISkpFVqQNwJseIg5mcTQySJ', '2018-05-01 18:16:03', '2018-05-01 18:16:03'),
 (837, 1, 'DCj754X42jdApjyhhYSMVWQ5kunBzedj', '2018-05-01 22:06:59', '2018-05-01 22:06:59'),
 (838, 1, 'ommRL74r2eKXg0jeEqhjWQjdPixNZ5cE', '2018-05-01 22:07:00', '2018-05-01 22:07:00'),
-(839, 1, 'p4lcc4nrQbYgIxtxuP0Cl6mOZHRO6b7O', '2018-05-01 23:45:10', '2018-05-01 23:45:10');
+(839, 1, 'p4lcc4nrQbYgIxtxuP0Cl6mOZHRO6b7O', '2018-05-01 23:45:10', '2018-05-01 23:45:10'),
+(840, 1, 'A1VHeEVkS7XMKByD0ritXK2rE4bB1EV5', '2018-05-10 12:31:20', '2018-05-10 12:31:20');
+INSERT INTO `persistences` (`id`, `user_id`, `code`, `created_at`, `updated_at`) VALUES
+(841, 1, 'AONtVqDfwMfUl1txqHZN6FNFsoKl8WSF', '2018-05-11 02:08:37', '2018-05-11 02:08:37'),
+(842, 1, 'Fi80Rr09d1kd0P2FhWg3cu0Cl5CljiKy', '2018-05-11 07:15:00', '2018-05-11 07:15:00');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `photo`
+-- Table structure for table `photo`
 --
 
 DROP TABLE IF EXISTS `photo`;
@@ -1594,7 +1571,7 @@ CREATE TABLE `photo` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `post_param`
+-- Table structure for table `post_param`
 --
 
 DROP TABLE IF EXISTS `post_param`;
@@ -1607,7 +1584,7 @@ CREATE TABLE `post_param` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `post_param`
+-- Dumping data for table `post_param`
 --
 
 INSERT INTO `post_param` (`id`, `post_id`, `param_id`, `created_at`, `updated_at`) VALUES
@@ -1618,7 +1595,7 @@ INSERT INTO `post_param` (`id`, `post_id`, `param_id`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `privilege`
+-- Table structure for table `privilege`
 --
 
 DROP TABLE IF EXISTS `privilege`;
@@ -1633,7 +1610,7 @@ CREATE TABLE `privilege` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `privilege`
+-- Dumping data for table `privilege`
 --
 
 INSERT INTO `privilege` (`id`, `fullname`, `controller`, `action`, `sort_order`, `created_at`, `updated_at`) VALUES
@@ -1720,7 +1697,7 @@ INSERT INTO `privilege` (`id`, `fullname`, `controller`, `action`, `sort_order`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `product`
+-- Table structure for table `product`
 --
 
 DROP TABLE IF EXISTS `product`;
@@ -1746,7 +1723,7 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Đang đổ dữ liệu cho bảng `product`
+-- Dumping data for table `product`
 --
 
 INSERT INTO `product` (`id`, `code`, `fullname`, `meta_keyword`, `meta_description`, `alias`, `image`, `status`, `child_image`, `price`, `sale_price`, `intro`, `detail`, `count_view`, `category_id`, `sort_order`, `created_at`, `updated_at`) VALUES
@@ -1771,7 +1748,7 @@ INSERT INTO `product` (`id`, `code`, `fullname`, `meta_keyword`, `meta_descripti
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `project`
+-- Table structure for table `project`
 --
 
 DROP TABLE IF EXISTS `project`;
@@ -1802,7 +1779,7 @@ CREATE TABLE `project` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `project_article`
+-- Table structure for table `project_article`
 --
 
 DROP TABLE IF EXISTS `project_article`;
@@ -1827,7 +1804,7 @@ CREATE TABLE `project_article` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `project_member`
+-- Table structure for table `project_member`
 --
 
 DROP TABLE IF EXISTS `project_member`;
@@ -1840,7 +1817,7 @@ CREATE TABLE `project_member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `project_member`
+-- Dumping data for table `project_member`
 --
 
 INSERT INTO `project_member` (`id`, `project_id`, `member_id`, `created_at`, `updated_at`) VALUES
@@ -1849,7 +1826,7 @@ INSERT INTO `project_member` (`id`, `project_id`, `member_id`, `created_at`, `up
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `province`
+-- Table structure for table `province`
 --
 
 DROP TABLE IF EXISTS `province`;
@@ -1864,7 +1841,7 @@ CREATE TABLE `province` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `province`
+-- Dumping data for table `province`
 --
 
 INSERT INTO `province` (`id`, `fullname`, `alias`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -1935,7 +1912,7 @@ INSERT INTO `province` (`id`, `fullname`, `alias`, `sort_order`, `status`, `crea
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `reminders`
+-- Table structure for table `reminders`
 --
 
 DROP TABLE IF EXISTS `reminders`;
@@ -1952,7 +1929,7 @@ CREATE TABLE `reminders` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `roles`
+-- Table structure for table `roles`
 --
 
 DROP TABLE IF EXISTS `roles`;
@@ -1968,7 +1945,7 @@ CREATE TABLE `roles` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `role_users`
+-- Table structure for table `role_users`
 --
 
 DROP TABLE IF EXISTS `role_users`;
@@ -1982,7 +1959,7 @@ CREATE TABLE `role_users` (
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `setting_system`
+-- Table structure for table `setting_system`
 --
 
 DROP TABLE IF EXISTS `setting_system`;
@@ -2007,7 +1984,7 @@ CREATE TABLE `setting_system` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `setting_system`
+-- Dumping data for table `setting_system`
 --
 
 INSERT INTO `setting_system` (`id`, `fullname`, `alias`, `title`, `meta_keyword`, `meta_description`, `author`, `copyright`, `google_site_verification`, `google_analytics`, `logo_frontend`, `favicon`, `setting`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -2016,7 +1993,7 @@ INSERT INTO `setting_system` (`id`, `fullname`, `alias`, `title`, `meta_keyword`
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `supporter`
+-- Table structure for table `supporter`
 --
 
 DROP TABLE IF EXISTS `supporter`;
@@ -2032,7 +2009,7 @@ CREATE TABLE `supporter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `supporter`
+-- Dumping data for table `supporter`
 --
 
 INSERT INTO `supporter` (`id`, `fullname`, `number_money`, `payment_method_id`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -2045,7 +2022,7 @@ INSERT INTO `supporter` (`id`, `fullname`, `number_money`, `payment_method_id`, 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `throttle`
+-- Table structure for table `throttle`
 --
 
 DROP TABLE IF EXISTS `throttle`;
@@ -2059,7 +2036,7 @@ CREATE TABLE `throttle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `throttle`
+-- Dumping data for table `throttle`
 --
 
 INSERT INTO `throttle` (`id`, `user_id`, `type`, `ip`, `created_at`, `updated_at`) VALUES
@@ -2618,7 +2595,7 @@ INSERT INTO `throttle` (`id`, `user_id`, `type`, `ip`, `created_at`, `updated_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `users`
+-- Table structure for table `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -2640,11 +2617,11 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `permissions`, `last_login`, `fullname`, `address`, `phone`, `image`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'diennk@dienkim.com', '$2y$10$nxBXFyAJNjPSLEI0RlPv8edQAw4ebTioV9JZaosCErs3VM/LYluuK', NULL, '2018-05-01 23:45:10', 'Nguyễn Kim Điền', NULL, NULL, 'logo-5-983456149.png', 6, 1, '2017-11-12 07:23:56', '2018-05-01 23:45:10'),
+(1, 'admin', 'diennk@dienkim.com', '$2y$10$nxBXFyAJNjPSLEI0RlPv8edQAw4ebTioV9JZaosCErs3VM/LYluuK', NULL, '2018-05-11 07:15:00', 'Nguyễn Kim Điền', NULL, NULL, 'logo-5-983456149.png', 6, 1, '2017-11-12 07:23:56', '2018-05-11 07:15:00'),
 (8, 'tiennv', 'tiennv@dienkim.com', '$2y$10$9sq3u.mDu/Bk1vvpv4sU7.Ior67wjHR5n1slgsv/sz63zBQxAfZ4K', NULL, '2018-02-23 01:16:10', 'Nguyễn Văn Tiến', '14 Tân Canh', '0988152782', NULL, 5, 0, '2018-02-05 20:06:26', '2018-02-23 01:16:10'),
 (9, 'vinhlt', 'vinhht@dienkim.com', '$2y$10$ib1fvlTyvQLoRQcVt.Qrt.VAZtN3lPSMWHwpoqYwx5OM/4/vSUE9q', NULL, '2018-02-04 11:57:07', 'Huỳnh Thúc Vinh', '23 Bùi Quang Là', '0988162722', NULL, 1, 0, '2018-02-04 05:35:55', '2018-02-04 11:57:07'),
 (14, 'phamduy', 'truonghuychuong1994@gmail.com', '$2y$10$j4aFmIopHHaRVXUSwKFIiOm59nc80jQzqfzEN58zTe87wWcgZHfJa', NULL, '2018-03-13 20:44:48', 'Phạm duy', NULL, NULL, NULL, 1, 1, '2018-03-13 19:46:01', '2018-03-13 20:44:48'),
@@ -2654,7 +2631,7 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `permissions`, `last
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `user_group_member`
+-- Table structure for table `user_group_member`
 --
 
 DROP TABLE IF EXISTS `user_group_member`;
@@ -2667,7 +2644,7 @@ CREATE TABLE `user_group_member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `user_group_member`
+-- Dumping data for table `user_group_member`
 --
 
 INSERT INTO `user_group_member` (`id`, `group_member_id`, `user_id`, `created_at`, `updated_at`) VALUES
@@ -2681,7 +2658,7 @@ INSERT INTO `user_group_member` (`id`, `group_member_id`, `user_id`, `created_at
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `video`
+-- Table structure for table `video`
 --
 
 DROP TABLE IF EXISTS `video`;
@@ -2698,7 +2675,7 @@ CREATE TABLE `video` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 --
--- Đang đổ dữ liệu cho bảng `video`
+-- Dumping data for table `video`
 --
 
 INSERT INTO `video` (`id`, `fullname`, `category_id`, `image`, `video_url`, `sort_order`, `status`, `created_at`, `updated_at`) VALUES
@@ -2712,236 +2689,236 @@ INSERT INTO `video` (`id`, `fullname`, `category_id`, `image`, `video_url`, `sor
 (11, 'Đi tham quan núi Bà Đen 8', 1, 'thuvienhinh-8.png', 'yGvSEhQXu4g', 8, 1, '2018-01-09 11:06:08', '2018-01-09 11:50:20');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `activations`
+-- Indexes for table `activations`
 --
 ALTER TABLE `activations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `album`
+-- Indexes for table `album`
 --
 ALTER TABLE `album`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `article`
+-- Indexes for table `article`
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `article_category`
+-- Indexes for table `article_category`
 --
 ALTER TABLE `article_category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `banner`
+-- Indexes for table `banner`
 --
 ALTER TABLE `banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `category_article`
+-- Indexes for table `category_article`
 --
 ALTER TABLE `category_article`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `category_banner`
+-- Indexes for table `category_banner`
 --
 ALTER TABLE `category_banner`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `category_param`
+-- Indexes for table `category_param`
 --
 ALTER TABLE `category_param`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `category_product`
+-- Indexes for table `category_product`
 --
 ALTER TABLE `category_product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `category_video`
+-- Indexes for table `category_video`
 --
 ALTER TABLE `category_video`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `district`
+-- Indexes for table `district`
 --
 ALTER TABLE `district`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `group_member`
+-- Indexes for table `group_member`
 --
 ALTER TABLE `group_member`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `group_privilege`
+-- Indexes for table `group_privilege`
 --
 ALTER TABLE `group_privilege`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `invoice`
+-- Indexes for table `invoice`
 --
 ALTER TABLE `invoice`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `invoice_detail`
+-- Indexes for table `invoice_detail`
 --
 ALTER TABLE `invoice_detail`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `menu`
+-- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `menu_type`
+-- Indexes for table `menu_type`
 --
 ALTER TABLE `menu_type`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `migrations`
+-- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `module_item`
+-- Indexes for table `module_item`
 --
 ALTER TABLE `module_item`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `organization`
+-- Indexes for table `organization`
 --
 ALTER TABLE `organization`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `page`
+-- Indexes for table `page`
 --
 ALTER TABLE `page`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `payment_method`
+-- Indexes for table `payment_method`
 --
 ALTER TABLE `payment_method`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `persistences`
+-- Indexes for table `persistences`
 --
 ALTER TABLE `persistences`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `persistences_code_unique` (`code`);
 
 --
--- Chỉ mục cho bảng `photo`
+-- Indexes for table `photo`
 --
 ALTER TABLE `photo`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `post_param`
+-- Indexes for table `post_param`
 --
 ALTER TABLE `post_param`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `privilege`
+-- Indexes for table `privilege`
 --
 ALTER TABLE `privilege`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `project`
+-- Indexes for table `project`
 --
 ALTER TABLE `project`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `project_article`
+-- Indexes for table `project_article`
 --
 ALTER TABLE `project_article`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `project_member`
+-- Indexes for table `project_member`
 --
 ALTER TABLE `project_member`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `province`
+-- Indexes for table `province`
 --
 ALTER TABLE `province`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `reminders`
+-- Indexes for table `reminders`
 --
 ALTER TABLE `reminders`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `roles`
+-- Indexes for table `roles`
 --
 ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `roles_slug_unique` (`slug`);
 
 --
--- Chỉ mục cho bảng `role_users`
+-- Indexes for table `role_users`
 --
 ALTER TABLE `role_users`
   ADD PRIMARY KEY (`user_id`,`role_id`);
 
 --
--- Chỉ mục cho bảng `setting_system`
+-- Indexes for table `setting_system`
 --
 ALTER TABLE `setting_system`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `supporter`
+-- Indexes for table `supporter`
 --
 ALTER TABLE `supporter`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `throttle`
+-- Indexes for table `throttle`
 --
 ALTER TABLE `throttle`
   ADD PRIMARY KEY (`id`),
   ADD KEY `throttle_user_id_index` (`user_id`);
 
 --
--- Chỉ mục cho bảng `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -2949,245 +2926,245 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- Chỉ mục cho bảng `user_group_member`
+-- Indexes for table `user_group_member`
 --
 ALTER TABLE `user_group_member`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `video`
+-- Indexes for table `video`
 --
 ALTER TABLE `video`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `activations`
+-- AUTO_INCREMENT for table `activations`
 --
 ALTER TABLE `activations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT cho bảng `album`
+-- AUTO_INCREMENT for table `album`
 --
 ALTER TABLE `album`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `article`
+-- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `article_category`
+-- AUTO_INCREMENT for table `article_category`
 --
 ALTER TABLE `article_category`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `banner`
+-- AUTO_INCREMENT for table `banner`
 --
 ALTER TABLE `banner`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
--- AUTO_INCREMENT cho bảng `category_article`
+-- AUTO_INCREMENT for table `category_article`
 --
 ALTER TABLE `category_article`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `category_banner`
+-- AUTO_INCREMENT for table `category_banner`
 --
 ALTER TABLE `category_banner`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT cho bảng `category_param`
+-- AUTO_INCREMENT for table `category_param`
 --
 ALTER TABLE `category_param`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
--- AUTO_INCREMENT cho bảng `category_product`
+-- AUTO_INCREMENT for table `category_product`
 --
 ALTER TABLE `category_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
--- AUTO_INCREMENT cho bảng `category_video`
+-- AUTO_INCREMENT for table `category_video`
 --
 ALTER TABLE `category_video`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `district`
+-- AUTO_INCREMENT for table `district`
 --
 ALTER TABLE `district`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT cho bảng `group_member`
+-- AUTO_INCREMENT for table `group_member`
 --
 ALTER TABLE `group_member`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `group_privilege`
+-- AUTO_INCREMENT for table `group_privilege`
 --
 ALTER TABLE `group_privilege`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3720;
 
 --
--- AUTO_INCREMENT cho bảng `invoice`
+-- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `invoice_detail`
+-- AUTO_INCREMENT for table `invoice_detail`
 --
 ALTER TABLE `invoice_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT cho bảng `menu`
+-- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=506;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=507;
 
 --
--- AUTO_INCREMENT cho bảng `menu_type`
+-- AUTO_INCREMENT for table `menu_type`
 --
 ALTER TABLE `menu_type`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT cho bảng `migrations`
+-- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT cho bảng `module_item`
+-- AUTO_INCREMENT for table `module_item`
 --
 ALTER TABLE `module_item`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `page`
+-- AUTO_INCREMENT for table `page`
 --
 ALTER TABLE `page`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT cho bảng `payment_method`
+-- AUTO_INCREMENT for table `payment_method`
 --
 ALTER TABLE `payment_method`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `persistences`
+-- AUTO_INCREMENT for table `persistences`
 --
 ALTER TABLE `persistences`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=840;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=843;
 
 --
--- AUTO_INCREMENT cho bảng `photo`
+-- AUTO_INCREMENT for table `photo`
 --
 ALTER TABLE `photo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `post_param`
+-- AUTO_INCREMENT for table `post_param`
 --
 ALTER TABLE `post_param`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT cho bảng `privilege`
+-- AUTO_INCREMENT for table `privilege`
 --
 ALTER TABLE `privilege`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
--- AUTO_INCREMENT cho bảng `product`
+-- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT cho bảng `project`
+-- AUTO_INCREMENT for table `project`
 --
 ALTER TABLE `project`
   MODIFY `id` bigint(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `project_article`
+-- AUTO_INCREMENT for table `project_article`
 --
 ALTER TABLE `project_article`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `project_member`
+-- AUTO_INCREMENT for table `project_member`
 --
 ALTER TABLE `project_member`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `province`
+-- AUTO_INCREMENT for table `province`
 --
 ALTER TABLE `province`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
--- AUTO_INCREMENT cho bảng `reminders`
+-- AUTO_INCREMENT for table `reminders`
 --
 ALTER TABLE `reminders`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `roles`
+-- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT cho bảng `setting_system`
+-- AUTO_INCREMENT for table `setting_system`
 --
 ALTER TABLE `setting_system`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT cho bảng `supporter`
+-- AUTO_INCREMENT for table `supporter`
 --
 ALTER TABLE `supporter`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `throttle`
+-- AUTO_INCREMENT for table `throttle`
 --
 ALTER TABLE `throttle`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=552;
 
 --
--- AUTO_INCREMENT cho bảng `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT cho bảng `user_group_member`
+-- AUTO_INCREMENT for table `user_group_member`
 --
 ALTER TABLE `user_group_member`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT cho bảng `video`
+-- AUTO_INCREMENT for table `video`
 --
 ALTER TABLE `video`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
