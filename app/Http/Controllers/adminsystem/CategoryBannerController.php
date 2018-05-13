@@ -125,10 +125,10 @@ public function save(Request $request){
   $msg['success']='Lưu thành công';
 } 
 $info = array(
-  "checked"       => $checked,          
-  'msg'       => $msg,          
-  "id"            => (int)@$id
-);                 		 			       
+        "checked"       => $checked,          
+        'msg'       => $msg,      
+        'link_edit'=>route('adminsystem.'.$this->_controller.'.getForm',['edit',@$item->id])
+      );                 		 			       
 return $info;       
 }
 public function changeStatus(Request $request){
@@ -158,11 +158,15 @@ public function deleteItem(Request $request){
   $checked              =   1;                           
   $msg                =   array();
 
-  
+  $data=BannerModel::whereRaw("category_id = ?",[(int)@$id])->select('id')->get()->toArray();
+  if(count($data) > 0){
+    $checked            =   0;
+    
+    $msg['cannotdelete']            =   "Phần tử này có dữ liệu con. Vui lòng không xoá";
+  }    
   if($checked == 1){                        
     $item               =   CategoryBannerModel::find((int)@$id);
     $item->delete();  
-    BannerModel::whereRaw("category_id = ?",[(int)@$id])->delete();       
     $msg['success']='Xóa thành công';                   
   }        
   $data                   =   $this->loadData($request);
@@ -217,10 +221,15 @@ public function trash(Request $request){
     $checked            =   0;
     
     $msg['chooseone']            =   "Vui lòng chọn ít nhất một phần tử";
-  }  
+  }
+  $data=DB::table('banner')->whereIn('category_id',@$arrID)->select('id')->get()->toArray();             
+  if(count($data) > 0){
+    $checked            =   0;
+    
+    $msg['cannotdelete']            =   "Phần tử này có dữ liệu con. Vui lòng không xoá";
+  }   
   if($checked == 1){                                                  
-    DB::table('category_banner')->whereIn('id',@$arrID)->delete();
-    DB::table('banner')->whereIn('category_id',@$arrID)->delete();         
+    DB::table('category_banner')->whereIn('id',@$arrID)->delete();   
     $msg['success']='Xóa thành công';     
   }
   $data                   =   $this->loadData($request);
