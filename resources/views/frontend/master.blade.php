@@ -353,7 +353,7 @@ if(count($arrCart) > 0){
 		var js, fjs = d.getElementsByTagName(s)[0];
 		if (d.getElementById(id)) return;
 		js = d.createElement(s); js.id = id;
-		js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.11&appId=206740246563578';
+		js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0&appId=206740246563578&autoLogAppEvents=1';
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
 	<!-- end fanpage -->
@@ -369,7 +369,7 @@ if(count($arrCart) > 0){
 						</center>	
 					</div>
 					<div class="faptap">
-						<div class="slogan-1">CÔNG TY TNHH XNK CÔNG NGHỆ THP</div>
+						<div class="slogan-1"><?php echo $seo_title; ?></div>
 						<hr class="mikae margin-top-5" />
 						<!--<div class="slogan-1 margin-top-5">KAIZEN FOODS</div>-->
 						<div class="cchc">Vì sức khỏe người Việt</div>
