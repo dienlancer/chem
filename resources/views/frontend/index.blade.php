@@ -211,24 +211,16 @@ $seo=getSeo();
                     <h2>HỖ TRỢ TRỰC TUYẾN</h2>
                     <?php 
                     $name_nvkd_1=$setting['name_nvkd_1']['field_value'];
-                    $name_nvkd_2=$setting['name_nvkd_2']['field_value'];
-                    $name_nvkd_3=$setting['name_nvkd_3']['field_value'];
-                    $name_nvkd_4=$setting['name_nvkd_4']['field_value'];
+                    
 
                     $skype_nvkd_1=$setting['skype_nvkd_1']['field_value'];
-                    $skype_nvkd_2=$setting['skype_nvkd_2']['field_value'];
-                    $skype_nvkd_3=$setting['skype_nvkd_3']['field_value'];
-                    $skype_nvkd_4=$setting['skype_nvkd_4']['field_value'];
+                    
 
                     $email_nvkd_1=$setting['email_nvkd_1']['field_value'];
-                    $email_nvkd_2=$setting['email_nvkd_2']['field_value'];
-                    $email_nvkd_3=$setting['email_nvkd_3']['field_value'];
-                    $email_nvkd_4=$setting['email_nvkd_4']['field_value'];
+                    
 
                     $tel_nvkd_1=$setting['tel_nvkd_1']['field_value'];
-                    $tel_nvkd_2=$setting['tel_nvkd_2']['field_value'];
-                    $tel_nvkd_3=$setting['tel_nvkd_3']['field_value'];
-                    $tel_nvkd_4=$setting['tel_nvkd_4']['field_value'];
+                    
                     ?>
                     <div class="box-article-list">  
                         <div class="box-support margin-top-5 padding-top-5 padding-left-5 padding-bottom-5">
@@ -240,37 +232,7 @@ $seo=getSeo();
                                 <span class="margin-left-5"><img src="<?php echo asset('upload/zalo-icon.png'); ?>" /></span>
                                 <span class="margin-left-5"><b><?php echo $tel_nvkd_1; ?></b></span>                                
                             </div>
-                        </div>
-                        <div class="box-support margin-top-5 padding-top-5 padding-left-5 padding-bottom-5">
-                            <div><img src="<?php echo asset('upload/user-icon.png'); ?>" /><span class="employee-name margin-left-5"><?php echo $name_nvkd_2; ?></span></div>
-                            <div class="margin-top-5">
-                                <span><a href="skype:<?php echo $skype_nvkd_2; ?>?add"><img src="<?php echo asset('upload/skype-icon.png'); ?>"></a></span>                             
-                                <span class="margin-left-5"><a href="mailto:<?php echo $email_nvkd_2; ?>"><img src="<?php echo asset('upload/mail-icon.png'); ?>"></a></span>
-                                <span class="margin-left-5 phone-tel"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                <span class="margin-left-5"><img src="<?php echo asset('upload/zalo-icon.png'); ?>" /></span>
-                                <span class="margin-left-5"><b><?php echo $tel_nvkd_2; ?></b></span>                                
-                            </div>
-                        </div>
-                        <div class="box-support margin-top-5 padding-top-5 padding-left-5 padding-bottom-5">
-                            <div><img src="<?php echo asset('upload/user-icon.png'); ?>" /><span class="employee-name margin-left-5"><?php echo $name_nvkd_3; ?></span></div>
-                            <div class="margin-top-5">
-                                <span><a href="skype:<?php echo $skype_nvkd_3; ?>?add"><img src="<?php echo asset('upload/skype-icon.png'); ?>"></a></span>                             
-                                <span class="margin-left-5"><a href="mailto:<?php echo $email_nvkd_3; ?>"><img src="<?php echo asset('upload/mail-icon.png'); ?>"></a></span>
-                                <span class="margin-left-5 phone-tel"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                <span class="margin-left-5"><img src="<?php echo asset('upload/zalo-icon.png'); ?>" /></span>
-                                <span class="margin-left-5"><b><?php echo $tel_nvkd_3; ?></b></span>                                
-                            </div>
-                        </div>
-                        <div class="box-support margin-top-5 padding-top-5 padding-left-5 padding-bottom-5">
-                            <div><img src="<?php echo asset('upload/user-icon.png'); ?>" /><span class="employee-name margin-left-5"><?php echo $name_nvkd_4; ?></span></div>
-                            <div class="margin-top-5">
-                                <span><a href="skype:<?php echo $skype_nvkd_4; ?>?add"><img src="<?php echo asset('upload/skype-icon.png'); ?>"></a></span>                             
-                                <span class="margin-left-5"><a href="mailto:<?php echo $email_nvkd_4; ?>"><img src="<?php echo asset('upload/mail-icon.png'); ?>"></a></span>
-                                <span class="margin-left-5 phone-tel"><i class="fa fa-phone" aria-hidden="true"></i></span>
-                                <span class="margin-left-5"><img src="<?php echo asset('upload/zalo-icon.png'); ?>" /></span>
-                                <span class="margin-left-5"><b><?php echo $tel_nvkd_4; ?></b></span>                                
-                            </div>
-                        </div>                              
+                        </div>                                        
                     </div>
                 </div>     
                 <?php 
