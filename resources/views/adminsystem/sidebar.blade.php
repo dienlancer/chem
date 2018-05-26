@@ -206,25 +206,25 @@ switch ($controller) {
                     <span class="title">Sản phẩm</span>                                            
                 </a>                                                                      
             </li>
-            
-            <li class="nav-item <?php echo $li_payment_method; ?> ">
-                <a href="{!! route('adminsystem.payment-method.getList') !!}" class="nav-link nav-toggle">
-                    <i class="icon-notebook"></i>
-                    <span class="title">Phương thức thanh toán</span>                                            
-                </a>                                                                      
-            </li>
             <li class="nav-item  <?php echo $li_invoice; ?>">
                 <a href="{!! route('adminsystem.invoice.getList') !!}" class="nav-link nav-toggle">
                     <i class="icon-notebook"></i>
                     <span class="title">Đơn hàng</span>                                            
                 </a>                                                                      
             </li>
+            <!--<li class="nav-item <?php echo $li_payment_method; ?> ">
+                <a href="{!! route('adminsystem.payment-method.getList') !!}" class="nav-link nav-toggle">
+                    <i class="icon-notebook"></i>
+                    <span class="title">Phương thức thanh toán</span>                                            
+                </a>                                                                      
+            </li>
+            
             <li class="nav-item  <?php echo $li_category_param; ?>">
                 <a href="{!! route('adminsystem.category-param.getList') !!}" class="nav-link nav-toggle">
                     <i class="icon-notebook"></i>
                     <span class="title">Tham số sản phẩm</span>                                            
                 </a>                                                                      
-            </li>
+            </li>-->
         </ul>
     </li>        
     <li class="nav-item  <?php echo $li_media; ?>">

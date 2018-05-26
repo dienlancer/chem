@@ -9,14 +9,16 @@
 		type: 'POST',
 		data: dataItem,
 		async: false,
-		success: function (data) {						
-			if(data.checked==1){
+		success: function (data) {	
+			console.log(data);
+					
+			/*if(parseInt(data.checked) ==1){
 				$(ctrl).summernote('editor.insertImage', data.summer_url,function(summer_img){										
 					$(summer_img).css('width','100%');
 				});
-			}else{                    
+			}else{                 				
 				alert(data.msg.status);                         
-			}
+			}*/
 		},
 		error : function (data){
 

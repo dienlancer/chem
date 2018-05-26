@@ -74,7 +74,8 @@ $linkSave               =   route('adminsystem.'.$controller.'.save');
             type: 'POST',
             data: dataItem,
             async: false,
-            success: function (data) {                                
+            success: function (data) {          
+                alert(data.msg.success);                                       
                 window.location.href = "<?php echo $linkCancel; ?>";
             },
             error : function (data){
