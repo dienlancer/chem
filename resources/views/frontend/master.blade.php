@@ -168,10 +168,6 @@ if(count($arrCart) > 0){
 	<script language="javascript" type="text/javascript" src="{{asset('public/frontend/js/jquery.fancybox.min.js')}}"                 ></script>
 	<link href="{{asset('public/frontend/css/jquery.fancybox.min.css')}}" rel="stylesheet" type="text/css" />
 	<!-- end fancybox -->
-	<!-- begin ckeditor-->
-	<script language="javascript" type="text/javascript" src="{{asset('public/frontend/ckeditor/ckeditor.js')}}"                 ></script>
-	<script language="javascript" type="text/javascript" src="{{asset('public/frontend/ckfinder/ckfinder.js')}}"                 ></script>
-	<!-- end ckeditor-->
 	<!-- begin custom -->
 	<link rel="stylesheet" href="{{ asset('public/frontend/css/menu-horizontal-right.css') }}" />
 	<link rel="stylesheet" href="{{ asset('public/frontend/css/menu-horizontal-right-dmsp.css') }}" />
