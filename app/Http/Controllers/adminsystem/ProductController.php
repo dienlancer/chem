@@ -114,7 +114,8 @@ public function save(Request $request){
   $sale_price           =   trim($request->sale_price);                    
   $detail               =   trim($request->detail);    
   $intro                =   trim($request->intro);
-  $image_hidden         =   trim($request->image_hidden);                       
+  $image_hidden         =   trim($request->image_hidden);    
+  $alt_image                =   trim($request->alt_image);                     
   $sort_order           =   trim($request->sort_order);          
   $category_id	        =		trim($request->category_id);             
   $category_param_id    =   ($request->category_param_id);            
@@ -218,7 +219,8 @@ if ($checked == 1) {
   $item->price            = (int)(str_replace('.', '',@$price)) ;
   $item->sale_price       = (int)(str_replace('.', '',@$sale_price)) ;                                 
   $item->detail           = $detail;      
-  $item->intro            = $intro;            
+  $item->intro            = $intro;        
+  $item->alt_image          = $alt_image;         
   $item->category_id      = (int)@$category_id;                                      
   $item->sort_order 	    =	(int)@$sort_order;                
   $item->updated_at 	    =	date("Y-m-d H:i:s",time());  
