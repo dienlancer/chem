@@ -59,25 +59,7 @@ $inputID                =   '<input type="hidden" name="id"  value="'.@$id.'" />
                             <span class="help-block"></span>
                         </div>
                     </div>   
-                </div>
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <label class="col-md-2 control-label"><b>Loại menu</b></label>
-                        <div class="col-md-10">
-                            <?php echo $ddlMenuAdminType; ?>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>    
-                </div> 
-                <div class="row">
-                    <div class="form-group col-md-12">
-                        <label class="col-md-2 control-label"><b>Menu class</b></label>
-                        <div class="col-md-10">
-                            <?php echo $inputMenuClass; ?>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>  
-                </div>      
+                </div>                            
                 <div class="row">
                     <div class="form-group col-md-12">
                         <label class="col-md-2 control-label"><b>Sắp xếp</b></label>
@@ -86,16 +68,7 @@ $inputID                =   '<input type="hidden" name="id"  value="'.@$id.'" />
                             <span class="help-block"></span>
                         </div>
                     </div>  
-                </div>
-                <div class="row"> 
-                    <div class="form-group col-md-12">
-                        <label class="col-md-2 control-label"><b>Trạng thái</b></label>
-                        <div class="col-md-10">                            
-                            <?php echo $ddlStatus; ?>
-                            <span class="help-block"></span>
-                        </div>
-                    </div>     
-                </div>                                                          
+                </div>                                                                
             </div>                  
         </form>
     </div>
