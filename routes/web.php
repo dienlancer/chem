@@ -286,6 +286,15 @@ Route::group(["prefix"=>"adminsystem","middleware"=>"TestLogin"],function(){
 		
 		Route::post("create-alias",["as"=>"adminsystem.page.createAlias","uses"=>"adminsystem\PageController@createAlias"]);
 	});	
+	Route::group(["prefix"=>"menu-admin"],function(){		
+		Route::get("list",["as"=>"adminsystem.menu-admin.getList","uses"=>"adminsystem\MenuAdminController@getList"]);
+		Route::post("load-data",["as"=>"adminsystem.menu-admin.loadData","uses"=>"adminsystem\MenuAdminController@loadData"]);		
+		Route::get("form/{task}/{id?}",["as"=>"adminsystem.menu-admin.getForm","uses"=>"adminsystem\MenuAdminController@getForm"]);
+		Route::post("save",["as"=>"adminsystem.menu-admin.save","uses"=>"adminsystem\MenuAdminController@save"]);
+		Route::post("delete-item",["as"=>"adminsystem.menu-admin.deleteItem","uses"=>"adminsystem\MenuAdminController@deleteItem"]);		
+		Route::post("sort-order",["as"=>"adminsystem.menu-admin.sortOrder","uses"=>"adminsystem\MenuAdminController@sortOrder"]);		
+		Route::post("trash",["as"=>"adminsystem.menu-admin.trash","uses"=>"adminsystem\MenuAdminController@trash"]);				
+	});	
 	Route::group(["prefix"=>"menu"],function(){		
 		Route::match(["get","post"],"list/{menu_type_id}",["as"=>"adminsystem.menu.getList","uses"=>"adminsystem\MenuController@getList"]);	
 		Route::get("form/{task}/{menu_type_id?}/{id?}/{alias?}",["as"=>"adminsystem.menu.getForm","uses"=>"adminsystem\MenuController@getForm"]);

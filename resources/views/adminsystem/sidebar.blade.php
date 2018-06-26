@@ -39,6 +39,8 @@ $li_privilege='';
 $li_media='';
 $li_supporter='';
 $li_organization='';
+
+$li_menu_admin='';
 switch ($controller) {
     case 'category-article':  
     $li_category_article='active open';
@@ -115,6 +117,9 @@ switch ($controller) {
     case 'page':    
     $li_page='active open';
     break;  
+    case 'menu-admin':    
+    $li_menu_admin='active open';
+    break;  
     case 'category-banner':
     case 'banner':
     $li_category_banner='active open';
@@ -187,6 +192,12 @@ switch ($controller) {
             <span class="title">Trang tĩnh</span>                                            
         </a>                                                                      
     </li> 
+    <li class="nav-item  <?php echo $li_menu_admin; ?>">
+        <a href="{!! route('adminsystem.menu-admin.getList') !!}" class="nav-link nav-toggle">
+            <i class="icon-notebook"></i>
+            <span class="title">Menu Admin</span>                                            
+        </a>                                                                      
+    </li>
     <li class="nav-item  <?php echo $li_product_management; ?>">
         <a href="javascript:;" class="nav-link nav-toggle">
             <i class="fa fa-folder-open-o" ></i>
@@ -211,20 +222,7 @@ switch ($controller) {
                     <i class="icon-notebook"></i>
                     <span class="title">Đơn hàng</span>                                            
                 </a>                                                                      
-            </li>
-            <!--<li class="nav-item <?php echo $li_payment_method; ?> ">
-                <a href="{!! route('adminsystem.payment-method.getList') !!}" class="nav-link nav-toggle">
-                    <i class="icon-notebook"></i>
-                    <span class="title">Phương thức thanh toán</span>                                            
-                </a>                                                                      
-            </li>
-            
-            <li class="nav-item  <?php echo $li_category_param; ?>">
-                <a href="{!! route('adminsystem.category-param.getList') !!}" class="nav-link nav-toggle">
-                    <i class="icon-notebook"></i>
-                    <span class="title">Tham số sản phẩm</span>                                            
-                </a>                                                                      
-            </li>-->
+            </li>            
         </ul>
     </li>        
     <li class="nav-item  <?php echo $li_media; ?>">
