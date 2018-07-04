@@ -4,7 +4,6 @@
 $linkNew			=	route('adminsystem.'.$controller.'.getForm',['add']);
 $linkCancel			=	route('adminsystem.'.$controller.'.getList');
 $linkLoadData		=	route('adminsystem.'.$controller.'.loadData');
-$linkDelete			=	route('adminsystem.'.$controller.'.deleteItem');
 $linkTrash			=	route('adminsystem.'.$controller.'.trash');
 $linkSortOrder		=	route('adminsystem.'.$controller.'.sortOrder');
 ?>
@@ -65,6 +64,7 @@ $linkSortOrder		=	route('adminsystem.'.$controller.'.sortOrder');
 						<th width="1%"><input type="checkbox" name="checkall-toggle"></th>           
 						<th>Menu</th>
 						<th>Menu cha</th>									
+						<th>Form</th>
 						<th width="10%">Sắp xếp</th>								
 						<th width="1%">Sửa</th>  
 						<th width="1%">Xóa</th>                     
@@ -77,7 +77,8 @@ $linkSortOrder		=	route('adminsystem.'.$controller.'.sortOrder');
 							$checked=$value['checked'];
 							$id=$value['id'];
 							$fullname=$value['fullname'];						
-							$parent_fullname=$value['parent_fullname'];						
+							$parent_fullname=$value['parent_fullname'];			
+							$form_url=$value['form_url'];			
 							$sort_order=$value['sort_order'];
 							$edited=$value['edited'];
 							$deleted=$value['deleted'];
@@ -85,7 +86,8 @@ $linkSortOrder		=	route('adminsystem.'.$controller.'.sortOrder');
 							<tr>
 								<td><?php echo $checked; ?></td>                
 								<td><?php echo $fullname; ?></td>
-								<td><?php echo $parent_fullname; ?></td>											
+								<td><?php echo $parent_fullname; ?></td>	
+								<td><?php echo $form_url; ?></td>										
 								<td><?php echo $sort_order; ?></td>					
 								<td><?php echo $edited; ?></td>  
 								<td><?php echo $deleted; ?></td>          

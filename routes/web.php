@@ -291,7 +291,7 @@ Route::group(["prefix"=>"adminsystem","middleware"=>"TestLogin"],function(){
 		Route::post("load-data",["as"=>"adminsystem.menu-admin.loadData","uses"=>"adminsystem\MenuAdminController@loadData"]);		
 		Route::get("form/{task}/{id?}",["as"=>"adminsystem.menu-admin.getForm","uses"=>"adminsystem\MenuAdminController@getForm"]);
 		Route::post("save",["as"=>"adminsystem.menu-admin.save","uses"=>"adminsystem\MenuAdminController@save"]);
-		Route::post("delete-item",["as"=>"adminsystem.menu-admin.deleteItem","uses"=>"adminsystem\MenuAdminController@deleteItem"]);		
+		Route::get("delete-item/{id}",["as"=>"adminsystem.menu-admin.deleteItem","uses"=>"adminsystem\MenuAdminController@deleteItem"]);		
 		Route::post("sort-order",["as"=>"adminsystem.menu-admin.sortOrder","uses"=>"adminsystem\MenuAdminController@sortOrder"]);		
 		Route::post("trash",["as"=>"adminsystem.menu-admin.trash","uses"=>"adminsystem\MenuAdminController@trash"]);				
 	});	

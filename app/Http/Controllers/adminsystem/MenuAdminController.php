@@ -104,9 +104,20 @@ public function getForm($task,$id=""){
     $checked              =   1;                           
     $msg                =   array();
     if(empty($fullname)){
-      $checked = 0;
-      $msg["fullname"] = "Thiếu chủ đề bài viết";
-    }
+        $checked = 0;                 
+        $msg["fullname"] = "Thiếu tên menu";
+      }else{
+        $data=array();
+        if (empty($id)) {
+          $data=MenuAdminModel::whereRaw("trim(lower(fullname)) = ?",[trim(mb_strtolower($fullname,'UTF-8'))])->get()->toArray();           
+        }else{
+          $data=MenuAdminModel::whereRaw("trim(lower(fullname)) = ? and id != ?",[trim(mb_strtolower($fullname,'UTF-8')),(int)@$id])->get()->toArray();   
+        }  
+        if (count($data) > 0) {
+          $checked = 0;                  
+          $msg["fullname"] = "Tên menu đã tồn tại";
+        }       
+      }      
     if(empty($sort_order)){
       $checked = 0;
       $msg["sort_order"] 		= "Thiếu sắp xếp";
@@ -153,7 +164,7 @@ public function getForm($task,$id=""){
     return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);                
   }
   public function trash(Request $request){        
-    $arrID                 =   $request->cid;             
+    $arrID                 =   $request->cid;                     
     $info                 =   array();
     $checked              =   1;                           
     $msg                =   array();
@@ -162,9 +173,8 @@ public function getForm($task,$id=""){
 
       $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
     }else{
-      foreach ($arrID as $key => $value) {
-        $item=MenuAdminModel::find($value);           
-        $data = MenuAdminModel::whereRaw("parent_id",(int)@$value)->select('id')->get()->toArray();
+      foreach ($arrID as $key => $value) {        
+        $data = MenuAdminModel::whereRaw("parent_id = ?",[(int)@$value])->select('id')->get()->toArray();        
         if(count($data) > 0){
          $checked     =   0;
 

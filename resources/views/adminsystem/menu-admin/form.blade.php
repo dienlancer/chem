@@ -6,7 +6,7 @@ $linkSave               =   route('adminsystem.'.$controller.'.save');
 $inputFullName          =   '<input type="text" class="form-control" name="fullname"       value="'.@$fullname.'">'; 
 $inputFormUrl             =   '<input type="text" class="form-control" name="form_url"       value="'.@$arrRowData['form_url'].'">';        
 $parent_id              =   (count($arrRowData) > 0) ? @$arrRowData['parent_id'] : null ; 
-$ddlMenuAdmin                =   cmsSelectboxCategory('parent_id', 'form-control',$arrMenuRecursive,@$arrRowData['parent_id'],"",'Chọn danh mục');
+$ddlMenuAdmin                =   cmsSelectboxCategory('parent_id', 'form-control',$arrMenuAdminRecursive,@$arrRowData['parent_id'],"",'Chọn danh mục');
 $inputSortOrder         =   '<input type="text" class="form-control" name="sort_order"   value="'.@$arrRowData['sort_order'].'">';
 $id                     =   (count($arrRowData) > 0) ? @$arrRowData['id'] : "" ;
 $inputID                =   '<input type="hidden" name="id"  value="'.@$id.'" />'; 
@@ -35,7 +35,7 @@ $inputID                =   '<input type="hidden" name="id"  value="'.@$id.'" />
             <div class="form-body">
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <label class="col-md-2 control-label"><b>Menu</b></label>
+                        <label class="col-md-2 control-label"><b>Tên Menu</b></label>
                         <div class="col-md-10">
                             <?php echo $inputFullName; ?>
                             <span class="help-block"></span>
@@ -44,7 +44,7 @@ $inputID                =   '<input type="hidden" name="id"  value="'.@$id.'" />
                 </div>
                 <div class="row">  
                     <div class="form-group col-md-12">
-                        <label class="col-md-2 control-label"><b>form_url</b></label>
+                        <label class="col-md-2 control-label"><b>Form URL</b></label>
                         <div class="col-md-10">
                             <?php echo $inputFormUrl; ?>
                             <span class="help-block"></span>
