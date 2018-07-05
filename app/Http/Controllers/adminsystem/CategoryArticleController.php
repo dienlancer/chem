@@ -209,41 +209,43 @@ class CategoryArticleController extends Controller {
         return $info;          
       }
       public function changeStatus(Request $request){
-            $id             =       (int)$request->id;  
-            $status         =       (int)$request->status;
-            
-            $item=CategoryArticleModel::find($id);
-            $trangThai=0;
-            if($status==0){
-              $trangThai=1;
-            }
-            else{
-              $trangThai=0;
-            }
-            $item->status=$status;
-            $item->save();
-            $result = array(
-                        'id'      => $id, 
-                        'status'  => $status, 
-                        'link'    => 'javascript:changeStatus('.$id.','.$trangThai.');'
-                    );
-            return $result;   
+        $id             =       (int)$request->id;  
+        $status         =       (int)$request->status;        
+        $item=CategoryArticleModel::find($id);
+        $trangThai=0;
+        if($status==0){
+          $trangThai=1;
+        }
+        else{
+          $trangThai=0;
+        }
+        $item->status=$status;
+        $item->save();
+        $result = array(
+          'id'      => $id, 
+          'status'  => $status, 
+          'link'    => 'javascript:changeStatus('.$id.','.$trangThai.');'
+        );
+        return $result;   
       }      
       public function deleteItem($id){   
         $info=array();       
         $info                 =   array();
-      $checked              =   1;                           
-      $msg                =   array();
-        $data                   =   CategoryArticleModel::whereRaw("parent_id = ?",[(int)@$id])->get()->toArray();  
+        $checked              =   1;                           
+        $msg                =   array();
+        $arrPrivilege=getArrPrivilege();
+        $requestControllerAction=$this->_controller."-delete";
+        if(in_array($requestControllerAction,$arrPrivilege)){
+          $data                   =   CategoryArticleModel::whereRaw("parent_id = ?",[(int)@$id])->get()->toArray();  
           if(count($data) > 0){
             $checked     =   0;
-                    
+
             $msg['cannotdelete']                    =   "Phần tử này có dữ liệu con. Vui lòng không xoá";
           }
           $data                   =   ArticleCategoryModel::whereRaw("category_id = ?",[(int)@$id])->get()->toArray();              
           if(count($data) > 0){
             $checked     =   0;
-               
+
             $msg['cannotdelete']                    =   "Phần tử này có dữ liệu con. Vui lòng không xoá";
           }
           if($checked == 1){
@@ -252,19 +254,25 @@ class CategoryArticleController extends Controller {
             $msg['success']='Xóa thành công';
           }  
           $info = array(
-              "checked"       => $checked,          
-        'msg'       => $msg,                    
-            );      
-          return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);                             
+            "checked"       => $checked,          
+            'msg'       => $msg,                    
+          );      
+          return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);           
+        }else{
+          return view("adminsystem.no-access",compact('controller'));
+        }                            
       }
       public function updateStatus(Request $request,$status){        
         $arrID=$request->cid;
         $info                 =   array();
-      $checked              =   1;                           
-      $msg                =   array();
-        if(count($arrID)==0){
+        $checked              =   1;                           
+        $msg                =   array();
+        $arrPrivilege=getArrPrivilege();
+        $requestControllerAction=$this->_controller."-status";
+        if(in_array($requestControllerAction,$arrPrivilege)){
+          if(count($arrID)==0){
             $checked     =   0;
-            
+
             $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
           }
           if($checked==1){
@@ -276,74 +284,84 @@ class CategoryArticleController extends Controller {
             $msg['success']='Cập nhật trạng thái thành công';
           }   
           $info = array(
-              "checked"       => $checked,          
-        'msg'       => $msg,                           
-            );        
-          return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);       
+            "checked"       => $checked,          
+            'msg'       => $msg,                           
+          );        
+          return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);    
+        }else{
+          return view("adminsystem.no-access",compact('controller'));
+        }          
       }
       public function trash(Request $request){                              
         $info                 =   array();
-      $checked              =   1;                           
-      $msg                =   array();
-        $arrID                 =   $request->cid;           
-        if(count($arrID)==0){
-          $checked     =   0;
-          
-          $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
-        }else{
-          foreach ($arrID as $key => $value) {
-            if(!empty($value)){
-              $data                   =   CategoryArticleModel::whereRaw("parent_id = ?",[(int)@$value])->get()->toArray();                    
-              if(count($data) > 0){
-                $checked     =   0;
-                
-                $msg['cannotdelete']                    =   "Phần tử đã có dữ liệu con vui lòng không xóa";
-              }
-              $data                   =   ArticleCategoryModel::whereRaw("category_id = ?",[(int)@$value])->get()->toArray();                     
-              if(count($data) > 0){
-                $checked     =   0;
-                 
-                $msg['cannotdelete']                    =   "Phần tử đã có dữ liệu con vui lòng không xóa";
-              }
-            }                
+        $checked              =   1;                           
+        $msg                =   array();
+        $arrID                 =   $request->cid; 
+        $arrPrivilege=getArrPrivilege();
+        $requestControllerAction=$this->_controller."-trash";         
+        if(in_array($requestControllerAction,$arrPrivilege)){
+          if(count($arrID)==0){
+            $checked     =   0;
+            $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
+          }else{
+            foreach ($arrID as $key => $value) {
+              if(!empty($value)){
+                $data                   =   CategoryArticleModel::whereRaw("parent_id = ?",[(int)@$value])->get()->toArray();                    
+                if(count($data) > 0){
+                  $checked     =   0;                  
+                  $msg['cannotdelete']                    =   "Phần tử đã có dữ liệu con vui lòng không xóa";
+                }
+                $data                   =   ArticleCategoryModel::whereRaw("category_id = ?",[(int)@$value])->get()->toArray();                     
+                if(count($data) > 0){
+                  $checked     =   0;
+                  $msg['cannotdelete']                    =   "Phần tử đã có dữ liệu con vui lòng không xóa";
+                }
+              }                
+            }
           }
-        }
-        if($checked == 1){                            
-          DB::table('category_article')->whereIn('id',@$arrID)->delete();   
-          $msg['success']='Xóa thành công';
-        }
-        $info = array(
-              "checked"       => $checked,          
-        'msg'       => $msg,                           
-            );        
-        return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);       
+          if($checked == 1){                            
+            DB::table('category_article')->whereIn('id',@$arrID)->delete();   
+            $msg['success']='Xóa thành công';
+          }
+          $info = array(
+            "checked"       => $checked,          
+            'msg'       => $msg,                           
+          );        
+          return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);       
+        }else{
+          return view("adminsystem.no-access",compact('controller'));
+        }                 
       }
       public function sortOrder(Request $request){
         $info                 =   array();
-      $checked              =   1;                           
-      $msg                =   array();
+        $checked              =   1;                           
+        $msg                =   array();
         $arrOrder=array();
-        $arrOrder=$request->sort_order;          
-        if(count($arrOrder) == 0){
-          $checked     =   0;
-          
-          $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
-        }
-        if($checked==1){        
-          foreach($arrOrder as $id => $value){                    
-            $item=CategoryArticleModel::find($id);
-            $item->sort_order=(int)$value;            
-            $item->save();            
-          }     
-          $msg['success']='Sắp xếp thành công';
-        }    
-        $info = array(
-         "checked"       => $checked,           
-        'msg'       => $msg,            
-        );        
-        return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);
-      }
-      
+        $arrOrder=$request->sort_order;   
+        $arrPrivilege=getArrPrivilege();
+        $requestControllerAction=$this->_controller."-ordering";         
+        if(in_array($requestControllerAction,$arrPrivilege)){
+          if(count($arrOrder) == 0){
+            $checked     =   0;            
+            $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
+          }
+          if($checked==1){        
+            foreach($arrOrder as $id => $value){                    
+              $item=CategoryArticleModel::find($id);
+              $item->sort_order=(int)$value;            
+              $item->save();            
+            }     
+            $msg['success']='Sắp xếp thành công';
+          }    
+          $info = array(
+           "checked"       => $checked,           
+           'msg'       => $msg,            
+         );        
+          return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);
+        }else{
+          return view("adminsystem.no-access",compact('controller'));
+        }               
+      }      
       public function createAlias(Request $request){
         $id                =  trim($request->id)  ; 
         $fullname                =  trim($request->fullname)  ;        
@@ -352,8 +370,8 @@ class CategoryArticleController extends Controller {
         
         $item                    =  null;
         $info                 =   array();
-      $checked              =   1;                           
-      $msg                =   array();
+        $checked              =   1;                           
+        $msg                =   array();
         $alias='';                     
         if(empty($fullname)){
          $checked = 0;         
@@ -366,7 +384,7 @@ class CategoryArticleController extends Controller {
         $dataProduct=array();
         $dataPage=array();
         $dataProject=array();
-          $dataProjectArticle=array();
+        $dataProjectArticle=array();
         $checked_trung_alias=0;
         if (empty($id)) {
           $dataCategoryArticle=CategoryArticleModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();              
@@ -392,14 +410,14 @@ class CategoryArticleController extends Controller {
           $checked_trung_alias=1;
         }      
         if (count($dataPage) > 0) {
-            $checked_trung_alias=1;
-          }  
-          if (count($dataProject) > 0) {
-            $checked_trung_alias=1;
-          }  
-          if (count($dataProjectArticle) > 0) {
-            $checked_trung_alias=1;
-          }   
+          $checked_trung_alias=1;
+        }  
+        if (count($dataProject) > 0) {
+          $checked_trung_alias=1;
+        }  
+        if (count($dataProjectArticle) > 0) {
+          $checked_trung_alias=1;
+        }   
         if((int)$checked_trung_alias == 1){
           $code_alias=rand(1,999999);
           $alias=$alias.'-'.$code_alias;
@@ -409,11 +427,11 @@ class CategoryArticleController extends Controller {
         $msg['success']='Lưu thành công';     
       }   
       $info = array(
-                "checked"       => $checked,          
+        "checked"       => $checked,          
         'msg'       => $msg,             
-                "alias"            => $alias
-              );                       
-            return $info;
+        "alias"            => $alias
+      );                       
+      return $info;
     }
 }
 ?>

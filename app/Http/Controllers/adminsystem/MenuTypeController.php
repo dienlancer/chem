@@ -6,60 +6,58 @@ use App\MenuTypeModel;
 use App\MenuModel;
 use DB;
 class MenuTypeController extends Controller {
-  	var $_controller="menu-type";	
-  	var $_title="Loại menu";
-  	var $_icon="icon-settings font-dark";
-  	public function getList(){		
-    		$controller=$this->_controller;	
-    		$task="list";
-    		$title=$this->_title;
-    		$icon=$this->_icon;		
-    		
-        $arrPrivilege=getArrPrivilege();
-        $requestControllerAction=$this->_controller."-list";         
-        if(in_array($requestControllerAction,$arrPrivilege)){
-          return view("adminsystem.".$this->_controller.".list",compact("controller","task","title","icon")); 
-        }
-        else{
-          return view("adminsystem.no-access",compact('controller'));
-        }
-  	}	
-  	public function loadData(Request $request){      
+     var $_controller="menu-type";	
+     var $_title="Loại menu";
+     var $_icon="icon-settings font-dark";
+     public function getList(){		
+      $controller=$this->_controller;	
+      $task="list";
+      $title=$this->_title;
+      $icon=$this->_icon;		      
+      $arrPrivilege=getArrPrivilege();
+      $requestControllerAction=$this->_controller."-list";         
+      if(in_array($requestControllerAction,$arrPrivilege)){
+        return view("adminsystem.".$this->_controller.".list",compact("controller","task","title","icon")); 
+      }
+      else{
+        return view("adminsystem.no-access",compact('controller'));
+      }
+    }	
+    public function loadData(Request $request){      
       $query=DB::table('menu_type')   ;   
       if(!empty(@$request->filter_search)){
         $query->where('menu_type.fullname','like','%'.trim(@$request->filter_search).'%');
       }             
       $data=$query->select('menu_type.id','menu_type.fullname','menu_type.theme_location','menu_type.sort_order','menu_type.status','menu_type.created_at','menu_type.updated_at')
-                  ->groupBy('menu_type.id','menu_type.fullname','menu_type.theme_location','menu_type.sort_order','menu_type.status','menu_type.created_at','menu_type.updated_at')
-                  ->orderBy('menu_type.sort_order', 'asc')
-                  ->get()
-                  ->toArray();      
+      ->groupBy('menu_type.id','menu_type.fullname','menu_type.theme_location','menu_type.sort_order','menu_type.status','menu_type.created_at','menu_type.updated_at')
+      ->orderBy('menu_type.sort_order', 'asc')
+      ->get()
+      ->toArray();      
       $data=convertToArray($data);    
       $data=menuTypeConverter($data,$this->_controller);            
       return $data;
     } 
     public function getForm($task,$id=""){		 
-        $controller=$this->_controller;			
-        $title="";
-        $icon=$this->_icon; 
-        $arrRowData=array();
-        $arrPrivilege=getArrPrivilege();
-        $requestControllerAction=$this->_controller."-form";  
-        if(in_array($requestControllerAction, $arrPrivilege)){
-            switch ($task) {
-            case 'edit':
-                $title=$this->_title . " : Update";
-                $arrRowData=MenuTypeModel::find((int)@$id)->toArray();       
-              break;
-            case 'add':
-                $title=$this->_title . " : Add new";
-              break;      
-       }       
-       return view("adminsystem.".$this->_controller.".form",compact("arrRowData","controller","task","title","icon"));
-        }else{
-          return view("adminsystem.no-access",compact('controller'));
-        }
-        
+      $controller=$this->_controller;			
+      $title="";
+      $icon=$this->_icon; 
+      $arrRowData=array();
+      $arrPrivilege=getArrPrivilege();
+      $requestControllerAction=$this->_controller."-form";  
+      if(in_array($requestControllerAction, $arrPrivilege)){
+        switch ($task) {
+          case 'edit':
+          $title=$this->_title . " : Update";
+          $arrRowData=MenuTypeModel::find((int)@$id)->toArray();       
+          break;
+          case 'add':
+          $title=$this->_title . " : Add new";
+          break;      
+        }       
+        return view("adminsystem.".$this->_controller.".form",compact("arrRowData","controller","task","title","icon"));
+      }else{
+        return view("adminsystem.no-access",compact('controller'));
+      }      
     }
     public function save(Request $request){
         $id 					       =	trim($request->id)	;        

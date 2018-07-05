@@ -138,15 +138,15 @@ public function save(Request $request){
   }      	
 }    
 /* begin checkfilesize */      
-      $file_size=0;
-      if($image_file != null){        
-        $file_size=((int)@$image_file['size'])/1024/1024;
-        if($file_size > (int)max_size_upload ){
-          $checked = 0;               
-          $msg["status"]      = "Vui lòng nhập hình ảnh dưới 2MB";
-        }
-      }
-      /* end checkfilesize */    
+$file_size=0;
+if($image_file != null){        
+  $file_size=((int)@$image_file['size'])/1024/1024;
+  if($file_size > (int)max_size_upload ){
+    $checked = 0;               
+    $msg["status"]      = "Vui lòng nhập hình ảnh dưới 2MB";
+  }
+}
+/* end checkfilesize */    
 if(empty($sort_order)){
  $checked = 0;
 
@@ -201,10 +201,10 @@ if ($checked == 1) {
   $msg['success']='Lưu thành công';
 } 
 $info = array(
-        "checked"       => $checked,          
-        'msg'       => $msg,      
-        'link_edit'=>route('adminsystem.'.$this->_controller.'.getForm',['edit',@$item->id])
-      );                  			       
+  "checked"       => $checked,          
+  'msg'       => $msg,      
+  'link_edit'=>route('adminsystem.'.$this->_controller.'.getForm',['edit',@$item->id])
+);                  			       
 return $info;       
 }
 public function changeStatus(Request $request){
@@ -228,55 +228,66 @@ public function changeStatus(Request $request){
   );
   return $result;   
 }
-
 public function deleteItem($id){           
   $info                 =   array();
   $checked              =   1;                           
   $msg                =   array();
-  $data                   =   CategoryProductModel::whereRaw("parent_id = ?",[(int)@$id])->get()->toArray();  
-  if(count($data) > 0){
-    $checked     =   0;          
-    $msg['cannotdelete']                    =   "Phần tử này có dữ liệu con. Vui lòng không xoá";
-  }
-  $data                   =   ProductModel::whereRaw("category_id = ?",[(int)@$id])->get()->toArray();              
-  if(count($data) > 0){
-    $checked     =   0;
-    $msg['cannotdelete']                    =   "Phần tử này có dữ liệu con. Vui lòng không xoá";
-  }
-  if($checked == 1){
-    $item               =   CategoryProductModel::find((int)@$id);
-    $item->delete();    
-    $msg['success']='Xóa thành công';        
-  }        
-  $info = array(
-    "checked"       => $checked,          
-    'msg'       => $msg,                    
-  );      
-  return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);                      
+  $arrPrivilege=getArrPrivilege();
+  $requestControllerAction=$this->_controller."-delete";
+  if(in_array($requestControllerAction,$arrPrivilege)){
+    $data                   =   CategoryProductModel::whereRaw("parent_id = ?",[(int)@$id])->get()->toArray();  
+    if(count($data) > 0){
+      $checked     =   0;          
+      $msg['cannotdelete']                    =   "Phần tử này có dữ liệu con. Vui lòng không xoá";
+    }
+    $data                   =   ProductModel::whereRaw("category_id = ?",[(int)@$id])->get()->toArray();              
+    if(count($data) > 0){
+      $checked     =   0;
+      $msg['cannotdelete']                    =   "Phần tử này có dữ liệu con. Vui lòng không xoá";
+    }
+    if($checked == 1){
+      $item               =   CategoryProductModel::find((int)@$id);
+      $item->delete();    
+      $msg['success']='Xóa thành công';        
+    }        
+    $info = array(
+      "checked"       => $checked,          
+      'msg'       => $msg,                    
+    );      
+    return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);       
+  }else{
+    return view("adminsystem.no-access",compact('controller'));
+  }  
 }
 public function updateStatus(Request $request,$status){        
   $arrID=$request->cid;
   $info                 =   array();
   $checked              =   1;                           
   $msg                =   array();
-  if(count($arrID)==0){
-    $checked     =   0;
+  $arrPrivilege=getArrPrivilege();
+  $requestControllerAction=$this->_controller."-status";
+  if(in_array($requestControllerAction,$arrPrivilege)){
+    if(count($arrID)==0){
+      $checked     =   0;
 
-    $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
-  }
-  if($checked==1){
-    foreach ($arrID as $key => $value) {
-      $item=CategoryProductModel::find($value);
-      $item->status=$status;
-      $item->save();    
+      $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
     }
-    $msg['success']='Cập nhật trạng thái thành công';
-  }        
-  $info = array(
-    "checked"       => $checked,          
-    'msg'       => $msg,                           
-  );        
-  return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);     
+    if($checked==1){
+      foreach ($arrID as $key => $value) {
+        $item=CategoryProductModel::find($value);
+        $item->status=$status;
+        $item->save();    
+      }
+      $msg['success']='Cập nhật trạng thái thành công';
+    }        
+    $info = array(
+      "checked"       => $checked,          
+      'msg'       => $msg,                           
+    );        
+    return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);     
+  }else{
+    return view("adminsystem.no-access",compact('controller'));
+  }  
 }
 public function trash(Request $request){            
   $arrID                 =   $request->cid;             
@@ -284,37 +295,43 @@ public function trash(Request $request){
   $checked              =   1;                           
   $msg                =   array();     
   $arrID                 =   $request->cid;   
-  if(count($arrID)==0){
-    $checked     =   0;
+  $arrPrivilege=getArrPrivilege();
+  $requestControllerAction=$this->_controller."-trash";         
+  if(in_array($requestControllerAction,$arrPrivilege)){
+    if(count($arrID)==0){
+      $checked     =   0;
 
-    $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
-  }else{
-    foreach ($arrID as $key => $value) {
-      if(!empty($value)){
-        $data                   =   CategoryProductModel::whereRaw("parent_id = ?",[(int)@$value])->get()->toArray();                    
-        if(count($data) > 0){
-          $checked     =   0;
+      $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
+    }else{
+      foreach ($arrID as $key => $value) {
+        if(!empty($value)){
+          $data                   =   CategoryProductModel::whereRaw("parent_id = ?",[(int)@$value])->get()->toArray();                    
+          if(count($data) > 0){
+            $checked     =   0;
 
-          $msg['cannotdelete']                    =   "Phần tử đã có dữ liệu con vui lòng không xóa";
-        }
-        $data                   =   ProductModel::whereRaw("category_id = ?",[(int)@$value])->get()->toArray();                     
-        if(count($data) > 0){
-          $checked     =   0;
+            $msg['cannotdelete']                    =   "Phần tử đã có dữ liệu con vui lòng không xóa";
+          }
+          $data                   =   ProductModel::whereRaw("category_id = ?",[(int)@$value])->get()->toArray();                     
+          if(count($data) > 0){
+            $checked     =   0;
 
-          $msg['cannotdelete']                    =   "Phần tử đã có dữ liệu con vui lòng không xóa";
-        }
-      }                
+            $msg['cannotdelete']                    =   "Phần tử đã có dữ liệu con vui lòng không xóa";
+          }
+        }                
+      }
     }
-  }
-  if($checked == 1){                            
-    DB::table('category_product')->whereIn('id',@$arrID)->delete();   
-    $msg['success']='Xóa thành công';
-  }
-  $info = array(
-    "checked"       => $checked,          
-    'msg'       => $msg,                           
-  );        
-  return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);       
+    if($checked == 1){                            
+      DB::table('category_product')->whereIn('id',@$arrID)->delete();   
+      $msg['success']='Xóa thành công';
+    }
+    $info = array(
+      "checked"       => $checked,          
+      'msg'       => $msg,                           
+    );        
+    return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]);       
+  }else{
+    return view("adminsystem.no-access",compact('controller'));
+  }  
 }
 public function sortOrder(Request $request){
   $info                 =   array();
@@ -322,26 +339,31 @@ public function sortOrder(Request $request){
   $msg                =   array();
   $arrOrder=array();
   $arrOrder=$request->sort_order;  
-  if(count($arrOrder) == 0){
-    $checked     =   0;
+  $arrPrivilege=getArrPrivilege();
+  $requestControllerAction=$this->_controller."-ordering";         
+  if(in_array($requestControllerAction,$arrPrivilege)){
+    if(count($arrOrder) == 0){
+      $checked     =   0;
 
-    $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
-  }
-  if($checked==1){        
-    foreach($arrOrder as $id => $value){                    
-      $item=CategoryProductModel::find($id);
-      $item->sort_order=(int)$value;            
-      $item->save();            
+      $msg['chooseone']                    =   "Vui lòng chọn ít nhất 1 phần tử";
+    }
+    if($checked==1){        
+      foreach($arrOrder as $id => $value){                    
+        $item=CategoryProductModel::find($id);
+        $item->sort_order=(int)$value;            
+        $item->save();            
+      }    
+      $msg['success']='Sắp xếp thành công'; 
     }    
-    $msg['success']='Sắp xếp thành công'; 
-  }    
-  $info = array(
-   "checked"       => $checked,           
-   'msg'       => $msg,            
- );        
-  return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]); 
+    $info = array(
+     "checked"       => $checked,           
+     'msg'       => $msg,            
+   );        
+    return redirect()->route("adminsystem.".$this->_controller.".getList")->with(["message"=>$info]); 
+  }else{
+    return view("adminsystem.no-access",compact('controller'));
+  } 
 }
-
 public function createAlias(Request $request){
   $id                =  trim($request->id)  ; 
   $fullname                =  trim($request->fullname)  ;        
