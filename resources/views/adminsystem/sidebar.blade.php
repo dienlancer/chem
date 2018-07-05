@@ -40,7 +40,7 @@ $li_media='';
 $li_supporter='';
 $li_organization='';
 
-switch ($controller) {
+switch (@$controller) {
     case 'category-article':  
     $li_category_article='active open';
     $li_content_management='active open';
