@@ -13,48 +13,48 @@ use App\MenuModel;
 use App\ArticleCategoryModel;
 use DB;
 class ArticleController extends Controller {
-  	var $_controller="article";	
-  	var $_title="Bài viết";
-  	var $_icon="icon-settings font-dark";    
-  	public function getList(){		
-    		$controller=$this->_controller;	
-    		$task="list";
-    		$title=$this->_title;
-    		$icon=$this->_icon;		
-        $arrCategoryArticle=CategoryArticleModel::select("id","fullname","parent_id")->orderBy("sort_order","asc")->get()->toArray();
-        $arrCategoryArticleRecursive=array();              
-        categoryRecursiveForm($arrCategoryArticle ,0,"",$arrCategoryArticleRecursive)  ;            
-        $arrPrivilege=getArrPrivilege();
-        $requestControllerAction=$this->_controller."-list";         
-        if(in_array($requestControllerAction,$arrPrivilege)){
-          return view("adminsystem.".$this->_controller.".list",compact("controller","task","title","icon","arrCategoryArticleRecursive")); 
-        }
-        else{
-          return view("adminsystem.no-access",compact('controller'));
-        }
-  	}	    
-  	public function loadData(Request $request){      
-      $category_id=(int)@$request->category_id;
-        $arrCategoryID[]=@$category_id;
-        getStringCategoryID($category_id,$arrCategoryID,'category_article');     
-      $query=DB::table('article')
-      ->leftJoin('article_category','article.id','=','article_category.article_id')
-      ->leftJoin('category_article','category_article.id','=','article_category.category_id')  ;      
-      if(!empty(@$request->filter_search)){
-        $query->where('article.fullname','like','%'.trim(@$request->filter_search).'%');
-      }     
-      if(count($arrCategoryID) > 0){
-        $query->whereIn('article_category.category_id',$arrCategoryID);
-      }   
-      $data=$query->select('article.id','article.fullname','article.image','article.sort_order','article.status','article.created_at','article.updated_at')
-                  ->groupBy('article.id','article.fullname','article.image','article.sort_order','article.status','article.created_at','article.updated_at')
-                  ->orderBy('article.sort_order', 'asc')
-                  ->get()
-                  ->toArray();      
-      $data=convertToArray($data);    
-      $data=articleConverter($data,$this->_controller);            
-      return $data;
-    } 
+	var $_controller="article";	
+	var $_title="Bài viết";
+	var $_icon="icon-settings font-dark";    
+	public function getList(){		
+		$controller=$this->_controller;	
+		$task="list";
+		$title=$this->_title;
+		$icon=$this->_icon;		
+		$arrCategoryArticle=CategoryArticleModel::select("id","fullname","parent_id")->orderBy("sort_order","asc")->get()->toArray();
+		$arrCategoryArticleRecursive=array();              
+		categoryRecursiveForm($arrCategoryArticle ,0,"",$arrCategoryArticleRecursive)  ;            
+		$arrPrivilege=getArrPrivilege();
+		$requestControllerAction=$this->_controller."-list";         
+		if(in_array($requestControllerAction,$arrPrivilege)){
+			return view("adminsystem.".$this->_controller.".list",compact("controller","task","title","icon","arrCategoryArticleRecursive")); 
+		}
+		else{
+			return view("adminsystem.no-access",compact('controller'));
+		}
+	}	    
+	public function loadData(Request $request){      
+		$category_id=(int)@$request->category_id;
+		$arrCategoryID[]=@$category_id;
+		getStringCategoryID($category_id,$arrCategoryID,'category_article');     
+		$query=DB::table('article')
+		->leftJoin('article_category','article.id','=','article_category.article_id')
+		->leftJoin('category_article','category_article.id','=','article_category.category_id')  ;      
+		if(!empty(@$request->filter_search)){
+			$query->where('article.fullname','like','%'.trim(@$request->filter_search).'%');
+		}     
+		if(count($arrCategoryID) > 0){
+			$query->whereIn('article_category.category_id',$arrCategoryID);
+		}   
+		$data=$query->select('article.id','article.fullname','article.image','article.sort_order','article.status','article.created_at','article.updated_at')
+		->groupBy('article.id','article.fullname','article.image','article.sort_order','article.status','article.created_at','article.updated_at')
+		->orderBy('article.sort_order', 'asc')
+		->get()
+		->toArray();      
+		$data=convertToArray($data);    
+		$data=articleConverter($data,$this->_controller);            
+		return $data;
+	} 
     public function getForm($task,$id=""){     
         $controller=$this->_controller;     
         $title="";
@@ -92,7 +92,7 @@ class ArticleController extends Controller {
     		$image_file         =   $_FILES["image"];
     	}                   
     	$image_hidden         =   trim($request->image_hidden);
-      $alt_image                =   trim($request->alt_image);
+    	$alt_image                =   trim($request->alt_image);
     	$intro                =   trim($request->intro);
     	$content              =   trim($request->content);          
     	$description          =   trim($request->description);
@@ -129,21 +129,21 @@ class ArticleController extends Controller {
     		$checked = 0;                
     		$msg["category_id"]      = "Thiếu danh mục";
     	}else{
-        if((int)$category_id[0]==0){
-          $checked = 0;                
-          $msg["category_id"]      = "Thiếu danh mục";
-        }
-      }    
-      /* begin checkfilesize */      
-      $file_size=0;
-      if($image_file != null){        
-        $file_size=((int)@$image_file['size'])/1024/1024;
-        if($file_size > (int)max_size_upload ){
-          $checked = 0;               
-          $msg["status"]      = "Vui lòng nhập hình ảnh dưới 2MB";
-        }
-      }
-      /* end checkfilesize */
+    		if((int)$category_id[0]==0){
+    			$checked = 0;                
+    			$msg["category_id"]      = "Thiếu danh mục";
+    		}
+    	}    
+    	/* begin checkfilesize */      
+    	$file_size=0;
+    	if($image_file != null){        
+    		$file_size=((int)@$image_file['size'])/1024/1024;
+    		if($file_size > (int)max_size_upload ){
+    			$checked = 0;               
+    			$msg["status"]      = "Vui lòng nhập hình ảnh dưới 2MB";
+    		}
+    	}
+    	/* end checkfilesize */
     	if(empty($sort_order)){
     		$checked = 0;               
     		$msg["sort_order"] 		= "Thiếu sắp xếp";
@@ -152,7 +152,7 @@ class ArticleController extends Controller {
     		$checked = 0;               
     		$msg["status"] 			= "Thiếu trạng thái";
     	}
-      
+
     	if ($checked == 1) {    
     		$image_name='';
     		if($image_file != null){                                                
@@ -179,7 +179,7 @@ class ArticleController extends Controller {
     		$item->alias 			      =	$alias;
     		$item->intro            = $intro;
     		$item->content          = $content;
-        $item->alt_image          = $alt_image;
+    		$item->alt_image          = $alt_image;
     		$item->description      = $description;
     		$item->meta_keyword     = $meta_keyword;
     		$item->meta_description = $meta_description;           
@@ -223,50 +223,49 @@ class ArticleController extends Controller {
     		$msg['success']='Lưu thành công';  
     	}        		 			       
     	$info = array(
-        "checked"       => $checked,          
-        'msg'       => $msg,      
-        'link_edit'=>route('adminsystem.'.$this->_controller.'.getForm',['edit',@$item->id])
-      );                        
+    		"checked"       => $checked,          
+    		'msg'       => $msg,      
+    		'link_edit'=>route('adminsystem.'.$this->_controller.'.getForm',['edit',@$item->id])
+    	);                        
     	return $info;       
     }
-          public function changeStatus(Request $request){
-                  $id             =       (int)$request->id;     
-                  $info                 =   array();
+    public function changeStatus(Request $request){
+    	$id             =       (int)$request->id;     
+    	$info                 =   array();
     	$checked              =   1;                           
     	$msg                =   array();
-                  $status         =       (int)$request->status;
-                  $item           =       ArticleModel::find((int)@$id);        
-                  $item->status   =       $status;
-                  $item->save();
-                  $msg['success']='Cập nhật thành công';              
-                  $data                   =   $this->loadData($request);
-                  $info = array(
-              "checked"       => $checked,       		
+    	$status         =       (int)$request->status;
+    	$item           =       ArticleModel::find((int)@$id);        
+    	$item->status   =       $status;
+    	$item->save();
+    	$msg['success']='Cập nhật thành công';              
+    	$data                   =   $this->loadData($request);
+    	$info = array(
+    		"checked"       => $checked,       		
     		'msg'       => $msg,           
-              'data'              => $data
-            );
-            return $info;
-          }
-        
-      public function deleteItem(Request $request){
-            $id                     =   (int)$request->id;              
-            $info                 =   array();
+    		'data'              => $data
+    	);
+    	return $info;
+    }        
+    public function deleteItem(Request $request){
+    	$id                     =   (int)$request->id;              
+    	$info                 =   array();
     	$checked              =   1;                           
     	$msg                =   array();
-            if($checked == 1){
-              $item = ArticleModel::find((int)@$id);
-                $item->delete();
-                ArticleCategoryModel::whereRaw("article_id = ?",[(int)$id])->delete();
-                $msg['success']='Xóa thành công';         
-            }        
-            $data                   =   $this->loadData($request);
-            $info = array(
-              "checked"       => $checked,       		
+    	if($checked == 1){
+    		$item = ArticleModel::find((int)@$id);
+    		$item->delete();
+    		ArticleCategoryModel::whereRaw("article_id = ?",[(int)$id])->delete();
+    		$msg['success']='Xóa thành công';         
+    	}        
+    	$data                   =   $this->loadData($request);
+    	$info = array(
+    		"checked"       => $checked,       		
     		'msg'       => $msg,    
-              'data'              => $data
-            );
-            return $info;
-      }
+    		'data'              => $data
+    	);
+    	return $info;
+    }
       public function updateStatus(Request $request){
         $strID                 =   $request->str_id;     
         $status                 =   $request->status;            
@@ -299,29 +298,29 @@ class ArticleController extends Controller {
         return $info;
       }
       public function trash(Request $request){
-            $strID                 =   $request->str_id;               
-            $info                 =   array();
-    	$checked              =   1;                           
-    	$msg                =   array();
-            $strID=substr($strID, 0,strlen($strID) - 1);
-            $arrID=explode(',',$strID);                 
-            if(empty($strID)){  
-              $checked            =   0;
-          
-          $msg['chooseone']            =   "Vui lòng chọn ít nhất một phần tử";
-            }
-            if($checked == 1){                                    
-                  DB::table('article')->whereIn('id',@$arrID)->delete();   
-                  DB::table('article_category')->whereIn('article_id',@$arrID)->delete();         
-                  $msg['success']='Xóa thành công';                     
-            }
-            $data                 =   $this->loadData($request);
-        $info = array(
-          "checked"       => $checked,       		
-    		'msg'       => $msg,         
-          'data'              => $data
-        );
-        return $info;
+      	$strID                 =   $request->str_id;               
+      	$info                 =   array();
+      	$checked              =   1;                           
+      	$msg                =   array();
+      	$strID=substr($strID, 0,strlen($strID) - 1);
+      	$arrID=explode(',',$strID);                 
+      	if(empty($strID)){  
+      		$checked            =   0;
+
+      		$msg['chooseone']            =   "Vui lòng chọn ít nhất một phần tử";
+      	}
+      	if($checked == 1){                                    
+      		DB::table('article')->whereIn('id',@$arrID)->delete();   
+      		DB::table('article_category')->whereIn('article_id',@$arrID)->delete();         
+      		$msg['success']='Xóa thành công';                     
+      	}
+      	$data                 =   $this->loadData($request);
+      	$info = array(
+      		"checked"       => $checked,       		
+      		'msg'       => $msg,         
+      		'data'              => $data
+      	);
+      	return $info;
       }
       public function sortOrder(Request $request){
         $sort_json              =   $request->sort_json;           
@@ -349,75 +348,74 @@ class ArticleController extends Controller {
         );
         return $info;
       }
-
       public function createAlias(Request $request){
-        $id                =  trim($request->id)  ; 
-        $fullname                =  trim($request->fullname)  ;        
-        $data                    =  array();
-        $info                 =   array();
-    	$checked              =   1;                           
-    	$msg                =   array();
-        $item                    =  null;          
-        $alias='';                     
-        if(empty($fullname)){
-         $checked = 0;           
-         $msg["fullname"] = "Thiếu tên bài viết";
-       }else{          
-        $alias=str_slug($fullname,'-');
-        $dataCategoryArticle=array();
-        $dataCategoryProduct=array();
-        $dataArticle=array();
-        $dataProduct=array();
-        $dataPage=array();
-        $dataProject=array();
-        $dataProjectArticle=array();
-        $checked_trung_alias=0;          
-        if (empty($id)) {              
-          $dataArticle=ArticleModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();             
-        }else{
-          $dataArticle=ArticleModel::whereRaw("trim(lower(alias)) = ? and id != ?",[trim(mb_strtolower($alias,'UTF-8')),(int)@$id])->get()->toArray();    
-        }  
-        $dataCategoryArticle=CategoryArticleModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
-        $dataCategoryProduct=CategoryProductModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
-        $dataProduct=ProductModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
-        $dataPage=PageModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
-        $dataProject=ProjectModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
-        $dataProjectArticle=ProjectArticleModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
-        if (count($dataCategoryArticle) > 0) {
-          $checked_trung_alias=1;
-        }
-        if (count($dataCategoryProduct) > 0) {
-          $checked_trung_alias=1;
-        }
-        if (count($dataArticle) > 0) {
-          $checked_trung_alias=1;
-        }
-        if (count($dataProduct) > 0) {
-          $checked_trung_alias=1;
-        }    
-        if (count($dataPage) > 0) {
-          $checked_trung_alias=1;
-        }  
-        if (count($dataProject) > 0) {
-          $checked_trung_alias=1;
-        }  
-        if (count($dataProjectArticle) > 0) {
-          $checked_trung_alias=1;
-        }       
-        if((int)$checked_trung_alias == 1){
-          $code_alias=rand(1,999999);
-          $alias=$alias.'-'.$code_alias;
-        }
-      }
-      if ($checked == 1){
-        $msg['success']='Lưu thành công';     
-      }  
-      $info = array(
-        "checked"       => $checked,       		
-    		'msg'       => $msg,      
-        "alias"            => $alias
-      );                       
-      return $info;
-    }      
+      	$id                =  trim($request->id)  ; 
+      	$fullname                =  trim($request->fullname)  ;        
+      	$data                    =  array();
+      	$info                 =   array();
+      	$checked              =   1;                           
+      	$msg                =   array();
+      	$item                    =  null;          
+      	$alias='';                     
+      	if(empty($fullname)){
+      		$checked = 0;           
+      		$msg["fullname"] = "Thiếu tên bài viết";
+      	}else{          
+      		$alias=str_slug($fullname,'-');
+      		$dataCategoryArticle=array();
+      		$dataCategoryProduct=array();
+      		$dataArticle=array();
+      		$dataProduct=array();
+      		$dataPage=array();
+      		$dataProject=array();
+      		$dataProjectArticle=array();
+      		$checked_trung_alias=0;          
+      		if (empty($id)) {              
+      			$dataArticle=ArticleModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();             
+      		}else{
+      			$dataArticle=ArticleModel::whereRaw("trim(lower(alias)) = ? and id != ?",[trim(mb_strtolower($alias,'UTF-8')),(int)@$id])->get()->toArray();    
+      		}  
+      		$dataCategoryArticle=CategoryArticleModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
+      		$dataCategoryProduct=CategoryProductModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
+      		$dataProduct=ProductModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
+      		$dataPage=PageModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
+      		$dataProject=ProjectModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
+      		$dataProjectArticle=ProjectArticleModel::whereRaw("trim(lower(alias)) = ?",[trim(mb_strtolower($alias,'UTF-8'))])->get()->toArray();
+      		if (count($dataCategoryArticle) > 0) {
+      			$checked_trung_alias=1;
+      		}
+      		if (count($dataCategoryProduct) > 0) {
+      			$checked_trung_alias=1;
+      		}
+      		if (count($dataArticle) > 0) {
+      			$checked_trung_alias=1;
+      		}
+      		if (count($dataProduct) > 0) {
+      			$checked_trung_alias=1;
+      		}    
+      		if (count($dataPage) > 0) {
+      			$checked_trung_alias=1;
+      		}  
+      		if (count($dataProject) > 0) {
+      			$checked_trung_alias=1;
+      		}  
+      		if (count($dataProjectArticle) > 0) {
+      			$checked_trung_alias=1;
+      		}       
+      		if((int)$checked_trung_alias == 1){
+      			$code_alias=rand(1,999999);
+      			$alias=$alias.'-'.$code_alias;
+      		}
+      	}
+      	if ($checked == 1){
+      		$msg['success']='Lưu thành công';     
+      	}  
+      	$info = array(
+      		"checked"       => $checked,       		
+      		'msg'       => $msg,      
+      		"alias"            => $alias
+      	);                       
+      	return $info;
+      }      
 }
 ?>
