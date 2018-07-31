@@ -76,7 +76,7 @@ class IndexController extends Controller {
     $position   = ((int)@$arrPagination['currentPage']-1)*$totalItemsPerPage;        
     $data=$query->select('product.id','product.alias','product.fullname','product.price','product.sale_price','product.image','product.intro','product.count_view')
     ->groupBy('product.id','product.alias','product.fullname','product.price','product.sale_price','product.image','product.intro','product.count_view')
-    ->orderBy('product.id', 'desc')
+    ->orderBy('product.sort_order', 'desc')
     ->skip($position)
     ->take($totalItemsPerPage)
     ->get()->toArray();   
@@ -147,7 +147,7 @@ class IndexController extends Controller {
 
     $data=$query->select('product.id','product.alias','product.fullname','product.price','product.sale_price','product.image','product.intro','product.count_view')
     ->groupBy('product.id','product.alias','product.fullname','product.price','product.sale_price','product.image','product.intro','product.count_view')
-    ->orderBy('product.created_at', 'desc')
+    ->orderBy('product.sort_order', 'desc')
     ->skip($position)
     ->take($totalItemsPerPage)
     ->get()->toArray();   
@@ -249,7 +249,7 @@ class IndexController extends Controller {
         $position   = ((int)@$arrPagination['currentPage']-1)*$totalItemsPerPage;        
         $data=$query->select('article.id','article.alias','article.fullname','article.image','article.intro','article.count_view')                
                     ->groupBy('article.id','article.alias','article.fullname','article.image','article.intro','article.count_view')
-                    ->orderBy('article.created_at', 'desc')
+                    ->orderBy('article.sort_order', 'desc')
                     ->skip($position)
                     ->take($totalItemsPerPage)
                     ->get()
@@ -302,7 +302,7 @@ class IndexController extends Controller {
         $position   = ((int)@$arrPagination['currentPage']-1)*$totalItemsPerPage;        
         $data=$query->select('product.id','product.alias','product.fullname','product.image','product.intro','product.price','product.sale_price')                
                 ->groupBy('product.id','product.alias','product.fullname','product.image','product.intro','product.price','product.sale_price')
-                ->orderBy('product.created_at', 'desc')
+                ->orderBy('product.sort_order', 'desc')
                 ->skip($position)
                 ->take($totalItemsPerPage)
                 ->get()->toArray();   
@@ -338,7 +338,7 @@ class IndexController extends Controller {
         $position   = ((int)@$arrPagination['currentPage']-1)*$totalItemsPerPage;        
         $data=$query->select('product.id','product.alias','product.fullname','product.image')                                
                     ->groupBy('product.id','product.alias','product.fullname','product.image')
-                    ->orderBy('product.created_at', 'desc')
+                    ->orderBy('product.sort_order', 'desc')
                     ->skip($position)
                     ->take($totalItemsPerPage)
                     ->get()
@@ -533,7 +533,7 @@ class IndexController extends Controller {
                 ->select('supporter.id','supporter.fullname','supporter.number_money','payment_method.fullname as payment_method_name','supporter.sort_order','supporter.status','supporter.created_at','supporter.updated_at')                
                 ->where('supporter.status',1)                     
                 ->groupBy('supporter.id','supporter.fullname','supporter.number_money','payment_method.fullname','supporter.sort_order','supporter.status','supporter.created_at','supporter.updated_at')
-                ->orderBy('supporter.created_at', 'desc')                
+                ->orderBy('supporter.sort_order', 'desc')                
                 ->get()->toArray();              
         $data=convertToArray($data);     
         $data=supporterTiepluaConverter($data);            
